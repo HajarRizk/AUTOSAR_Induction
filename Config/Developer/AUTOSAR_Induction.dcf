@@ -3,7 +3,7 @@
 	<Version>1.0</Version>
 	<PROFILESETTINGS>ProfileSettings.xml</PROFILESETTINGS>
 	<ADMINDATATEMPLATES>AdminDataTemplates.xml</ADMINDATATEMPLATES>
-	<PROJECTASSISTANT>../../AUTOSAR_Induction.dpa</PROJECTASSISTANT>
+	<PROJECTASSISTANT>..\..\AUTOSAR_Induction.dpa</PROJECTASSISTANT>
 	<FILEREF>
 		<ARXML>Packages.arxml</ARXML>
 	</FILEREF>
@@ -14,6 +14,6 @@
 		<ARXML>PortInterfaces.arxml</ARXML>
 	</FILEREF>
 	<FILEREF>
-		<ARXML>ECUProjects/AUTOSAR_Induction.arxml</ARXML>
+		<ARXML>ECUProjects\AUTOSAR_Induction.arxml</ARXML>
 	</FILEREF>
 </DCF>

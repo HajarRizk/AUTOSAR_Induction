@@ -1,0 +1,26 @@
+﻿16 Aug 2023 18:25:08 - Opening workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf'...
+16 Aug 2023 18:25:09 - Loading file PlatformTypes_AR4.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\AUTOSAR\PlatformTypes_AR4.arxml)
+16 Aug 2023 18:25:09 - Loading file ComM_swc.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\ServiceComponents\ComM_swc.arxml)
+16 Aug 2023 18:25:09 - Loading file Det_swc.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\ServiceComponents\Det_swc.arxml)
+16 Aug 2023 18:25:09 - Loading file EcuM_swc.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\ServiceComponents\EcuM_swc.arxml)
+16 Aug 2023 18:25:09 - Loading file Os_swc.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\ServiceComponents\Os_swc.arxml)
+16 Aug 2023 18:25:09 - Loading file AUTOSAR_Induction.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.arxml)
+16 Aug 2023 18:25:09 - Loading file DataTypes.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\DataTypes.arxml)
+16 Aug 2023 18:25:09 - Loading file Packages.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\Packages.arxml)
+16 Aug 2023 18:25:09 - Loading file PortInterfaces.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\PortInterfaces.arxml)
+16 Aug 2023 18:25:10 - Opened workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf' successfully.
+16 Aug 2023 18:25:10 - Start import
+16 Aug 2023 18:25:10 - Importing file (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\System\SystemExtract.arxml).
+16 Aug 2023 18:25:11 - Merging imported data
+16 Aug 2023 18:25:11 - Could not access the category of given Compu-method. The category is deduced as 'LINEAR'.
+Developer Item: /VectorAutosarExplorerGeneratedObjects/COMPUMETHODS/ACCompPow_Encoding (Compu Method)
+AUTOSAR Item: /VectorAutosarExplorerGeneratedObjects/COMPUMETHODS/ACCompPow_Encoding
+File: SystemExtract.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\System)
+16 Aug 2023 18:25:12 - Finished import
+16 Aug 2023 18:25:12 - Saving workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf'...
+16 Aug 2023 18:25:12 - Saving file AUTOSAR_Induction.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.arxml)
+16 Aug 2023 18:25:12 - Saving file DataTypes.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\DataTypes.arxml)
+16 Aug 2023 18:25:12 - Saving file Packages.arxml (C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\Packages.arxml)
+16 Aug 2023 18:25:12 - Saved workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf' successfully.
+16 Aug 2023 18:25:12 - Closing workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf'...
+16 Aug 2023 18:25:12 - Closed workspace 'C:\Users\HRezk\AppData\Local\Temp\DaVinci\Cfg-8550768\Workflow\1692199473852-0\Config\Developer\AUTOSAR_Induction.dcf' successfully.

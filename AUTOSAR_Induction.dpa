@@ -36,8 +36,10 @@
     </Folders>
     <Tools>
         <DEV>C:\Program Files (x86)\Vector DaVinci Developer 4.5\Bin\DaVinciDEV.exe</DEV>
+        <DDM Version="5.19.46 SP2"/>
     </Tools>
     <Input>
+        <ECUEX>Config\System\SystemExtract.arxml</ECUEX>
         <Options>
             <IgnoreUuidsSystemDescriptionFiles>false</IgnoreUuidsSystemDescriptionFiles>
             <IgnoreUuidsStandardConfigurationFiles>false</IgnoreUuidsStandardConfigurationFiles>
@@ -47,13 +49,85 @@
     </Input>
     <References>
         <DVWorkspace>.\Config\Developer\AUTOSAR_Induction.dcf</DVWorkspace>
+        <FlatMap>.\Config\System\FlatMap.arxml</FlatMap>
+        <FlatECUEX>.\Config\System\FlatExtract.arxml</FlatECUEX>
+        <OEMCommunicationExtract>Config\System\Communication.arxml</OEMCommunicationExtract>
+        <EcucFileReferences/>
     </References>
     <EcucSplitter>
         <Configuration>.\Config\ECUC\AUTOSAR_Induction.ecuc.arxml</Configuration>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Com_ecuc.arxml">
+            <Module Name="Com"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Mcu_ecuc.arxml">
+            <Module Name="Mcu"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Rte_ecuc.arxml">
+            <Module Name="Rte"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_EcuM_ecuc.arxml">
+            <Module Name="EcuM"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTMcu_ecuc.arxml">
+            <Module Name="VTTMcu"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTCntrl_ecuc.arxml">
+            <Module Name="VTTCntrl"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Os_ecuc.arxml">
+            <Module Name="Os"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_PduR_ecuc.arxml">
+            <Module Name="PduR"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTEcuC_ecuc.arxml">
+            <Module Name="VTTEcuC"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_CanSM_ecuc.arxml">
+            <Module Name="CanSM"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Can_ecuc.arxml">
+            <Module Name="Can"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_CanIf_ecuc.arxml">
+            <Module Name="CanIf"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_ComXf_ecuc.arxml">
+            <Module Name="ComXf"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Det_ecuc.arxml">
+            <Module Name="Det"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_ComM_ecuc.arxml">
+            <Module Name="ComM"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTCan_ecuc.arxml">
+            <Module Name="VTTCan"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_EcuC_ecuc.arxml">
+            <Module Name="EcuC"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_BswM_ecuc.arxml">
+            <Module Name="BswM"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_vSet_ecuc.arxml">
+            <Module Name="vSet"/>
+        </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTOs_ecuc.arxml">
+            <Module Name="VTTOs"/>
+        </Splitter>
         <OwnFolderForEachSplitter>false</OwnFolderForEachSplitter>
     </EcucSplitter>
+    <Display LastVersion="5.19.46 SP2">
+        <FileSet Id="" CS="a77ed9f">
+            <File Order="0" EcuInstance="eJAD_AC_ECU" Hash="34b6e25a52c6e4c15d19b13f13e1f857" FileCategory="communication_system_description">$(DpaProjectFolder)\InputFiles\eJAD_InductionTraining.arxml</File>
+        </FileSet>
+        <Merge/>
+        <SelectiveUpdate Active="false" CS="ecd6502d"/>
+    </Display>
     <ECUC>
-        <Active RootPackageName="/ActiveEcuC/ActiveEcuC">.\Config\ECUC\AUTOSAR_Induction.ecuc.arxml</Active>
+        <Active RootPackageName="/ActiveEcuC/ActiveEcuC">Config\ECUC\AUTOSAR_Induction.ecuc.arxml</Active>
+        <Derived RootPackageName="/InitialEcuC/InitialEcuC">Config\ECUC\AUTOSAR_Induction.ecuc.Initial.arxml</Derived>
     </ECUC>
     <PostBuildLoadable RTEDataFreezeChecksum="" CurrentConfigurationPhase="PRE_COMPILE"/>
     <DEVSettings>

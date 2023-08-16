@@ -1,0 +1,7 @@
+2023-08-16 - 17:23:15
+Workflow 'Input File Pre-Processing' started.
+ 17:23:15 - Action 'Load arxml file: eJAD_InductionTraining.arxml' started.
+ 17:23:16 - Action 'Load arxml file: eJAD_InductionTraining.arxml' successfully finished.
+ 17:23:16 - Action 'Creating system extract from system description: eJAD_InductionTraining.arxml' started.
+ 17:23:16 - Action 'Creating system extract from system description: eJAD_InductionTraining.arxml' successfully finished.
+17:23:16 - Workflow 'Input File Pre-Processing' successfully finished.
