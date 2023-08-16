@@ -215,6 +215,16 @@
                 <ECUC-CONTAINER-VALUE UUID="f533cc4b-8828-45f2-b050-871911150b47">
                   <SHORT-NAME>CanMainFunctionRWPeriods</SHORT-NAME>
                   <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/VTT/VTTCan/CanGeneral/CanMainFunctionRWPeriods</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanGeneral/CanMainFunctionRWPeriods/CanMainFunctionReadPeriod</DEFINITION-REF>
+                      <VALUE>0.01</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanGeneral/CanMainFunctionRWPeriods/CanMainFunctionWritePeriod</DEFINITION-REF>
+                      <VALUE>0.01</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
@@ -248,7 +258,7 @@
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanHardwareObject/CanHwProcessing</DEFINITION-REF>
-                      <VALUE>false</VALUE>
+                      <VALUE>true</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanHardwareObject/CanObjectHwSize</DEFINITION-REF>
@@ -312,7 +322,7 @@
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanHardwareObject/CanHwProcessing</DEFINITION-REF>
-                      <VALUE>false</VALUE>
+                      <VALUE>true</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanHardwareObject/CanObjectHwSize</DEFINITION-REF>
@@ -352,7 +362,7 @@
                   <PARAMETER-VALUES>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanBusoffProcessing</DEFINITION-REF>
-                      <VALUE>INTERRUPT</VALUE>
+                      <VALUE>POLLING</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanControllerActivation</DEFINITION-REF>
@@ -368,15 +378,15 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanRxProcessing</DEFINITION-REF>
-                      <VALUE>INTERRUPT</VALUE>
+                      <VALUE>POLLING</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanTxProcessing</DEFINITION-REF>
-                      <VALUE>INTERRUPT</VALUE>
+                      <VALUE>POLLING</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanWakeupProcessing</DEFINITION-REF>
-                      <VALUE>INTERRUPT</VALUE>
+                      <VALUE>POLLING</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/VTT/VTTCan/CanConfigSet/CanController/CanWakeupSupport</DEFINITION-REF>

@@ -215,6 +215,14 @@
                     <Setting Value="2.25.0" Name="BswImplSwVersion"/>
                 </Settings>
             </Settings>
+            <Settings Name="com.vector.cfg.gui.pse.pages.generators">
+                <Settings Name="BuildVipProject"/>
+                <Settings Name="CustomWorkflowExecution"/>
+            </Settings>
+            <Settings Name="com.vector.cfg.persistency.internal.folder">
+                <Settings Name="TargetFolderManager"/>
+            </Settings>
+            <Settings Name="generationReportSettings"/>
         </Misc>
     </ToolSettings>
     <TopDownServiceConfiguration>
