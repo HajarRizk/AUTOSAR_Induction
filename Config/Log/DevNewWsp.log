@@ -1,0 +1,15 @@
+﻿16 Aug 2023 18:16:42 - Saving file AdminDataTemplates.xml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\AdminDataTemplates.xml)
+16 Aug 2023 18:16:42 - Saving file AUTOSAR_Induction.dcf (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\AUTOSAR_Induction.dcf)
+16 Aug 2023 18:16:43 - Start import
+16 Aug 2023 18:16:43 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.5\Bin\Predefines\StandardPackages_AR4.arxml).
+16 Aug 2023 18:16:43 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.5\Bin\Predefines\ServicePortInterfaces_4.4.0.arxml).
+16 Aug 2023 18:16:43 - Importing file (C:\Program Files (x86)\Vector DaVinci Developer 4.5\Bin\Predefines\ApplicationPortInterfaces_4.4.0.arxml).
+16 Aug 2023 18:16:43 - Importing file (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\AUTOSAR\PlatformTypes_AR4.arxml).
+16 Aug 2023 18:16:43 - Merging imported data
+16 Aug 2023 18:16:45 - Finished import
+16 Aug 2023 18:16:45 - Saving file ProfileSettings.xml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\ProfileSettings.xml)
+16 Aug 2023 18:16:45 - Saving file Packages.arxml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\Packages.arxml)
+16 Aug 2023 18:16:45 - Saving file DataTypes.arxml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\DataTypes.arxml)
+16 Aug 2023 18:16:45 - Saving file PortInterfaces.arxml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\PortInterfaces.arxml)
+16 Aug 2023 18:16:45 - Saving file AUTOSAR_Induction.arxml (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\ECUProjects\AUTOSAR_Induction.arxml)
+16 Aug 2023 18:16:45 - Saving file AUTOSAR_Induction.dcf (D:\Repositories\Training_Repo\AUTOSAR_Induction\Config\Developer\AUTOSAR_Induction.dcf)
