@@ -52,11 +52,12 @@ uint8 InitializeComStack()
 
   InitializeCanIf();
 
-  //CanSM_Init(CanSM_Config_Ptr);
-
+(void)CanSM_Init(CanSM_Config_Ptr);
+  
   Com_Init(Com_Config_Ptr);
 
   ComM_Init();
+  
 
   /* PduR_Init must be called with a NULL_PTR or a valid post-build configuration */
   PduR_Init(PduR_Config_Ptr);
@@ -64,11 +65,12 @@ uint8 InitializeComStack()
   /* Mandatory -> Changes CAN state from Init to Ready */
   Can_MainFunction_Mode();
 
+  retVal = Can_SetControllerMode(0, CAN_T_WAKEUP);
   retVal = Can_SetControllerMode(0, CAN_T_START);
 
   if (retVal != CAN_OK)
   {
-	  return COM_STACK_INIT_NOT_OK;
+	 return COM_STACK_INIT_NOT_OK;
   }
 
   CanIf_ControllerModeIndication(0, CANIF_CS_STARTED);
@@ -81,6 +83,9 @@ uint8 InitializeComStack()
   }
 
   Can_MainFunction_Mode();
+
+
+  
 
   return COM_STACK_INIT_OK;
 }

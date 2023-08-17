@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Core_Lcfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -102,20 +102,6 @@ extern CONST(Os_Hal_CoreConfigType, OS_CONST) OsCfg_Hal_Core_OsCore0;
 extern CONST(Os_Hal_CoreAsrConfigType, OS_CONST) OsCfg_Hal_CoreAsr_OsCore0;
 
 # define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
-# include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-
-# define OS_START_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-# include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! HAL core initialized interrupt sources: OsCore1 */
-extern CONSTP2CONST(Os_Hal_IntIsrConfigType, OS_CONST, OS_CONST)
-  OsCfg_Hal_Core_OsCore1_InterruptSourceRefs[OS_CFG_NUM_CORE_OSCORE1_INTERRUPTSOURCEREFS + 1u];
-
-/*! HAL core configuration data: OsCore1 */
-extern CONST(Os_Hal_CoreConfigType, OS_CONST) OsCfg_Hal_Core_OsCore1;
-
-# define OS_STOP_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
 

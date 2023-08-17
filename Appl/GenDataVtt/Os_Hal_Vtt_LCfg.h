@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Vtt_LCfg.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -90,8 +90,6 @@
 extern void main(void);
 
 /* Category 2 ISRs */
-extern void Os_Hal_CanoeIrqHandler_CounterIsr_SystemTimer(void);
-extern void Os_Hal_CanoeIrqTask_CounterIsr_SystemTimer(void);
 
 /* Category 1 ISRs */
 

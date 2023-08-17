@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Kernel_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -81,16 +81,6 @@
  *  LOCAL DATA PROTOTYPES
  *********************************************************************************************************************/
 
-#define OS_START_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! Dynamic core status: OsCore1 */
-OS_LOCAL VAR(Os_CoreStatusType, OS_VAR_NOINIT) OsCfg_Core_OsCore1_Status_Dyn;
-
-#define OS_STOP_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-
 /**********************************************************************************************************************
  *  GLOBAL DATA
  *********************************************************************************************************************/
@@ -99,27 +89,6 @@ OS_LOCAL VAR(Os_CoreStatusType, OS_VAR_NOINIT) OsCfg_Core_OsCore1_Status_Dyn;
  *  GLOBAL CONSTANT DATA
  *********************************************************************************************************************/
 
-#define OS_START_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! Core configuration data: OsCore1 */
-CONST(Os_CoreConfigType, OS_CONST) OsCfg_Core_OsCore1 =
-{
-    /* .Status               = */ OS_CORE_CASTSTATUS_CORESTATUS_2_CORESTATUS(OsCfg_Core_OsCore1_Status_Dyn),
-    /* .HwConfig             = */ &OsCfg_Hal_Core_OsCore1,
-    /* .InterruptSourceRefs  = */ OsCfg_Hal_Core_OsCore1_InterruptSourceRefs,
-    /* .InterruptSourceCount = */ (Os_ObjIdxType)OS_CFG_NUM_CORE_OSCORE1_INTERRUPTSOURCEREFS,
-    /* .Id                   = */ OS_CORE_ID_1,
-    /* .IsAsrCore            = */ FALSE,
-    /* .IsAutostart          = */ FALSE,
-    /* .IsMasterStartAllowed = */ FALSE,
-    /* .HasPrivilegedHardwareAccess = */ FALSE
-  };
-
-#define OS_STOP_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-
 #define OS_START_SEC_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
@@ -127,7 +96,6 @@ CONST(Os_CoreConfigType, OS_CONST) OsCfg_Core_OsCore1 =
 CONSTP2CONST(Os_CoreConfigType, OS_CONST, OS_CONST) OsCfg_CoreRefs[OS_COREID_COUNT + 1u] =                /* PRQA S 4521 */ /* MD_Os_Rule10.1_4521 */
 {
   OS_CORE_CASTCONFIG_COREASR_2_CORE(OsCfg_Core_OsCore0),
-  OS_CORE_CASTCONFIG_CORE_2_CORE(OsCfg_Core_OsCore1),
   NULL_PTR
 };
 
@@ -135,7 +103,6 @@ CONSTP2CONST(Os_CoreConfigType, OS_CONST, OS_CONST) OsCfg_CoreRefs[OS_COREID_COU
 CONSTP2CONST(Os_CoreConfigType, OS_CONST, OS_CONST) OsCfg_CorePhysicalRefs[OS_CFG_COREPHYSICALID_COUNT + 1u] =
 {
   OS_CORE_CASTCONFIG_COREASR_2_CORE(OsCfg_Core_OsCore0),
-  OS_CORE_CASTCONFIG_CORE_2_CORE(OsCfg_Core_OsCore1),
   NULL_PTR
 };
 
@@ -143,7 +110,6 @@ CONSTP2CONST(Os_CoreConfigType, OS_CONST, OS_CONST) OsCfg_CorePhysicalRefs[OS_CF
 CONSTP2CONST(Os_Hal_ContextStackConfigType, OS_CONST, OS_CONST) OsCfg_Stack_KernelStacks[OS_CFG_COREPHYSICALID_COUNT + 1u] = /* PRQA S 1533 */ /* MD_Os_Rule8.9_1533 */
 {
   &OsCfg_Hal_Stack_OsCore0_Kernel,
-  NULL_PTR,
   NULL_PTR
 };
 

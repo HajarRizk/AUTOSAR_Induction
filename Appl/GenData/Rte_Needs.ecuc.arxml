@@ -226,7 +226,7 @@
                             <REFERENCE-VALUES>
                                 <ECUC-REFERENCE-VALUE>
                                     <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableCounterRef</DEFINITION-REF>
-                                    <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/SystemTimer</VALUE-REF>
+                                    <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/OsCounter</VALUE-REF>
                                 </ECUC-REFERENCE-VALUE>
                             </REFERENCE-VALUES>
                             <SUB-CONTAINERS>

@@ -41,7 +41,7 @@
      LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION = FALSE;
      REPEATING = TRUE;
      DURATION = 20;
-     COUNTER = SystemTimer;
+     COUNTER = OsCounter;
      EXPIRY_POINT = EXPIRY_POINT
      {
         ADJUST = FALSE;

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Entry_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -115,16 +115,6 @@
 /*******************
  * Category 2 ISRs
  *******************/
-
-
-
-/* CANoe IRQ Handler: CounterIsr_SystemTimer (Level: 1) */
-FUNC(void, OS_CODE) Os_Hal_CanoeIrqHandler_CounterIsr_SystemTimer(void)
-{
-  Os_Hal_EntryIrqRun((P2CONST(Os_IsrConfigType, AUTOMATIC, OS_CONST)) &OsCfg_Isr_CounterIsr_SystemTimer); /* PRQA S 0310 */ /* MD_Os_Rule11.3_0310 */
-}
-
-
 
 
 

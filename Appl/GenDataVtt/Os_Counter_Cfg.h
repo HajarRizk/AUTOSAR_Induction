@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Counter_Cfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:25:17
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -60,16 +60,13 @@
 # define OS_CFG_COUNTER_SW_USED                  (STD_ON)
 
 /*! Defines whether any counter uses PIT (STD_ON) or not (STD_OFF) */
-# define OS_CFG_COUNTER_PIT_USED                 (STD_ON)
+# define OS_CFG_COUNTER_PIT_USED                 (STD_OFF)
 
 /*! Defines whether any counter uses High Resolution (STD_ON) or not (STD_OFF) */
 # define OS_CFG_COUNTER_HRT_USED                 (STD_OFF)
 
 /*! Defines whether any counter uses FRT as PIT (STD_ON) or not (STD_OFF) */
 # define OS_CFG_COUNTER_PFRT_USED                (STD_OFF)
-
-/*! Number of counter jobs: OsCounter */
-# define OS_CFG_NUM_COUNTER_OSCOUNTER_JOBS     (0uL)
 
 /*! Number of counter jobs: SystemTimer */
 # define OS_CFG_NUM_COUNTER_SYSTEMTIMER_JOBS     (1uL)

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Counter_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:26
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -89,11 +89,11 @@
 #define OS_START_SEC_CORE0_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
-/*! Dynamic counter data: SystemTimer */
-OS_LOCAL VAR(Os_TimerSwType, OS_VAR_NOINIT) OsCfg_Counter_SystemTimer_Dyn;
-OS_LOCAL VAR(Os_PriorityQueueType, OS_VAR_NOINIT) OsCfg_Counter_SystemTimer_JobQueue_Dyn;
+/*! Dynamic counter data: OsCounter */
+OS_LOCAL VAR(Os_TimerSwType, OS_VAR_NOINIT) OsCfg_Counter_OsCounter_Dyn;
+OS_LOCAL VAR(Os_PriorityQueueType, OS_VAR_NOINIT) OsCfg_Counter_OsCounter_JobQueue_Dyn;
 OS_LOCAL VAR(Os_PriorityQueueNodeType, OS_VAR_NOINIT)
-  OsCfg_Counter_SystemTimer_JobQueueNodes_Dyn[OS_CFG_NUM_COUNTER_SYSTEMTIMER_JOBS + 1u];
+  OsCfg_Counter_OsCounter_JobQueueNodes_Dyn[OS_CFG_NUM_COUNTER_OSCOUNTER_JOBS + 1u];
 
 #define OS_STOP_SEC_CORE0_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
@@ -110,35 +110,31 @@ OS_LOCAL VAR(Os_PriorityQueueNodeType, OS_VAR_NOINIT)
 #define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
-/*! Counter configuration data: SystemTimer */
-CONST(Os_TimerPitConfigType, OS_CONST) OsCfg_Counter_SystemTimer =
+/*! Counter configuration data: OsCounter */
+CONST(Os_TimerSwConfigType, OS_CONST) OsCfg_Counter_OsCounter =
 {
-  /* .SwCounter = */
-  {
   /* .Counter = */
   {
     /* .Characteristics       = */
     {
-      /* .MaxAllowedValue      = */ OSMAXALLOWEDVALUE_SystemTimer,
-      /* .MaxCountingValue     = */ OS_TIMERPIT_GETMAXCOUNTINGVALUE(OSMAXALLOWEDVALUE_SystemTimer),
-      /* .MaxDifferentialValue = */ OS_TIMERPIT_GETMAXDIFFERENTIALVALUE(OSMAXALLOWEDVALUE_SystemTimer),
-      /* .MinCycle             = */ OSMINCYCLE_SystemTimer,
-      /* .TicksPerBase         = */ OSTICKSPERBASE_SystemTimer
+      /* .MaxAllowedValue      = */ OSMAXALLOWEDVALUE_OsCounter,
+      /* .MaxCountingValue     = */ OS_TIMERSW_GETMAXCOUNTINGVALUE(OSMAXALLOWEDVALUE_OsCounter),
+      /* .MaxDifferentialValue = */ OS_TIMERSW_GETMAXDIFFERENTIALVALUE(OSMAXALLOWEDVALUE_OsCounter),
+      /* .MinCycle             = */ OSMINCYCLE_OsCounter,
+      /* .TicksPerBase         = */ OSTICKSPERBASE_OsCounter
     },
     /* .JobQueue              = */
     {
-      /* .Queue     = */ OsCfg_Counter_SystemTimer_JobQueueNodes_Dyn,
-      /* .Dyn       = */ &OsCfg_Counter_SystemTimer_JobQueue_Dyn,
-      /* .QueueSize = */ (Os_PriorityQueueNodeIdxType)OS_CFG_NUM_COUNTER_SYSTEMTIMER_JOBS
+      /* .Queue     = */ OsCfg_Counter_OsCounter_JobQueueNodes_Dyn,
+      /* .Dyn       = */ &OsCfg_Counter_OsCounter_JobQueue_Dyn,
+      /* .QueueSize = */ (Os_PriorityQueueNodeIdxType)OS_CFG_NUM_COUNTER_OSCOUNTER_JOBS
     },
-    /* .DriverType            = */ OS_TIMERTYPE_PERIODIC_TICK,
+    /* .DriverType            = */ OS_TIMERTYPE_SOFTWARE,
     /* .Core                  = */ &OsCfg_Core_OsCore0,
     /* .OwnerApplication      = */ &OsCfg_App_SystemApplication_OsCore0,
     /* .AccessingApplications = */ OS_APPID2MASK(SystemApplication_OsCore0)
   },
-  /* .Dyn     = */ &OsCfg_Counter_SystemTimer_Dyn
-},
-  /* .HwConfig  = */ &OsCfg_Hal_TimerPit_SystemTimer
+  /* .Dyn     = */ &OsCfg_Counter_OsCounter_Dyn
 };
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
@@ -151,7 +147,7 @@ CONST(Os_TimerPitConfigType, OS_CONST) OsCfg_Counter_SystemTimer =
 /*! Object reference table for counters. */
 CONSTP2CONST(Os_CounterConfigType, OS_CONST, OS_CONST) OsCfg_CounterRefs[OS_COUNTERID_COUNT + 1u] =            /* PRQA S 4521 */ /* MD_Os_Rule10.1_4521 */
 {
-  OS_COUNTER_CASTCONFIG_TIMERPIT_2_COUNTER(OsCfg_Counter_SystemTimer),
+  OS_COUNTER_CASTCONFIG_TIMERSW_2_COUNTER(OsCfg_Counter_OsCounter),
   NULL_PTR
 };
 

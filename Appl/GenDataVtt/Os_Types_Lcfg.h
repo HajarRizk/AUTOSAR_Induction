@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Types_Lcfg.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:25:17
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -75,12 +75,10 @@
 #define PeriodicTask PeriodicTask
 
 /* Category 2 ISR identifiers. */
-#define CounterIsr_SystemTimer CounterIsr_SystemTimer
 
 /* Alarm identifiers. */
 
 /* Counter identifiers. */
-#define OsCounter OsCounter
 #define SystemTimer SystemTimer
 
 /* ScheduleTable identifiers. */
@@ -145,8 +143,7 @@ typedef enum
 /*! Category 2 ISR identifiers. */
 typedef enum
 {
-  CounterIsr_SystemTimer = 0,   /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  OS_ISRID_COUNT = 1,
+  OS_ISRID_COUNT = 0,
   INVALID_ISR = OS_ISRID_COUNT
 } ISRType;
 
@@ -159,9 +156,8 @@ typedef enum
 /*! Counter identifiers. */
 typedef enum
 {
-  OsCounter = 0,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  SystemTimer = 1,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  OS_COUNTERID_COUNT = 2
+  SystemTimer = 0,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
+  OS_COUNTERID_COUNT = 1
 } CounterType;
 
 /*! ScheduleTable identifiers. */

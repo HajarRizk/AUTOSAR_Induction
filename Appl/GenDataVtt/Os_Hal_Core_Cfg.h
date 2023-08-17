@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Core_Cfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -62,9 +62,7 @@
 
 
 /*! Number of interrupt sources initialized by core OsCore0 */
-#define OS_CFG_NUM_CORE_OSCORE0_INTERRUPTSOURCEREFS           (1uL)
-/*! Number of interrupt sources initialized by core OsCore1 */
-#define OS_CFG_NUM_CORE_OSCORE1_INTERRUPTSOURCEREFS           (0uL)
+#define OS_CFG_NUM_CORE_OSCORE0_INTERRUPTSOURCEREFS           (0uL)
 
 
 

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_ScheduleTable_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:27
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -178,7 +178,7 @@ CONST(Os_SchTConfigType, OS_CONST) OsCfg_SchT_MainScheduleTable_PeriodicTask =
   /* .Job                   = */
   {
     /* .Dyn      = */ OS_SCHT_CASTDYN_SCHT_2_JOB(OsCfg_SchT_MainScheduleTable_PeriodicTask_Dyn),
-    /* .Counter  = */ OS_COUNTER_CASTCONFIG_TIMERPIT_2_COUNTER(OsCfg_Counter_SystemTimer),
+    /* .Counter  = */ OS_COUNTER_CASTCONFIG_TIMERSW_2_COUNTER(OsCfg_Counter_OsCounter),
     /* .Callback = */ &Os_SchTWorkScheduleTable
   },
   /* .Autostart             = */

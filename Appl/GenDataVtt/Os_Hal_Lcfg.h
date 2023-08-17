@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Lcfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -68,7 +68,6 @@
  *********************************************************************************************************************/
 /*! OS-Core identifier */
 #define OS_CORE_ID_0 OS_CORE_ID_0
-#define OS_CORE_ID_1 OS_CORE_ID_1
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -88,8 +87,7 @@ typedef enum
 {
   OS_CORE_ID_MASTER = 0,
   OS_CORE_ID_0 = 0, /* 0x00000001 - OsCore0 */  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  OS_CORE_ID_1 = 1, /* 0x00000002 - OsCore1 */  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  OS_COREID_COUNT = 2
+  OS_COREID_COUNT = 1
 } CoreIdType;
 
 

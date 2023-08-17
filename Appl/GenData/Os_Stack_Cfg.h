@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Cfg.h
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:27
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -61,10 +61,9 @@
 /*! Defines whether stack measurement is active (STD_ON) or not (STD_OFF). */
 # define OS_CFG_STACKMEASUREMENT                 (STD_OFF)
 
-/* Configured stack sizes (Total: 6144 Byte) */
+/* Configured stack sizes (Total: 5120 Byte) */
 # define OS_CFG_SIZE_OSCORE0_ERROR_STACK     (1024uL)
 # define OS_CFG_SIZE_OSCORE0_INIT_STACK     (1024uL)
-# define OS_CFG_SIZE_OSCORE0_ISR_CORE_STACK     (1024uL)
 # define OS_CFG_SIZE_OSCORE0_KERNEL_STACK     (1024uL)
 # define OS_CFG_SIZE_OSCORE0_TASK_PRIO0_STACK     (1024uL)
 # define OS_CFG_SIZE_OSCORE0_TASK_PRIO4294967295_STACK     (1024uL)

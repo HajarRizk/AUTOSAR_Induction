@@ -11,6 +11,7 @@
 #include "Os_Application_Cfg.h"
 #include "EcuM.h"
 #include "Rte_Main.h"
+#include "CanSM_Cfg.h"
 
 /*------------------------------------------------------------------*/
 /*---------------------------- InitTask ----------------------------*/
@@ -23,6 +24,8 @@ TASK(InitTask)
   #endif
 
   (void)Rte_Start();
+  
+
   #ifdef DISABLED_FOR_THE_CURRENT_RELEASE_AS_OS_IS_NOT_FUNCTIONAL_YET
   (void)TerminateTask();
   #endif

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Core_Cfg.h
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:26
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -69,7 +69,7 @@
 # define OS_CFG_NUM_BARRIERS                                     (0uL)
 
 /*! Number of ISR2 nesting levels. */
-# define OS_CFG_NUM_ISRLEVELS                                    (1uL)
+# define OS_CFG_NUM_ISRLEVELS                                    (0uL)
 
 /*! Number of all spinlocks. */
 # define OS_CFG_NUM_SYSTEM_SPINLOCKS                             (0uL)
@@ -82,8 +82,8 @@
 # define OS_CFG_NUM_CORE_OSCORE0_HOOKS            (2uL)
 # define OS_CFG_NUM_CORE_OSCORE0_IOCS             (0uL)
 # define OS_CFG_NUM_CORE_OSCORE0_RESOURCES        (1uL)
-# define OS_CFG_NUM_CORE_OSCORE0_STACKS           (6uL)
-# define OS_CFG_NUM_CORE_OSCORE0_ISRS             (1uL)
+# define OS_CFG_NUM_CORE_OSCORE0_STACKS           (5uL)
+# define OS_CFG_NUM_CORE_OSCORE0_ISRS             (0uL)
 
 
 /**********************************************************************************************************************

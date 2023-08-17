@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Cfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:34:54
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -62,54 +62,18 @@
 # define OS_CFG_HAL_MINOR_VERSION                (17u)
 
 /* ISR core and level definitions */
-# define OS_ISR_COUNTERISR_SYSTEMTIMER_CORE      (0)
-# define OS_ISR_COUNTERISR_SYSTEMTIMER_LEVEL     (1)
 
 /* Hardware counter timing macros */
 
-/* Counter timing macros and constants: SystemTimer */
-# define OSMAXALLOWEDVALUE_SystemTimer     (2147483647uL) /* 0x7FFFFFFFuL */
-# define OSMINCYCLE_SystemTimer            (1uL)
-# define OSTICKSPERBASE_SystemTimer        (1uL)
-# define OSTICKDURATION_SystemTimer        (1000000uL)
-
-/* OSEK compatibility for the system timer. */
-# define OSMAXALLOWEDVALUE     (OSMAXALLOWEDVALUE_SystemTimer)
-# define OSMINCYCLE            (OSMINCYCLE_SystemTimer)
-# define OSTICKSPERBASE        (OSTICKSPERBASE_SystemTimer)
-# define OSTICKDURATION        (OSTICKDURATION_SystemTimer)
-
-/*! Macro OS_NS2TICKS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_NS2TICKS_SystemTimer(x)     ( (TickType) (((((uint32)(x)) * 1) + 500000) / 1000000) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-/*! Macro OS_TICKS2NS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_TICKS2NS_SystemTimer(x)     ( (PhysicalTimeType) (((((uint32)(x)) * 1000000) + 0) / 1) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-
-/*! Macro OS_US2TICKS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_US2TICKS_SystemTimer(x)     ( (TickType) (((((uint32)(x)) * 1) + 500) / 1000) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-/*! Macro OS_TICKS2US_SystemTimer was approximated with a deviation of 1.1102230246251565E-10ppm. */
-# define OS_TICKS2US_SystemTimer(x)     ( (PhysicalTimeType) (((((uint32)(x)) * 1000) + 0) / 1) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-
-/*! Macro OS_MS2TICKS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_MS2TICKS_SystemTimer(x)     ( (TickType) (((((uint32)(x)) * 1) + 0) / 1) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-/*! Macro OS_TICKS2MS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_TICKS2MS_SystemTimer(x)     ( (PhysicalTimeType) (((((uint32)(x)) * 1) + 0) / 1) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-
-/*! Macro OS_SEC2TICKS_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_SEC2TICKS_SystemTimer(x)     ( (TickType) (((((uint32)(x)) * 1000) + 0) / 1) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
-/*! Macro OS_TICKS2SEC_SystemTimer was approximated with a deviation of 0.0ppm. */
-# define OS_TICKS2SEC_SystemTimer(x)     ( (PhysicalTimeType) (((((uint32)(x)) * 1) + 500) / 1000) ) /* PRQA S 3453 */ /* MD_MSR_FctLikeMacro */
 
 
 
 
-
-
-#define OS_IRQ_CounterIsr_SystemTimer 0
-#define OS_CANOE_IRQ_COUNT 1
+#define OS_CANOE_IRQ_COUNT 0
 
 
 #define OS_CFG_CAT1_ISR_COUNT         (0)
-#define OS_CFG_MAX_INT_LEVEL          (1)
+#define OS_CFG_MAX_INT_LEVEL          (0)
 
 typedef enum
 {
@@ -120,34 +84,28 @@ typedef enum
   CANoeTaskId_PeriodicTask = 3,
   CANoeTaskId_PeriodicTask_IsrHost = 4,
 
-  CANoeTaskId_CounterIsr_SystemTimer = 5,
-  CANoeTaskId_CounterIsr_SystemTimer_IsrHost = 6,
+  CANoeTaskId_Os_CoreInitHook_OsCore0 = 5,
+  CANoeTaskId_Os_CoreInitHook_OsCore0_IsrHost = 6,
 
-  CANoeTaskId_Os_CoreInitHook_OsCore0 = 7,
-  CANoeTaskId_Os_CoreInitHook_OsCore0_IsrHost = 8,
+  CANoeTaskId_ErrorHook_OsCore0 = 7,
+  CANoeTaskId_ErrorHook_OsCore0_IsrHost = 8,
 
-  CANoeTaskId_ErrorHook_OsCore0 = 9,
-  CANoeTaskId_ErrorHook_OsCore0_IsrHost = 10,
-
-  OS_CANOE_OsCore0_TASK_COUNT = 11     /* PRQA S 0647 */ /* MD_Os_Hal_Dir1.1_0647 */
+  OS_CANOE_OsCore0_TASK_COUNT = 9     /* PRQA S 0647 */ /* MD_Os_Hal_Dir1.1_0647 */
   
 } CANoeTaskIdType;                                                                                                      
 
 typedef enum
 {
-  CANoeHrtId_OsHardwareTimerChannel = 1,
-  CANoeHrtId_OsHardwareTimerChannel = 2,
-  CANoeHrtId_STM0_Ch1 = 3,
-  CANoeHrtId_STM0_Ch0 = 4,
-  OS_CANOE_HRT_COUNT = 5
+  CANoeHrtId_STM0_Ch1 = 1,
+  CANoeHrtId_STM0_Ch0 = 2,
+  OS_CANOE_HRT_COUNT = 3
 } CANoeHrtIdType;
 
 typedef enum
 {
-  CANoePitId_OsHardwareTimerChannel  = 1,
-  CANoePitId_GPT_Ch1  = 2,
-  CANoePitId_GPT_Ch0  = 3,
-  OS_CANOE_PIT_COUNT = 4
+  CANoePitId_GPT_Ch1  = 1,
+  CANoePitId_GPT_Ch0  = 2,
+  OS_CANOE_PIT_COUNT = 3
 } CANoePitIdType;
 
 

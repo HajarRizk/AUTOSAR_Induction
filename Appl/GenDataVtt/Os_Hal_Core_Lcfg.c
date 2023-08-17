@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Core_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -106,7 +106,6 @@ OS_LOCAL VAR(Os_Hal_Core2ThreadType, OS_VAR_NOINIT_FAST) OsCfg_Hal_Core2Thread_O
 CONSTP2CONST(Os_Hal_IntIsrConfigType, OS_CONST, OS_CONST)
   OsCfg_Hal_Core_OsCore0_InterruptSourceRefs[OS_CFG_NUM_CORE_OSCORE0_INTERRUPTSOURCEREFS + 1u] =
 {
-  &OsCfg_Hal_IntIsr_CounterIsr_SystemTimer,
   NULL_PTR
 };
 
@@ -130,28 +129,6 @@ CONST(Os_Hal_CoreAsrConfigType, OS_CONST) OsCfg_Hal_CoreAsr_OsCore0 =
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
 
-#define OS_START_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! HAL core initialized interrupt sources: OsCore1 */
-CONSTP2CONST(Os_Hal_IntIsrConfigType, OS_CONST, OS_CONST)
-  OsCfg_Hal_Core_OsCore1_InterruptSourceRefs[OS_CFG_NUM_CORE_OSCORE1_INTERRUPTSOURCEREFS + 1u] =
-{
-  NULL_PTR
-};
-
-
-/*! HAL core configuration data: OsCore1 */
-CONST(Os_Hal_CoreConfigType, OS_CONST) OsCfg_Hal_Core_OsCore1 =
-{
-  /* .Name  =           */ "OsCore1",
-  /* .CANoeEmuCoreId  = */ 1
-};
-
-#define OS_STOP_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-#include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-
 #define OS_START_SEC_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
@@ -161,7 +138,6 @@ CONST(Os_Hal_Core2ThreadConfigType, OS_CONST) OsCfg_Hal_Core2Thread =
   /* .Core2Thread = */
   {
     &OsCfg_Hal_Core2Thread_OsCore0_Dyn, /* OS_CORE_ID_0 */
-    NULL_PTR,
   }
 };
 

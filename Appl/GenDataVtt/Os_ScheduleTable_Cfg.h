@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_ScheduleTable_Cfg.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -61,8 +61,6 @@
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_1_EVENTS     (0)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_TASKS      (1)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_EVENTS     (0)
-# define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_3_TASKS      (1)
-# define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_3_EVENTS     (0)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_DUMMYLAST_TASKS      (0)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_DUMMYLAST_EVENTS     (0)
 

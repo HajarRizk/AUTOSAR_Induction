@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Context_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -101,9 +101,6 @@ VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_Os_CoreInitHook_OsCore0
 /*! HAL dynamic hook context data: ErrorHook_OsCore0 */
 VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_ErrorHook_OsCore0_Dyn;
 
-/*! HAL dynamic ISR2 level context data: Level1 */
-VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_OsCore0_Isr_Level1_Dyn;
-
 /*! HAL dynamic task context data: InitTask */
 VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_InitTask_Dyn;
 
@@ -142,7 +139,7 @@ CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_Os_CoreInitHook_OsCo
   },  
   /* Entry =             */ (Os_Hal_ContextEntryCBType)  Os_HookWrapperOs_CoreInitHook,                                /* PRQA S 0313 */ /* MD_Os_Hal_Rule11.1_0313 */
   /* ReturnAddress =     */ (Os_Hal_ContextReturnCBType) Os_TrapHookReturn,
-  /* IntLockLevel =      */ 1,
+  /* IntLockLevel =      */ 0,
   /* Stack =             */ &OsCfg_Stack_OsCore0_Init
 }
 ;
@@ -165,31 +162,8 @@ CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_ErrorHook_OsCore0 =
   },  
   /* Entry =             */ (Os_Hal_ContextEntryCBType)  Os_HookWrapperStatusHook,                                /* PRQA S 0313 */ /* MD_Os_Hal_Rule11.1_0313 */
   /* ReturnAddress =     */ (Os_Hal_ContextReturnCBType) Os_TrapHookReturn,
-  /* IntLockLevel =      */ 1,
+  /* IntLockLevel =      */ 0,
   /* Stack =             */ &OsCfg_Stack_OsCore0_Error
-}
-;
-
-/*! HAL ISR2 context configuration data: CounterIsr_SystemTimer */
-CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_CounterIsr_SystemTimer =
-{
-  /* Type =              */ Os_Hal_ContextConfigType_Isr,
-  /* CANoeTask           */
-  {
-    /* Name =              */ "CounterIsr_SystemTimer",
-    /* Id =                */ CANoeTaskId_CounterIsr_SystemTimer,
-    /* Main =              */ Os_Hal_EntryExecuteThread
-  },
-  /* CANoeIsrHost        */
-  {
-    /* Name =              */ "CounterIsr_SystemTimer_IsrHost",
-    /* Id =                */ CANoeTaskId_CounterIsr_SystemTimer_IsrHost,
-    /* Main =              */ Os_Hal_EntryIsrRun
-  },
-  /* Entry =             */ (Os_Hal_ContextEntryCBType)  Os_Isr_Os_TimerPitIsr,                               /* PRQA S 0313 */ /* MD_Os_Hal_Rule11.1_0313 */
-  /* ReturnAddress =     */ (Os_Hal_ContextReturnCBType) Os_IsrEpilogue,
-  /* IntLockLevel =      */ 1,
-  /* Stack =             */ &OsCfg_Stack_OsCore0_Isr_Core
 }
 ;
 
@@ -259,7 +233,6 @@ CONSTP2VAR(Os_ExceptionContextType, AUTOMATIC, OS_CONST)
   OsCfg_Hal_Context_ExceptionContextRef[OS_CFG_COREPHYSICALID_COUNT + 1u] =
 {
   &OsCfg_Hal_Context_OsCore0_ExceptionContext,
-  NULL_PTR,
   NULL_PTR
 };
 

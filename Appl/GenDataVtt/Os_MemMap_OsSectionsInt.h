@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_MemMap_OsSectionsInt.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -278,34 +278,6 @@
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
 #endif
 
-#ifdef OS_START_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-# ifdef OS_MEMMAP_SECTION_OPEN
-#  error A MemMap section is already open. Nesting is not supported.
-# endif
-# define OS_MEMMAP_SECTION_OPEN
-# define OS_NONAUTOSAR_CORE1_CONST_UNSPECIFIED_OPEN
-# ifndef MEMMAP_ERROR
-#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
-# endif
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_START_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
-#ifdef OS_STOP_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED
-# ifndef OS_MEMMAP_SECTION_OPEN
-#  error No MemMap section is currently opened.
-# endif
-# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-# ifndef OS_NONAUTOSAR_CORE1_CONST_UNSPECIFIED_OPEN
-#  error Section OS_NONAUTOSAR_CORE1_CONST_UNSPECIFIED is currently not opened and so cannot be closed.
-# endif
-# undef OS_NONAUTOSAR_CORE1_CONST_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_STOP_SEC_NONAUTOSAR_CORE1_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
 
 /**********************************************************************************************************************
  *  KERNEL VAR SECTIONS
@@ -505,62 +477,6 @@
 # undef OS_BARRIER_CORE0_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
 
 # undef OS_STOP_SEC_BARRIER_CORE0_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
-#ifdef OS_START_SEC_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED
-# ifdef OS_MEMMAP_SECTION_OPEN
-#  error A MemMap section is already open. Nesting is not supported.
-# endif
-# define OS_MEMMAP_SECTION_OPEN
-# define OS_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED_OPEN
-# ifndef MEMMAP_ERROR
-#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
-# endif
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_START_SEC_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
-#ifdef OS_STOP_SEC_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED
-# ifndef OS_MEMMAP_SECTION_OPEN
-#  error No MemMap section is currently opened.
-# endif
-# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-# ifndef OS_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED_OPEN
-#  error Section OS_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED is currently not opened and so cannot be closed.
-# endif
-# undef OS_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_STOP_SEC_NONAUTOSAR_CORE1_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
-#ifdef OS_START_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED
-# ifdef OS_MEMMAP_SECTION_OPEN
-#  error A MemMap section is already open. Nesting is not supported.
-# endif
-# define OS_MEMMAP_SECTION_OPEN
-# define OS_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN
-# ifndef MEMMAP_ERROR
-#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
-# endif
-# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_START_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
-#endif
-
-#ifdef OS_STOP_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED
-# ifndef OS_MEMMAP_SECTION_OPEN
-#  error No MemMap section is currently opened.
-# endif
-# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-# ifndef OS_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN
-#  error Section OS_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED is currently not opened and so cannot be closed.
-# endif
-# undef OS_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
-
-# undef OS_STOP_SEC_CORESTATUS_CORE1_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_Undef */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
 #endif
 

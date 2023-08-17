@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Entry_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:26
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -119,7 +119,7 @@ Os_Hal_UnhandledTrapEntry(0, 7)
 #define OS_START_SEC_INTVEC_CORE0_CODE
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
-Os_Hal_Cat2InterruptEntry(0, 0, OS_CFG_HAL_ISR2_DISABLE_LEVEL, OsCfg_Isr_CounterIsr_SystemTimer)
+Os_Hal_UnhandledInterruptEntry(0, 0)
 Os_Hal_UnhandledInterruptEntry(0, 1)
 Os_Hal_UnhandledInterruptEntry(0, 2)
 Os_Hal_UnhandledInterruptEntry(0, 3)

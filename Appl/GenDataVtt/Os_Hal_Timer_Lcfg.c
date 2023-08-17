@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Timer_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -78,7 +78,6 @@
  *********************************************************************************************************************/
 
 
-OS_LOCAL VAR(Os_Hal_TimerPitDynType, OS_VAR_NOINIT) OsCfg_Hal_TimerPit_SystemTimer_Dyn;
 
 
 /**********************************************************************************************************************
@@ -91,18 +90,6 @@ OS_LOCAL VAR(Os_Hal_TimerPitDynType, OS_VAR_NOINIT) OsCfg_Hal_TimerPit_SystemTim
 
 #define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! HAL timer configuration data: SystemTimer */
-CONST(Os_Hal_TimerPitConfigType, OS_CONST) OsCfg_Hal_TimerPit_SystemTimer =
-{
-   /* .Name =          */	"SystemTimer",
-   /* .CycleTime =     */	1000, /* [microseconds] */
-   /* .InterruptSource */   OS_IRQ_CounterIsr_SystemTimer,
-   /* .Dyn     =       */	&OsCfg_Hal_TimerPit_SystemTimer_Dyn
-}
-
-
-;
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */

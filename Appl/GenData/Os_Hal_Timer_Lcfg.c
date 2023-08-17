@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Timer_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:27
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -89,19 +89,6 @@
 
 #define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
-
-/*! HAL timer configuration data: SystemTimer */
-CONST(Os_Hal_TimerPitConfigType, OS_CONST) OsCfg_Hal_TimerPit_SystemTimer =
-{
-  /* CounterRegisterAddress            = */ OS_HAL_TIMER_GPT_BASE + OS_HAL_TIMER_GPT_T3_OFFSET,
-  /* CounterConfRegisterAddress        = */ OS_HAL_TIMER_GPT_BASE + OS_HAL_TIMER_GPT_T3CON_OFFSET,
-  /* CounterConfRegisterValue          = */ OS_HAL_TIMER_GPT_T3CON_COUNTING_DOWN | OS_HAL_TIMER_GPT_T3CON_T3R,  /* set the timer to counting down and start it. T3 is running at F(GPT)/8 */
-  /* ReloadRegisterAddress             = */ OS_HAL_TIMER_GPT_BASE + OS_HAL_TIMER_GPT_T2_OFFSET,
-  /* ReloadConfRegisterAddress         = */ OS_HAL_TIMER_GPT_BASE + OS_HAL_TIMER_GPT_T2CON_OFFSET,
-  /* ReloadConfRegisterValue           = */ OS_HAL_TIMER_GPT_T2CON_USE_AS_RELOAD,
-  /* ReloadValue                       = */ 1,
-  /* InterruptSRCRegisterAddress       = */ OS_HAL_INT_SRC_BASE + OS_HAL_INT_SRC_GPT_CH0_OFFSET,
-};
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */

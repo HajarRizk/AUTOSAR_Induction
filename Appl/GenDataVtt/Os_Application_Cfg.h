@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Cfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-16 21:08:50
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -58,9 +58,9 @@
 
 /* Number of application objects: SystemApplication_OsCore0 */
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_ALARMS             (0uL)
-# define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_COUNTERS           (2uL)
+# define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_COUNTERS           (1uL)
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_HOOKS              (0uL)
-# define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_ISRS               (1uL)
+# define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_ISRS               (0uL)
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_CAT1ISRS           (0uL)
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_SCHTS              (1uL)
 # define OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_TASKS              (2uL)

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Vtt_Cfg.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:10:35
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -61,7 +61,6 @@
  *********************************************************************************************************************/
 
 # define OS_CFG_HAL_CORE0_STARTUP  OS_HAL_CORESTARTUP_AUTOSTART
-# define OS_CFG_HAL_CORE1_STARTUP  OS_HAL_CORESTARTUP_MANUALSTART
 
 # define CORE_START_FUNC  main
 

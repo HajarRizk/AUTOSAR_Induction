@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Link_Core0_Stacks.ld
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-16 21:07:27
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -62,14 +62,6 @@ _OS_STACK_OSCORE0_INIT_VAR_NOINIT_START = ABSOLUTE(.);
 *(*.OS_STACK_OSCORE0_INIT_VAR_NOINIT)
 . = ALIGN(8);
 _OS_STACK_OSCORE0_INIT_VAR_NOINIT_END = ABSOLUTE(.);
-. += 16;
-
-/* Stack: OsCore0_Isr_Core (1024 Byte) */
-. = ALIGN(8);
-_OS_STACK_OSCORE0_ISR_CORE_VAR_NOINIT_START = ABSOLUTE(.);
-*(*.OS_STACK_OSCORE0_ISR_CORE_VAR_NOINIT)
-. = ALIGN(8);
-_OS_STACK_OSCORE0_ISR_CORE_VAR_NOINIT_END = ABSOLUTE(.);
 . += 16;
 
 /* Stack: OsCore0_Kernel (1024 Byte) */

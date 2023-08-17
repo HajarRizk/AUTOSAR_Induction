@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_ScheduleTable_Lcfg.c
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-16 21:25:17
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -99,7 +99,6 @@ OS_LOCAL VAR(Os_SchTType, OS_VAR_NOINIT) OsCfg_SchT_MainScheduleTable_PeriodicTa
 /* Expiry points configuration data: MainScheduleTable_PeriodicTask */
 OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_1;
 OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_2;
-OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_3;
 OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_DummyLast;
 
 #define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
@@ -137,32 +136,11 @@ OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_Per
   /* .TaskCount       = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_1_TASKS,
   /* .Events          = */ NULL_PTR,
   /* .EventCount      = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_1_EVENTS,
-  /* .RelOffsetToNext = */ ((Os_TickType)1)
+  /* .RelOffsetToNext = */ ((Os_TickType)10)
 };
 
 /*! Expiry point task activations: MainScheduleTable_PeriodicTask_2 */
 OS_LOCAL CONST(Os_SchTExPoActionTaskConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_2_Tasks[OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_TASKS] =
-{
-  /* Activate task: InitTask */
-  {
-    /* .Task = */ &OsCfg_Task_InitTask
-  }
-};
-
-/*! Expiry point configuration data: MainScheduleTable_PeriodicTask_2 */
-OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_2 =
-{
-  /* .Next            = */ OS_SCHT_CASTCONFIG_SCHTEXPO_2_SCHTEXPO(OsCfg_ExPo_MainScheduleTable_PeriodicTask_3),
-  /* .Kind            = */ OS_SCHT_EXPO_KIND_EXECUTE,
-  /* .Tasks           = */ OsCfg_ExPo_MainScheduleTable_PeriodicTask_2_Tasks,
-  /* .TaskCount       = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_TASKS,
-  /* .Events          = */ NULL_PTR,
-  /* .EventCount      = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_EVENTS,
-  /* .RelOffsetToNext = */ ((Os_TickType)9)
-};
-
-/*! Expiry point task activations: MainScheduleTable_PeriodicTask_3 */
-OS_LOCAL CONST(Os_SchTExPoActionTaskConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_3_Tasks[OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_3_TASKS] =
 {
   /* Activate task: PeriodicTask */
   {
@@ -170,15 +148,15 @@ OS_LOCAL CONST(Os_SchTExPoActionTaskConfigType, OS_CONST) OsCfg_ExPo_MainSchedul
   }
 };
 
-/*! Expiry point configuration data: MainScheduleTable_PeriodicTask_3 */
-OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_3 =
+/*! Expiry point configuration data: MainScheduleTable_PeriodicTask_2 */
+OS_LOCAL CONST(Os_SchTExPoConfigType, OS_CONST) OsCfg_ExPo_MainScheduleTable_PeriodicTask_2 =
 {
   /* .Next            = */ OS_SCHT_CASTCONFIG_SCHTEXPO_2_SCHTEXPO(OsCfg_ExPo_MainScheduleTable_PeriodicTask_DummyLast),
   /* .Kind            = */ OS_SCHT_EXPO_KIND_EXECUTE,
-  /* .Tasks           = */ OsCfg_ExPo_MainScheduleTable_PeriodicTask_3_Tasks,
-  /* .TaskCount       = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_3_TASKS,
+  /* .Tasks           = */ OsCfg_ExPo_MainScheduleTable_PeriodicTask_2_Tasks,
+  /* .TaskCount       = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_TASKS,
   /* .Events          = */ NULL_PTR,
-  /* .EventCount      = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_3_EVENTS,
+  /* .EventCount      = */ OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_EVENTS,
   /* .RelOffsetToNext = */ ((Os_TickType)10)
 };
 
@@ -200,7 +178,7 @@ CONST(Os_SchTConfigType, OS_CONST) OsCfg_SchT_MainScheduleTable_PeriodicTask =
   /* .Job                   = */
   {
     /* .Dyn      = */ OS_SCHT_CASTDYN_SCHT_2_JOB(OsCfg_SchT_MainScheduleTable_PeriodicTask_Dyn),
-    /* .Counter  = */ OS_COUNTER_CASTCONFIG_TIMERPIT_2_COUNTER(OsCfg_Counter_SystemTimer),
+    /* .Counter  = */ OS_COUNTER_CASTCONFIG_TIMERSW_2_COUNTER(OsCfg_Counter_SystemTimer),
     /* .Callback = */ &Os_SchTWorkScheduleTable
   },
   /* .Autostart             = */

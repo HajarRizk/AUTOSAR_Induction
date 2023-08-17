@@ -21,7 +21,7 @@
  #  FILE DESCRIPTION
  #  -------------------------------------------------------------------------------------------------------------------
  #              File: BswM_rules_generated.mak
- #   Generation Time: 2023-08-16 18:20:08
+ #   Generation Time: 2023-08-16 21:34:54
  #           Project: AUTOSAR_Induction - Version 1.0
  #          Delivery: CBD1800285_D02
  #      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
