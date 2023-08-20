@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: PduR_PBcfg.c
- *   Generation Time: 2023-08-16 18:19:40
+ *   Generation Time: 2023-08-17 17:40:10
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -56,6 +56,8 @@
 /* include headers with symbolic name values */
 #include "CanIf.h"
 #include "Com_Cbk.h"
+#include "CanTp.h"
+#include "CanTp_Cbk.h"
 
 /**********************************************************************************************************************
  * LOCAL CONSTANT MACROS

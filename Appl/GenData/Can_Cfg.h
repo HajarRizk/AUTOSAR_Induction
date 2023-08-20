@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Can_Cfg.h
- *   Generation Time: 2023-08-16 21:08:21
+ *   Generation Time: 2023-08-17 17:40:09
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -265,8 +265,8 @@
 #define CAN_API1                             1u
 #define CAN_API2                             2u
 
-#define CAN_OS_TICK2MS(tick)     OS_TICKS2MS_OsCounter((tick))     /* PRQA S 3453 */ /* MD_Can_3453 */
-#define CAN_OS_COUNTER_ID        OsCounter
+#define CAN_OS_TICK2MS(tick)     OS_TICKS2MS_SystemTimer((tick))     /* PRQA S 3453 */ /* MD_Can_3453 */
+#define CAN_OS_COUNTER_ID        SystemTimer
 
 /* -----------------------------------------------------------------------------
     Defines / Switches

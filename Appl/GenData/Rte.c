@@ -236,7 +236,7 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
     Rte_ScheduleTable_PeriodicTask_Step = 0;
   }
 
-  (void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
+  //(void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
 } /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 
 #define RTE_STOP_SEC_CODE

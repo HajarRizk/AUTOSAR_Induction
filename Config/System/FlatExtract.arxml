@@ -203,6 +203,13 @@
                                     <SD GID="b45b91d3-4b07-4061-94f1-2c365d17f665">/MICROSAR/CanSM_ib_bswmd/BswModuleDescriptions/CanSM/CanSMBehavior/CanSM_MainFunction</SD>
                                     <SD GID="3c1e2fae-c0c1-4a7f-bcf4-39906265d0eb">/MICROSAR/CanSM_ib_bswmd/BswModuleDescriptions/CanSM/CanSMBehavior/CanSM_MainFunctionTimingEvent0</SD>
                                     <SD GID="20e4440c-399f-416e-abeb-7f95eedea77c">/MICROSAR/CanSM_ib_bswmd/BswModuleDescriptions/CanSM_MainFunction</SD>
+                                    <SD GID="f6cfe33c-2251-4cca-95e4-b9a7772ac02f">/MICROSAR/CanTp_ib_bswmd</SD>
+                                    <SD GID="f5d32b0d-456e-4e3d-92b0-6ba0c3b9a477">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions</SD>
+                                    <SD GID="6858e3a7-56e5-48b6-b903-a29517159e02">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions/CanTp/CanTpBehavior</SD>
+                                    <SD GID="c83acfa8-66bb-4915-824e-687a82619589">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions/CanTp/CanTpBehavior/CANTP_EXCLUSIVE_AREA_0</SD>
+                                    <SD GID="59deaa7b-099d-469b-98da-3907468ca60e">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions/CanTp/CanTpBehavior/CanTp_MainFunction</SD>
+                                    <SD GID="70f2c4f6-6959-4ee4-8496-f93e7eb5d561">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions/CanTp/CanTpBehavior/CanTp_MainFunctionTimingEvent0</SD>
+                                    <SD GID="fc944301-ada2-420b-8a2e-d3ca3f752857">/MICROSAR/CanTp_ib_bswmd/BswModuleDescriptions/CanTp_MainFunction</SD>
                                     <SD GID="c94f4fcc-408c-462a-b3f2-006ad4c38bca">/MICROSAR/Can_Mpc5700Mcan_ib_bswmd/BswModuleDescriptions/Can/Can_Can_Mpc5700McanBehavior</SD>
                                     <SD GID="35549461-24f9-49c4-857d-b4d6800f2551">/MICROSAR/Can_Mpc5700Mcan_ib_bswmd/BswModuleDescriptions/Can/Can_Can_Mpc5700McanBehavior/CAN_EXCLUSIVE_AREA_0</SD>
                                     <SD GID="c7b7aa15-6138-493d-b263-ce1d70b53a5c">/MICROSAR/Can_Mpc5700Mcan_ib_bswmd/BswModuleDescriptions/Can/Can_Can_Mpc5700McanBehavior/CAN_EXCLUSIVE_AREA_1</SD>

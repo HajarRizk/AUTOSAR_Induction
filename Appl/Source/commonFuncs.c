@@ -9,6 +9,7 @@
 #include "CANoeApi.h"
 #include "VttCntrl_Can.h"
 #include "ComM.h"
+#include "CanTp.h"
 
 #define COM_STACK_INIT_OK    0U
 #define COM_STACK_INIT_NOT_OK  1U
@@ -55,6 +56,7 @@ uint8 InitializeComStack()
 (void)CanSM_Init(CanSM_Config_Ptr);
   
   Com_Init(Com_Config_Ptr);
+  CanTp_Init(CanTp_Config_Ptr);
 
   ComM_Init();
   

@@ -57,6 +57,16 @@
                             </SUB-CONTAINERS>
                         </ECUC-CONTAINER-VALUE>
                         <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>CanTp</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>CanTp_MainFunctionTimingEvent0</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
                             <SHORT-NAME>Com</SHORT-NAME>
                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
                             <SUB-CONTAINERS>
@@ -220,7 +230,7 @@
                                 </ECUC-NUMERICAL-PARAM-VALUE>
                                 <ECUC-NUMERICAL-PARAM-VALUE>
                                     <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableDuration</DEFINITION-REF>
-                                    <VALUE>20</VALUE>
+                                    <VALUE>10</VALUE>
                                 </ECUC-NUMERICAL-PARAM-VALUE>
                             </PARAMETER-VALUES>
                             <REFERENCE-VALUES>
@@ -237,28 +247,6 @@
                                         <ECUC-NUMERICAL-PARAM-VALUE>
                                         <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTblExpPointOffset</DEFINITION-REF>
                                         <VALUE>0</VALUE>
-                                        </ECUC-NUMERICAL-PARAM-VALUE>
-                                    </PARAMETER-VALUES>
-                                    <SUB-CONTAINERS>
-                                        <ECUC-CONTAINER-VALUE>
-                                            <SHORT-NAME>OsScheduleTableTaskActivation</SHORT-NAME>
-                                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation</DEFINITION-REF>
-                                            <REFERENCE-VALUES>
-                                                <ECUC-REFERENCE-VALUE>
-                                                    <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTableTaskActivation/OsScheduleTableActivateTaskRef</DEFINITION-REF>
-                                                    <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/DaVinci_Project/Os/PeriodicTask</VALUE-REF>
-                                                </ECUC-REFERENCE-VALUE>
-                                            </REFERENCE-VALUES>
-                                        </ECUC-CONTAINER-VALUE>
-                                    </SUB-CONTAINERS>
-                                </ECUC-CONTAINER-VALUE>
-                                <ECUC-CONTAINER-VALUE>
-                                    <SHORT-NAME>ExpiryPoint_1</SHORT-NAME>
-                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableExpiryPoint</DEFINITION-REF>
-                                    <PARAMETER-VALUES>
-                                        <ECUC-NUMERICAL-PARAM-VALUE>
-                                        <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsScheduleTable/OsScheduleTableExpiryPoint/OsScheduleTblExpPointOffset</DEFINITION-REF>
-                                        <VALUE>10</VALUE>
                                         </ECUC-NUMERICAL-PARAM-VALUE>
                                     </PARAMETER-VALUES>
                                     <SUB-CONTAINERS>

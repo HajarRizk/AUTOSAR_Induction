@@ -116,6 +116,9 @@
         <Splitter File=".\Config\ECUC\AUTOSAR_Induction_VTTOs_ecuc.arxml">
             <Module Name="VTTOs"/>
         </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_CanTp_ecuc.arxml">
+            <Module Name="CanTp"/>
+        </Splitter>
         <OwnFolderForEachSplitter>false</OwnFolderForEachSplitter>
     </EcucSplitter>
     <Display LastVersion="5.19.46 SP2">
@@ -136,7 +139,11 @@
         <ImportModePreset>true</ImportModePreset>
     </DEVSettings>
     <ToolSettings>
-        <Generators/>
+        <Generators>
+            <Settings Name="com.vector.cfg.gui.core.generators.GeneratedModules">
+                <Setting Value="false" Name="Dcm"/>
+            </Settings>
+        </Generators>
         <Misc>
             <Settings Name="com.vector.cfg.gen.core.bswmdmigration.internal.service.BswImplVersionPersistor">
                 <Settings Name="|MICROSAR|BswM">

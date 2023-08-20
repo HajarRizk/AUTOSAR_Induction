@@ -41,6 +41,7 @@
 #include "SchM_Can.h"
 #include "SchM_CanIf.h"
 #include "SchM_CanSM.h"
+#include "SchM_CanTp.h"
 #include "SchM_Com.h"
 #include "SchM_ComM.h"
 #include "SchM_ComXf.h"
@@ -227,6 +228,33 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
     /* call runnable */
     EcuM_MainFunction();
 
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
     Rte_ScheduleTable_PeriodicTask_Step = 1;
   }
   else if (Rte_ScheduleTable_PeriodicTask_Step == 1) /* PRQA S 2004 */ /* MD_Rte_2004 */ /* COV_RTE_STATE_MACHINE_LAST_STATE */
@@ -234,10 +262,37 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
     /* call runnable */
     EcuM_MainFunction();
 
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
     Rte_ScheduleTable_PeriodicTask_Step = 0;
   }
 
-  (void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
+  //(void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
 } /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 
 #define RTE_STOP_SEC_CODE

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_ScheduleTable_Cfg.h
- *   Generation Time: 2023-08-16 21:10:35
+ *   Generation Time: 2023-08-17 19:04:25
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -59,8 +59,6 @@
 /* Number of expiry point task activations and event settings: MainScheduleTable_PeriodicTask */
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_1_TASKS      (1)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_1_EVENTS     (0)
-# define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_TASKS      (1)
-# define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_2_EVENTS     (0)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_DUMMYLAST_TASKS      (0)
 # define OS_CFG_NUM_EXPO_MAINSCHEDULETABLE_PERIODICTASK_DUMMYLAST_EVENTS     (0)
 

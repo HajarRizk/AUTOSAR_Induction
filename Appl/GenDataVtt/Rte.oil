@@ -40,22 +40,12 @@
      AUTOSTART = FALSE;
      LOCAL_TO_GLOBAL_TIME_SYNCHRONIZATION = FALSE;
      REPEATING = TRUE;
-     DURATION = 20;
+     DURATION = 10;
      COUNTER = SystemTimer;
      EXPIRY_POINT = EXPIRY_POINT
      {
         ADJUST = FALSE;
         OFFSET = 0;
-        ACTION = ACTIVATETASK
-        {
-           TASK = PeriodicTask;
-           Cyclic = FALSE;
-        };
-     };
-     EXPIRY_POINT = EXPIRY_POINT
-     {
-        ADJUST = FALSE;
-        OFFSET = 10;
         ACTION = ACTIVATETASK
         {
            TASK = PeriodicTask;

@@ -104,6 +104,8 @@
  *  SchM_EnterHook_CanSM_CANSM_EXCLUSIVE_AREA_5_Start
  *  SchM_EnterHook_CanSM_CANSM_EXCLUSIVE_AREA_6_Return
  *  SchM_EnterHook_CanSM_CANSM_EXCLUSIVE_AREA_6_Start
+ *  SchM_EnterHook_CanTp_CANTP_EXCLUSIVE_AREA_0_Return
+ *  SchM_EnterHook_CanTp_CANTP_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_Can_CAN_EXCLUSIVE_AREA_0_Return
  *  SchM_EnterHook_Can_CAN_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_Can_CAN_EXCLUSIVE_AREA_1_Return
@@ -172,6 +174,8 @@
  *  SchM_ExitHook_CanSM_CANSM_EXCLUSIVE_AREA_5_Start
  *  SchM_ExitHook_CanSM_CANSM_EXCLUSIVE_AREA_6_Return
  *  SchM_ExitHook_CanSM_CANSM_EXCLUSIVE_AREA_6_Start
+ *  SchM_ExitHook_CanTp_CANTP_EXCLUSIVE_AREA_0_Return
+ *  SchM_ExitHook_CanTp_CANTP_EXCLUSIVE_AREA_0_Start
  *  SchM_ExitHook_Can_CAN_EXCLUSIVE_AREA_0_Return
  *  SchM_ExitHook_Can_CAN_EXCLUSIVE_AREA_0_Start
  *  SchM_ExitHook_Can_CAN_EXCLUSIVE_AREA_1_Return
@@ -212,6 +216,8 @@
  *  SchM_ExitHook_PduR_PDUR_EXCLUSIVE_AREA_0_Start
  *  SchM_Schedulable_CanSM_CanSM_MainFunction_Return
  *  SchM_Schedulable_CanSM_CanSM_MainFunction_Start
+ *  SchM_Schedulable_CanTp_CanTp_MainFunction_Return
+ *  SchM_Schedulable_CanTp_CanTp_MainFunction_Start
  *  SchM_Schedulable_Can_Can_MainFunction_BusOff_Return
  *  SchM_Schedulable_Can_Can_MainFunction_BusOff_Start
  *  SchM_Schedulable_Can_Can_MainFunction_Mode_Return
