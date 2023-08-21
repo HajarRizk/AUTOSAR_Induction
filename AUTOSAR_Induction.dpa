@@ -119,6 +119,9 @@
         <Splitter File=".\Config\ECUC\AUTOSAR_Induction_CanTp_ecuc.arxml">
             <Module Name="CanTp"/>
         </Splitter>
+        <Splitter File=".\Config\ECUC\AUTOSAR_Induction_Dcm_ecuc.arxml">
+            <Module Name="Dcm"/>
+        </Splitter>
         <OwnFolderForEachSplitter>false</OwnFolderForEachSplitter>
     </EcucSplitter>
     <Display LastVersion="5.19.46 SP2">
@@ -222,6 +225,9 @@
                     <Setting Value="2.25.0" Name="BswImplSwVersion"/>
                 </Settings>
             </Settings>
+            <Settings Name="com.vector.cfg.gen.core.gencore.internal.aov.AutomaticOnDemandValidationConfigurationService">
+                <Setting Value="rO0ABXNyAGpjb20udmVjdG9yLmNmZy5nZW4uY29yZS5nZW5jb3JlLmludGVybmFsLmFvdi5BdXRv&#xA;bWF0aWNPbkRlbWFuZFZhbGlkYXRpb25Db25maWd1cmF0aW9uU2VydmljZSRQZXJzaXN0ZWREYXRh&#xA;pcjrmQ6cuakCAAJaAAlhY3RpdmF0ZWRMABJkZWFjdGl2YXRlZE1vZHVsZXN0ABZMamF2YS91dGls&#xA;L0NvbGxlY3Rpb247eHABc3IANmNvbS5nb29nbGUuY29tbW9uLmNvbGxlY3QuSW1tdXRhYmxlTGlz&#xA;dCRTZXJpYWxpemVkRm9ybQAAAAAAAAAAAgABWwAIZWxlbWVudHN0ABNbTGphdmEvbGFuZy9PYmpl&#xA;Y3Q7eHB1cgATW0xqYXZhLmxhbmcuT2JqZWN0O5DOWJ8QcylsAgAAeHAAAAAA" Name="Data"/>
+            </Settings>
             <Settings Name="com.vector.cfg.gui.pse.pages.generators">
                 <Settings Name="BuildVipProject"/>
                 <Settings Name="CustomWorkflowExecution"/>
@@ -239,5 +245,7 @@
         <AmdGenerateDebugData>false</AmdGenerateDebugData>
         <AutomaticSyncSystemDescription>false</AutomaticSyncSystemDescription>
     </Miscellaneous>
-    <SwctGeneration/>
+    <SwctGeneration>
+        <Component Name="CounterSWC" GenerationEnabled="true"/>
+    </SwctGeneration>
 </ProjectAssistant>

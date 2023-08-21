@@ -565,7 +565,7 @@
                             </ECUC-REFERENCE-VALUE>
                             <ECUC-REFERENCE-VALUE>
                               <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRDestPdu/PduRDestPduPduRBswModulesRef</DEFINITION-REF>
-                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/PduR/Com</VALUE-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/PduR/Dcm</VALUE-REF>
                             </ECUC-REFERENCE-VALUE>
                           </REFERENCE-VALUES>
                         </ECUC-CONTAINER-VALUE>
@@ -671,7 +671,7 @@
                             </ECUC-REFERENCE-VALUE>
                             <ECUC-REFERENCE-VALUE>
                               <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/PduR/PduRRoutingTables/PduRRoutingTable/PduRRoutingPath/PduRSrcPdu/PduRSrcPduPduRBswModulesRef</DEFINITION-REF>
-                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/PduR/Com</VALUE-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/PduR/Dcm</VALUE-REF>
                             </ECUC-REFERENCE-VALUE>
                           </REFERENCE-VALUES>
                         </ECUC-CONTAINER-VALUE>
@@ -775,7 +775,7 @@
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
-                  <VALUE>true</VALUE>
+                  <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
@@ -850,6 +850,58 @@
                 <ECUC-REFERENCE-VALUE>
                   <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
                   <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/CanTp</VALUE-REF>
+                </ECUC-REFERENCE-VALUE>
+              </REFERENCE-VALUES>
+            </ECUC-CONTAINER-VALUE>
+            <ECUC-CONTAINER-VALUE UUID="93854f2b-fcdd-46ad-83b3-f6a0c28547fa">
+              <SHORT-NAME>Dcm</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/PduR/PduRBswModules</DEFINITION-REF>
+              <PARAMETER-VALUES>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRCancelReceive</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRCancelTransmit</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRChangeParameterRequestApi</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRCommunicationInterface</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRLowerModule</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRTransportProtocol</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRTriggertransmit</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRTxConfirmation</DEFINITION-REF>
+                  <VALUE>false</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRUpperModule</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-NUMERICAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/PduR/PduRBswModules/PduRUseTag</DEFINITION-REF>
+                  <VALUE>true</VALUE>
+                </ECUC-NUMERICAL-PARAM-VALUE>
+              </PARAMETER-VALUES>
+              <REFERENCE-VALUES>
+                <ECUC-REFERENCE-VALUE>
+                  <DEFINITION-REF DEST="ECUC-FOREIGN-REFERENCE-DEF">/MICROSAR/PduR/PduRBswModules/PduRBswModuleRef</DEFINITION-REF>
+                  <VALUE-REF DEST="ECUC-MODULE-CONFIGURATION-VALUES">/ActiveEcuC/Dcm</VALUE-REF>
                 </ECUC-REFERENCE-VALUE>
               </REFERENCE-VALUES>
             </ECUC-CONTAINER-VALUE>

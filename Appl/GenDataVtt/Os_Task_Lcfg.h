@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Task_Lcfg.h
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -86,6 +86,9 @@
 
 /*! Task configuration data: InitTask */
 extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_InitTask;
+
+/*! Task configuration data: OnEventTask */
+extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OnEventTask;
 
 /*! Task configuration data: PeriodicTask */
 extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_PeriodicTask;

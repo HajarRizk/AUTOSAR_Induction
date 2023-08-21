@@ -96,6 +96,26 @@
                               <MAPPINGS>
                                 <SYSTEM-MAPPING UUID="2dcbac29-ae20-49ac-9df2-9f71b877af97">
                                   <SHORT-NAME>MAPPINGS</SHORT-NAME>
+                                  <DATA-MAPPINGS>
+                                    <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                                      <DATA-ELEMENT-IREF>
+                                        <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</CONTEXT-COMPONENT-REF>
+                                        <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</CONTEXT-COMPOSITION-REF>
+                                        <CONTEXT-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CounterSWC/CounterSignalPI_Tx</CONTEXT-PORT-REF>
+                                        <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/CounterSignalPI/Element</TARGET-DATA-PROTOTYPE-REF>
+                                      </DATA-ELEMENT-IREF>
+                                      <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/VectorAutosarExplorerGeneratedObjects/SYSTEM_SIGNALS/ACCompPow_274b307919b78395</SYSTEM-SIGNAL-REF>
+                                    </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                                    <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                                      <DATA-ELEMENT-IREF>
+                                        <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</CONTEXT-COMPONENT-REF>
+                                        <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</CONTEXT-COMPOSITION-REF>
+                                        <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/CounterSWC/CounterSignalPI_Rx</CONTEXT-PORT-REF>
+                                        <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/CounterSignalPI/Element</TARGET-DATA-PROTOTYPE-REF>
+                                      </DATA-ELEMENT-IREF>
+                                      <SYSTEM-SIGNAL-REF DEST="SYSTEM-SIGNAL">/VectorAutosarExplorerGeneratedObjects/SYSTEM_SIGNALS/AC_UC_AirCirc_4982379d745170f0</SYSTEM-SIGNAL-REF>
+                                    </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                                  </DATA-MAPPINGS>
                                 </SYSTEM-MAPPING>
                               </MAPPINGS>
                               <ROOT-SOFTWARE-COMPOSITIONS>
@@ -140,7 +160,62 @@
                                   <SHORT-NAME>Os_OsCore0_swc</SHORT-NAME>
                                   <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/MICROSAR/Os_swc/ComponentTypes/Os_OsCore0_swc</TYPE-TREF>
                                 </SW-COMPONENT-PROTOTYPE>
+                                <SW-COMPONENT-PROTOTYPE UUID="14a70079-3eb3-4458-afc5-d70a8c7df8cd">
+                                  <SHORT-NAME>CounterSWC</SHORT-NAME>
+                                  <ADMIN-DATA>
+                                    <SDGS>
+                                      <SDG GID="DV:DEV">
+                                        <SD GID="DV:ImportModePreset">Keep</SD>
+                                      </SDG>
+                                    </SDGS>
+                                  </ADMIN-DATA>
+                                  <ANNOTATIONS>
+                                    <ANNOTATION>
+                                      <ANNOTATION-ORIGIN>DV:Flattener</ANNOTATION-ORIGIN>
+                                    </ANNOTATION>
+                                  </ANNOTATIONS>
+                                  <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CounterSWC</TYPE-TREF>
+                                </SW-COMPONENT-PROTOTYPE>
+                                <SW-COMPONENT-PROTOTYPE UUID="d74e3a4c-2ef7-4116-b9cf-efba8842174b">
+                                  <SHORT-NAME>Dcm</SHORT-NAME>
+                                  <TYPE-TREF DEST="SERVICE-SW-COMPONENT-TYPE">/MICROSAR/Dcm_swc/ComponentTypes/Dcm</TYPE-TREF>
+                                </SW-COMPONENT-PROTOTYPE>
                               </COMPONENTS>
+                              <CONNECTORS>
+                                <ASSEMBLY-SW-CONNECTOR UUID="13d00014-07c1-481a-a75f-bbd40891ab46">
+                                  <SHORT-NAME>CounterSWC_RoutineServices_Counter_Dcm_RoutineServices_DcmDspRoutine_Counter</SHORT-NAME>
+                                  <PROVIDER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</CONTEXT-COMPONENT-REF>
+                                    <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CounterSWC/RoutineServices_Counter</TARGET-P-PORT-REF>
+                                  </PROVIDER-IREF>
+                                  <REQUESTER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Dcm</CONTEXT-COMPONENT-REF>
+                                    <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/RoutineServices_DcmDspRoutine_Counter</TARGET-R-PORT-REF>
+                                  </REQUESTER-IREF>
+                                </ASSEMBLY-SW-CONNECTOR>
+                                <ASSEMBLY-SW-CONNECTOR UUID="0f9b17ea-f2e6-4c28-a26d-7bd92b290f0d">
+                                  <SHORT-NAME>CounterSWC_DataServices_Counter_Dcm_DataServices_DcmDspData_Counter</SHORT-NAME>
+                                  <PROVIDER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</CONTEXT-COMPONENT-REF>
+                                    <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CounterSWC/DataServices_Counter</TARGET-P-PORT-REF>
+                                  </PROVIDER-IREF>
+                                  <REQUESTER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Dcm</CONTEXT-COMPONENT-REF>
+                                    <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DataServices_DcmDspData_Counter</TARGET-R-PORT-REF>
+                                  </REQUESTER-IREF>
+                                </ASSEMBLY-SW-CONNECTOR>
+                                <ASSEMBLY-SW-CONNECTOR UUID="39d45316-dbe0-4547-aecc-8cbcb1538f11">
+                                  <SHORT-NAME>CounterSWC_DataServices_DcmDspData_CountersValue_Dcm_DataServices_DcmDspData_CountersValue</SHORT-NAME>
+                                  <PROVIDER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</CONTEXT-COMPONENT-REF>
+                                    <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/CounterSWC/DataServices_DcmDspData_CountersValue</TARGET-P-PORT-REF>
+                                  </PROVIDER-IREF>
+                                  <REQUESTER-IREF>
+                                    <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Dcm</CONTEXT-COMPONENT-REF>
+                                    <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DataServices_DcmDspData_CountersValue</TARGET-R-PORT-REF>
+                                  </REQUESTER-IREF>
+                                </ASSEMBLY-SW-CONNECTOR>
+                              </CONNECTORS>
                             </COMPOSITION-SW-COMPONENT-TYPE>
                             <END-TO-END-PROTECTION-SET UUID="68e96d98-2ef5-4bcb-a1b8-0d37880f1aa7">
                               <SHORT-NAME>E2EPROTECTIONSET</SHORT-NAME>
@@ -171,12 +246,34 @@
                                     <SD GID="f0d80ae3-f782-4e79-a4e5-7eaefbf9a571">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE</SD>
                                     <SD GID="385e7e7d-b173-46f1-b2c2-2b82b0874f3c">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/BswM</SD>
                                     <SD GID="3c9c8d62-fb64-4311-8c41-594e1fcf4b9c">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/ComM</SD>
+                                    <SD GID="14a70079-3eb3-4458-afc5-d70a8c7df8cd">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</SD>
+                                    <SD GID="0f9b17ea-f2e6-4c28-a26d-7bd92b290f0d">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC_DataServices_Counter_Dcm_DataServices_DcmDspData_Counter</SD>
+                                    <SD GID="39d45316-dbe0-4547-aecc-8cbcb1538f11">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC_DataServices_DcmDspData_CountersValue_Dcm_DataServices_DcmDspData_CountersValue</SD>
+                                    <SD GID="13d00014-07c1-481a-a75f-bbd40891ab46">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC_RoutineServices_Counter_Dcm_RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="d74e3a4c-2ef7-4116-b9cf-efba8842174b">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Dcm</SD>
                                     <SD GID="7c5cab9e-3a50-4962-aaf2-5bc5b0ee499d">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Det</SD>
                                     <SD GID="d86ee652-913c-460b-9934-3b09b37f1261">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/EcuM</SD>
                                     <SD GID="91918ac4-3d80-4c80-82e3-02edf3cfdcfc">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/Os_OsCore0_swc</SD>
                                     <SD GID="9e39e03a-9ab4-4982-a879-ca504f60adb0">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/FLATMAP</SD>
                                     <SD GID="940b9407-8917-4324-8583-dfb54f1b489c">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM</SD>
+                                    <SD GID="390a9090-e6a2-41a9-8c72-8756e1345943">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</SD>
+                                    <SD GID="A738A3A0-FD31-4C97-A229-F0195933F7DE">/ComponentTypes/CounterSWC</SD>
+                                    <SD GID="43F67914-945B-45F5-AC5B-242D4A58537B">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/DRT_CounterRecieveSignal_CounterSignalPI_Rx_Element</SD>
+                                    <SD GID="EB1CE664-FFF4-496A-B7A1-C632DDE7F2D0">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_DataServices_Counter_ReadData_DataServices_Counter_ReadData</SD>
+                                    <SD GID="C3AE936F-12AB-48D9-BA6C-3F13B0A1B072">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_DataServices_Counter_WriteData_DataServices_Counter_WriteData</SD>
+                                    <SD GID="58B2A1E2-9BD2-4E10-8AF0-9252BE688DDA">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_DataServices_DcmDspData_CountersValue_ReadData_DataServices_DcmDspData_CountersValue_ReadData</SD>
+                                    <SD GID="3BB7BF1F-3249-4C64-800C-A7D5C126DA1A">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_RoutineServices_Counter_RequestResults_RoutineServices_Counter_RequestResults</SD>
+                                    <SD GID="5CDE336E-F68F-46AD-9C55-32C94240E50E">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_RoutineServices_Counter_Start_RoutineServices_Counter_Start</SD>
+                                    <SD GID="20E2E118-9ECE-4B74-939D-0B715E170B74">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/OIT_RoutineServices_Counter_Stop_RoutineServices_Counter_Stop</SD>
+                                    <SD GID="9282D35A-ECC1-4BDD-846B-21771C4EF589">/ComponentTypes/CounterSWC/CounterSWC_InternalBehavior/TMT_CounterMainFunction</SD>
+                                    <SD GID="567714B7-EF92-4471-8CDC-F26A7D0EC3F9">/ComponentTypes/CounterSWC/CounterSignalPI_Rx</SD>
+                                    <SD GID="A6482FF8-F22F-49E5-9AAF-4CB57504185A">/ComponentTypes/CounterSWC/CounterSignalPI_Tx</SD>
+                                    <SD GID="E50D998C-26F5-4772-B028-FF50B65334F1">/ComponentTypes/CounterSWC/DataServices_Counter</SD>
+                                    <SD GID="49F00AA8-2BFB-417B-99E0-532098C5E1A8">/ComponentTypes/CounterSWC/DataServices_DcmDspData_CountersValue</SD>
+                                    <SD GID="0920F32F-257D-4F05-97FD-DFD3FDA331F6">/ComponentTypes/CounterSWC/RoutineServices_Counter</SD>
+                                    <SD GID="FB2407FA-6A8C-424B-B735-6AAD17E2A64E">/ComponentTypes/CounterSWC_Implementation</SD>
                                     <SD GID="26A46B5C-C6E6-4E35-B7A4-9761DF6F44C7">/ECUCompositionTypes/ECU_Composition</SD>
+                                    <SD GID="E82382B4-B2CC-471B-9B94-0334A5704C74">/ECUCompositionTypes/ECU_Composition/CounterSWC</SD>
                                     <SD GID="fb316105-d2c5-446a-9844-c74328ac6f00">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions/BswM/BswMBehavior</SD>
                                     <SD GID="47036af4-0a63-4f26-9422-b438e3f453b1">/MICROSAR/BswM_ib_bswmd/BswModuleDescriptions/BswM/BswMBehavior/BSWM_EXCLUSIVE_AREA_0</SD>
                                     <SD GID="20bc9bbf-b0fb-4c68-a128-cc54c3a180d6">/MICROSAR/BswM_swc</SD>
@@ -314,6 +411,116 @@
                                     <SD GID="c9e6aed5-5924-4c21-a74c-cd699f43632b">/MICROSAR/Com_ib_bswmd/BswModuleDescriptions/Com/ComBehavior/Com_MainFunctionTxTimingEvent0</SD>
                                     <SD GID="1a2a47f3-d638-4699-9acc-385009f971fc">/MICROSAR/Com_ib_bswmd/BswModuleDescriptions/Com_MainFunctionRx</SD>
                                     <SD GID="9168e510-f197-40f3-87bb-098fc05a397d">/MICROSAR/Com_ib_bswmd/BswModuleDescriptions/Com_MainFunctionTx</SD>
+                                    <SD GID="d1bdbbc2-4688-413c-849b-bbf890bf7010">/MICROSAR/Dcm_ib_bswmd</SD>
+                                    <SD GID="312d02ed-9a30-4df9-9787-4563b0b1bb08">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions</SD>
+                                    <SD GID="5c2df35a-f94a-442a-b878-5ba199185a50">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions/Dcm/DcmBehavior</SD>
+                                    <SD GID="9a63e9a6-6561-425d-8ef7-3046880e017c">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions/Dcm/DcmBehavior/DCM_EXCLUSIVE_AREA_0</SD>
+                                    <SD GID="18bd3913-ee9b-4e4d-98f2-40d26b05edce">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions/Dcm/DcmBehavior/Dcm_MainFunction</SD>
+                                    <SD GID="658a9662-1643-4ba6-b2c0-6d543a044da6">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions/Dcm/DcmBehavior/Dcm_MainFunctionTimingEvent0</SD>
+                                    <SD GID="86e47bd0-7884-40c6-9ee0-78a99340bd86">/MICROSAR/Dcm_ib_bswmd/BswModuleDescriptions/Dcm_MainFunction</SD>
+                                    <SD GID="d35246e7-1f89-4bc4-9893-524b30ece222">/MICROSAR/Dcm_swc</SD>
+                                    <SD GID="3ad6d822-d37f-4700-90f0-4bb0486df34c">/MICROSAR/Dcm_swc/ComponentTypes</SD>
+                                    <SD GID="02dd57ac-439a-447e-8b2b-7bd2fabb9010">/MICROSAR/Dcm_swc/ComponentTypes/Dcm</SD>
+                                    <SD GID="95ba2afb-836b-4a8f-85ad-3c5973e0274a">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DCMServices</SD>
+                                    <SD GID="ce09b6ab-9ab3-45a7-b88d-f041c48e0a1f">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DataServices_DcmDspData_Counter</SD>
+                                    <SD GID="5bfeb12d-ea7e-455d-be77-f65480cd4ba2">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DataServices_DcmDspData_CountersValue</SD>
+                                    <SD GID="5ab99b7c-3c2d-4ba0-b6fd-8b0a409c004c">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmDiagnosticSessionControl</SD>
+                                    <SD GID="3cd321a4-e73b-4283-a3a4-6c33572e0124">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior</SD>
+                                    <SD GID="351849ec-4f0b-49b9-aa31-f38cb5424508">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction</SD>
+                                    <SD GID="7ae4e0ca-aff2-4fb3-ba1f-f3d59a590e66">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/ModeSwitchPointDcm_MainFunction_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl</SD>
+                                    <SD GID="b82edf0d-42b7-4496-ad73-fa5983692c18">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_ReadData_DataServices_DcmDspData_Counter</SD>
+                                    <SD GID="49194d09-e31d-4858-9815-72ca0350e870">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_ReadData_DataServices_DcmDspData_CountersValue</SD>
+                                    <SD GID="ad3d2032-4036-4597-82cd-8027612cf751">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_RequestResults_RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="086b8c6d-0b9f-44e1-9987-c90079aa740d">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_Start_RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="c5f6feaf-6bf6-4a34-b2b4-23c015942539">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_Stop_RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="87a02f8b-37f0-4c4d-aaf9-02c0579ce7ca">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Dcm_MainFunction/OpServerCallDcm_MainFunction_WriteData_DataServices_DcmDspData_Counter</SD>
+                                    <SD GID="73b18782-99b8-4bc0-b3f9-83a994e69ebf">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/GetActiveProtocol</SD>
+                                    <SD GID="f88865bb-a354-4ab9-8663-694d2b71f25e">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/GetRequestKind</SD>
+                                    <SD GID="60da347a-033c-4da3-b260-7b7fd6d3f168">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/GetSesCtrlType</SD>
+                                    <SD GID="6faacac9-afeb-4ffc-963a-77c2be1873cc">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/OpEventGetActiveProtocol_GetActiveProtocol_DCMServices</SD>
+                                    <SD GID="c1da2f0f-5f00-412f-b64b-757dc3bc75f0">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/OpEventGetRequestKind_GetRequestKind_DCMServices</SD>
+                                    <SD GID="d5bd9d2f-e04f-4db1-9f7c-d87be823b00d">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/OpEventGetSesCtrlType_GetSesCtrlType_DCMServices</SD>
+                                    <SD GID="409b5b40-e3af-44c7-a4af-1849d79ccfa6">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/OpEventResetToDefaultSession_ResetToDefaultSession_DCMServices</SD>
+                                    <SD GID="51ff879f-5b66-4fb9-986d-164c4b184f57">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/OpEventSetActiveDiagnostic_SetActiveDiagnostic_DCMServices</SD>
+                                    <SD GID="01bb73e7-7908-4b61-86a4-2334731a5ca8">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/ResetToDefaultSession</SD>
+                                    <SD GID="d53dd860-ab43-4c0e-9d55-960c9e0be16c">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/SetActiveDiagnostic</SD>
+                                    <SD GID="3b841e5f-7257-4fc3-af17-6fc1d2711a94">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/DcmInternalBehavior/Timer_Dcm_MainFunction</SD>
+                                    <SD GID="29ddac72-6675-4b98-b4da-b587e29454f2">/MICROSAR/Dcm_swc/ComponentTypes/Dcm/RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="c270f04b-217d-44b5-96d0-a8a4d6c69c88">/MICROSAR/Dcm_swc/DataTypes</SD>
+                                    <SD GID="3f69075c-2147-40a2-9129-4f0dc0d9c389">/MICROSAR/Dcm_swc/DataTypes/CompuMethods</SD>
+                                    <SD GID="1ab0e062-3914-4961-a986-106d6b84b37e">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_CommunicationModeType</SD>
+                                    <SD GID="d2e502ad-e6ae-44e7-a105-abd5b2f7a991">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_ConfirmationStatusType</SD>
+                                    <SD GID="dfea4f5c-e82e-4fa8-b309-8e25fb25e987">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_DiagnosticSessionControlType</SD>
+                                    <SD GID="e281c50a-8da6-4894-aabe-b3704a42bfec">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_NegativeResponseCodeType</SD>
+                                    <SD GID="b47fb5be-a999-4de3-86e4-e35e6ca5ded1">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_OpStatusType</SD>
+                                    <SD GID="9ce72be2-2e94-4414-a0fd-3e95d1b3c8cd">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_ProtocolType</SD>
+                                    <SD GID="65d2c05c-a267-45c7-9fb9-83fce18f9558">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_RequestKindType</SD>
+                                    <SD GID="9efcd6ff-4384-4f32-8ffb-022536708b37">/MICROSAR/Dcm_swc/DataTypes/CompuMethods/Dcm_SesCtrlType</SD>
+                                    <SD GID="ddd0d811-3ab1-4c76-b12b-a7a1584e2255">/MICROSAR/Dcm_swc/DataTypes/DataConstrs</SD>
+                                    <SD GID="8b8a7dc2-84a1-43a7-b97b-1fffd202b2c0">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_CommunicationModeType_Constr</SD>
+                                    <SD GID="35d6d94f-5e39-4eb7-ab56-f888d551df19">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_ConfirmationStatusType_Constr</SD>
+                                    <SD GID="9d96c9d4-23f8-45e6-a39d-f406fc474769">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_DiagnosticSessionControlType_Constr</SD>
+                                    <SD GID="f038a0fa-d086-4a45-b98e-ff303abae180">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_NegativeResponseCodeType_Constr</SD>
+                                    <SD GID="cc34873e-a9d2-4765-bc7c-4380769e8815">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_OpStatusType_Constr</SD>
+                                    <SD GID="d4d83858-23d8-4711-9360-5156d64b312a">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_ProtocolType_Constr</SD>
+                                    <SD GID="d49468ee-9835-457a-823c-f3e6ea850677">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_RequestKindType_Constr</SD>
+                                    <SD GID="588c6da9-e5c2-43dd-aadb-f0a75cd8a67f">/MICROSAR/Dcm_swc/DataTypes/DataConstrs/Dcm_SesCtrlType_Constr</SD>
+                                    <SD GID="6df138b8-6536-46eb-a915-dbec8022dcee">/MICROSAR/Dcm_swc/DataTypes/Dcm_CommunicationModeType</SD>
+                                    <SD GID="26150a65-fdea-4f9b-9167-f544f441cea4">/MICROSAR/Dcm_swc/DataTypes/Dcm_ConfirmationStatusType</SD>
+                                    <SD GID="d7605037-8bcf-4b42-84f7-91f317b20fff">/MICROSAR/Dcm_swc/DataTypes/Dcm_Data2ByteType</SD>
+                                    <SD GID="1aea7974-eb2f-45a6-ba89-dfedca98c754">/MICROSAR/Dcm_swc/DataTypes/Dcm_Data2ByteType/Dcm_Data2ByteTypeElement</SD>
+                                    <SD GID="1f888794-bedd-40fe-ac43-aabec3b72234">/MICROSAR/Dcm_swc/DataTypes/Dcm_Data40ByteType</SD>
+                                    <SD GID="973ed356-b6d2-4bff-848d-161f2e8ce9dc">/MICROSAR/Dcm_swc/DataTypes/Dcm_Data40ByteType/Dcm_Data40ByteTypeElement</SD>
+                                    <SD GID="600819cf-82e7-4b4c-a849-efbaebf0ccd8">/MICROSAR/Dcm_swc/DataTypes/Dcm_DiagnosticSessionControlType</SD>
+                                    <SD GID="78b79a75-9513-41d4-88bf-eb378eb81138">/MICROSAR/Dcm_swc/DataTypes/Dcm_NegativeResponseCodeType</SD>
+                                    <SD GID="220189cd-1da4-4aa6-b3ba-31ae1210c52c">/MICROSAR/Dcm_swc/DataTypes/Dcm_OpStatusType</SD>
+                                    <SD GID="06fc9eb1-da6a-4254-a611-24e0799b6aa2">/MICROSAR/Dcm_swc/DataTypes/Dcm_ProtocolType</SD>
+                                    <SD GID="3f4f5c01-7170-4154-85bd-a236db2b6254">/MICROSAR/Dcm_swc/DataTypes/Dcm_RequestKindType</SD>
+                                    <SD GID="33a8943c-714d-4f5e-add4-33b890d0e532">/MICROSAR/Dcm_swc/DataTypes/Dcm_SesCtrlType</SD>
+                                    <SD GID="bd259352-e982-40b8-b243-3412abdc323b">/MICROSAR/Dcm_swc/DcmDiagnosticSessionControl</SD>
+                                    <SD GID="76f8cdee-5b2c-46c5-99ce-e1db868ace98">/MICROSAR/Dcm_swc/DcmDiagnosticSessionControl/DEFAULT_SESSION</SD>
+                                    <SD GID="aa89f8e7-8355-42cc-aac3-6a24251e150b">/MICROSAR/Dcm_swc/DcmMappingSet</SD>
+                                    <SD GID="1feb4e68-8bd0-4334-bd0b-293a506230dd">/MICROSAR/Dcm_swc/Interfaces</SD>
+                                    <SD GID="cc6c7fd8-50e6-4f3d-b11b-8606f54682bd">/MICROSAR/Dcm_swc/Interfaces/DCMServices</SD>
+                                    <SD GID="6d530024-d2bb-45e1-9b7a-6f09bc777cb0">/MICROSAR/Dcm_swc/Interfaces/DCMServices/E_NOT_OK</SD>
+                                    <SD GID="cfaaf099-c5ab-4f0b-9bb5-7dbf5ed99762">/MICROSAR/Dcm_swc/Interfaces/DCMServices/E_OK</SD>
+                                    <SD GID="5f0b9941-ccbd-4b05-9092-d26d856591e9">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetActiveProtocol</SD>
+                                    <SD GID="e4fb56b4-eb70-44f0-b097-b9e27e7e420c">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetActiveProtocol/ActiveProtocol</SD>
+                                    <SD GID="196b4cd9-c4dc-44b9-ae5f-70f85fc25cee">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetRequestKind</SD>
+                                    <SD GID="1cae5715-e386-4b63-b7cb-f9425f62396d">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetRequestKind/RequestKind</SD>
+                                    <SD GID="e92e9ef2-e663-4bd6-a7c4-9777354173d1">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetRequestKind/TesterSourceAddress</SD>
+                                    <SD GID="288274c0-6cef-4409-a43a-4e3af77a23f9">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetSesCtrlType</SD>
+                                    <SD GID="ef04d1d6-7295-43e0-8ffe-4405584abdfb">/MICROSAR/Dcm_swc/Interfaces/DCMServices/GetSesCtrlType/SesCtrlType</SD>
+                                    <SD GID="3f13762a-369c-4b2c-a89e-c2cfff7e7ccb">/MICROSAR/Dcm_swc/Interfaces/DCMServices/ResetToDefaultSession</SD>
+                                    <SD GID="0e209a34-f9e4-4901-8a54-0d61ed0f5c92">/MICROSAR/Dcm_swc/Interfaces/DCMServices/SetActiveDiagnostic</SD>
+                                    <SD GID="b00d1341-a7eb-4477-98e8-82d5482cd3fc">/MICROSAR/Dcm_swc/Interfaces/DCMServices/SetActiveDiagnostic/active</SD>
+                                    <SD GID="7fc95da2-cca4-4833-9289-bfd24fb92097">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter</SD>
+                                    <SD GID="65512e95-28ba-463b-a309-617a79532070">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/E_NOT_OK</SD>
+                                    <SD GID="0387c717-1994-450f-9257-c4c5b57af52f">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/ReadData</SD>
+                                    <SD GID="ba176209-16b8-402a-b983-35777d3bfdac">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/ReadData/Data</SD>
+                                    <SD GID="9863a26e-db82-4700-939f-5a44a13b8d9c">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/WriteData</SD>
+                                    <SD GID="449a5f83-c6d8-4fcd-b2ec-3915c29e0114">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/WriteData/Data</SD>
+                                    <SD GID="3879b2dc-fcee-480e-aec2-0ee67e58a150">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_Counter/WriteData/ErrorCode</SD>
+                                    <SD GID="e2b7b2d8-d238-42a4-b319-9c63fc769b60">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_CountersValue</SD>
+                                    <SD GID="d7866795-25b1-445c-93c7-3f10a9cb01d9">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_CountersValue/E_NOT_OK</SD>
+                                    <SD GID="d62d4e52-ab8c-4a6d-8821-0dea97297f48">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_CountersValue/ReadData</SD>
+                                    <SD GID="a169f8f1-d67a-483b-8a66-2d137803d8e6">/MICROSAR/Dcm_swc/Interfaces/DataServices_DcmDspData_CountersValue/ReadData/Data</SD>
+                                    <SD GID="82b14523-393f-427c-a33e-8e3f3a4207ad">/MICROSAR/Dcm_swc/Interfaces/DcmDiagnosticSessionControl</SD>
+                                    <SD GID="1af8bd95-7c73-419c-aa90-edf17539fb0d">/MICROSAR/Dcm_swc/Interfaces/DcmDiagnosticSessionControl/DcmDiagnosticSessionControl</SD>
+                                    <SD GID="326e3dc5-b453-4aba-bf34-74697de79cf8">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter</SD>
+                                    <SD GID="cfbf61ca-84f6-492d-a4a3-f801ba25cd97">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/DCM_E_FORCE_RCRRP</SD>
+                                    <SD GID="85810b83-5a6c-46ca-ad4c-88553ba5e419">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/DCM_E_PENDING</SD>
+                                    <SD GID="9bf308d6-1d45-49c0-9631-692f87fc8672">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/E_NOT_OK</SD>
+                                    <SD GID="7ef6c9ae-2b99-494d-b576-cf0a58a38f8b">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/RequestResults</SD>
+                                    <SD GID="0ddae420-84ea-4516-bd87-2616d3984ea6">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/RequestResults/DcmDspRoutineRequestResOutSignal</SD>
+                                    <SD GID="d37bb884-8375-4c68-9146-4673b81f6fb3">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/RequestResults/ErrorCode</SD>
+                                    <SD GID="86cbf94b-290a-4fbe-a033-c88057c7b0c9">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/RequestResults/OpStatus</SD>
+                                    <SD GID="0ea505b6-14f0-4873-a031-beba497e7513">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Start</SD>
+                                    <SD GID="e31e163c-6a99-466c-ac07-60987749c6e4">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Start/ErrorCode</SD>
+                                    <SD GID="e871f889-f089-4100-ba17-be637aa588de">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Start/OpStatus</SD>
+                                    <SD GID="7fe2e65d-8936-4bf5-b057-5d0c3ab28c68">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Stop</SD>
+                                    <SD GID="6a3047a9-e90d-4490-9125-dd3b47cf7b99">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Stop/ErrorCode</SD>
+                                    <SD GID="d451818d-ab18-4050-b8b7-e84a3384f100">/MICROSAR/Dcm_swc/Interfaces/RoutineServices_DcmDspRoutine_Counter/Stop/OpStatus</SD>
                                     <SD GID="a746a50e-6644-4ca1-bc91-32246cc8943b">/MICROSAR/Det_ib_bswmd/BswModuleDescriptions/Det/DetBehavior</SD>
                                     <SD GID="26179fbf-7eef-4888-8d69-cadbf2b951dd">/MICROSAR/Det_ib_bswmd/BswModuleDescriptions/Det/DetBehavior/DET_EXCLUSIVE_AREA_0</SD>
                                     <SD GID="38e27637-ba8e-488e-9e90-be1de55cda49">/MICROSAR/Det_swc/ComponentTypes/Det</SD>
@@ -395,6 +602,7 @@
                                     <SD GID="a57c9d10-7c38-4cd2-ba22-4e477c4fefec">/MICROSAR/PduR_ib_bswmd/BswModuleDescriptions/PduR/PduRBehavior</SD>
                                     <SD GID="4fe049bb-2a94-4006-96e9-6282266cf9da">/MICROSAR/PduR_ib_bswmd/BswModuleDescriptions/PduR/PduRBehavior/PDUR_EXCLUSIVE_AREA_0</SD>
                                     <SD GID="06f39daf-4123-443b-b9b6-a741fa93e7b2">/MICROSAR/Rte_ib_bswmd/BswModuleDescriptions/Rte/RteBehavior</SD>
+                                    <SD GID="E1A48955-927F-4217-A607-9235D8B85D16">/PortInterfaces/CounterSignalPI/Element</SD>
                                     <SD GID="{AF35D1D4-4362-4055-B014-780FA6F9E75B}">/Predefined_DEV/CompuMethods/Dem_UdsStatusByteType</SD>
                                     <SD GID="F2570AA0-D6E5-4217-80F7-5F60B8778133">/Predefined_DEV/CompuMethods/NvM_RequestResultType</SD>
                                     <SD GID="007B24D3-5C46-4986-B3CA-31D71FEDD510">/Predefined_DEV/CompuMethods/NvM_ServiceIdType</SD>
@@ -449,6 +657,7 @@
                                     <SD GID="01161A35-BCA9-4BB6-AB7A-EB12534BC4B3">/VectorAutosarExplorerGeneratedObjects/COMPUMETHODS/AC_UC_Power_level_Encoding</SD>
                                     <SD GID="9C4695E5-710D-4F41-A015-4393D7EC5359">/VectorAutosarExplorerGeneratedObjects/COMPUMETHODS/AC_UC_TargetTemp_Encoding</SD>
                                     <SD GID="6B8E2131-E615-4CCC-8732-12A3596428E1">/VectorAutosarExplorerGeneratedObjects/COMPUMETHODS/AmbTempOutCar_PDU_Signal_Encoding</SD>
+                                    <SD GID="D7D25BB5-F9AC-41A0-8D4F-4F5708C06C58">/VectorAutosarExplorerGeneratedObjects/SYSTEM/System/EcuSwComposition</SD>
                                   </SDG>
                                 </SDGS>
                               </ADMIN-DATA>

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: PduR_Com.h
- *   Generation Time: 2023-08-17 18:09:21
+ *   Generation Time: 2023-08-20 17:38:36
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -99,8 +99,6 @@
  * \note     The function is called by Com.
  *********************************************************************************************************************/
 FUNC(Std_ReturnType, PDUR_CODE) PduR_ComTransmit(PduIdType id, P2CONST(PduInfoType, AUTOMATIC, PDUR_APPL_DATA) info);
-
-
 
 
 

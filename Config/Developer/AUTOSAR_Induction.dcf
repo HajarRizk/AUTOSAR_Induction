@@ -15,5 +15,10 @@
 	</FILEREF>
 	<FILEREF>
 		<ARXML>ECUProjects\AUTOSAR_Induction.arxml</ARXML>
+		<DVG>ECUProjects\AUTOSAR_Induction.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/CounterSWC.arxml</ARXML>
+		<DVG>ComponentTypes/CounterSWC.dvg</DVG>
 	</FILEREF>
 </DCF>

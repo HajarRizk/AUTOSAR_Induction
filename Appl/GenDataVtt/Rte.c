@@ -34,6 +34,8 @@
 
 #include "Rte_BswM.h"
 #include "Rte_ComM.h"
+#include "Rte_CounterSWC.h"
+#include "Rte_Dcm.h"
 #include "Rte_Det.h"
 #include "Rte_EcuM.h"
 #include "Rte_Os_OsCore0_swc.h"
@@ -45,6 +47,7 @@
 #include "SchM_Com.h"
 #include "SchM_ComM.h"
 #include "SchM_ComXf.h"
+#include "SchM_Dcm.h"
 #include "SchM_Det.h"
 #include "SchM_EcuM.h"
 #include "SchM_Mcu.h"
@@ -52,6 +55,13 @@
 
 #include "Rte_Hook.h"
 #include "Rte_VttHook.h"
+
+#include "Com.h"
+#if defined(IL_ASRCOM_VERSION)
+# define RTE_USE_COM_TXSIGNAL_RDACCESS
+#endif
+
+#include "Rte_Cbk.h"
 
 /* AUTOSAR 3.x compatibility */
 #if !defined (RTE_LOCAL)
@@ -105,6 +115,39 @@ volatile VAR(uint8, RTE_VAR_ZERO_INIT) Rte_StartTiming_InitState = RTE_STATE_UNI
 #include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
 
+/**********************************************************************************************************************
+ * Buffer for inter-runnable variables
+ *********************************************************************************************************************/
+
+#define RTE_START_SEC_VAR_NOINIT_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+VAR(uint16, RTE_VAR_NOINIT) Rte_Irv_CounterSWC_CounterValueIRV; /* PRQA S 0850, 3408, 1504 */ /* MD_MSR_19.8, MD_Rte_3408, MD_MSR_8.10 */
+
+#define RTE_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+#define RTE_START_SEC_CODE
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+FUNC(void, RTE_CODE) Rte_MemClr(P2VAR(void, AUTOMATIC, RTE_VAR_NOINIT) ptr, uint32_least num); /* PRQA S 0850, 3447, 3408 */ /* MD_MSR_19.8, MD_Rte_3447, MD_Rte_3408 */
+
+#define RTE_STOP_SEC_CODE
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+#define RTE_START_SEC_VAR_NOINIT_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ * Data structures for mode management
+ *********************************************************************************************************************/
+
+#define RTE_STOP_SEC_VAR_NOINIT_UNSPECIFIED
+#include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+
 
 /**********************************************************************************************************************
  * Internal definitions
@@ -132,6 +175,16 @@ VAR(uint8, RTE_VAR_ZERO_INIT) Rte_ScheduleTable_PeriodicTask_Step = 0U; /* PRQA 
 #define RTE_START_SEC_CODE
 #include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
+FUNC(void, RTE_CODE) Rte_MemClr(P2VAR(void, AUTOMATIC, RTE_VAR_NOINIT) ptr, uint32_least num)
+{
+  P2VAR(uint8, AUTOMATIC, RTE_VAR_NOINIT) dst = (P2VAR(uint8, AUTOMATIC, RTE_VAR_NOINIT))ptr;
+  uint32_least i;
+  for (i = 0; i < num; i++)
+  {
+    dst[i] = 0;
+  }
+}
+
 FUNC(void, RTE_CODE) SchM_Init(void)
 {
   /* activate the schedule tables */
@@ -142,6 +195,9 @@ FUNC(void, RTE_CODE) SchM_Init(void)
 
 FUNC(Std_ReturnType, RTE_CODE) Rte_Start(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
 {
+  /* initialize inter-runnable variables */
+  Rte_Irv_CounterSWC_CounterValueIRV = 0U;
+
   /* mode management initialization part 1 */
 
   Rte_StartTiming_InitState = RTE_STATE_INIT;
@@ -178,6 +234,20 @@ FUNC(void, RTE_CODE) Rte_InitMemory(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
 
 
 /**********************************************************************************************************************
+ * Internal/External Tx connections
+ *********************************************************************************************************************/
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_CounterSWC_CounterSignalPI_Tx_Element(uint16 data) /* PRQA S 0850, 1505 */ /* MD_MSR_19.8, MD_MSR_8.10 */
+{
+  Std_ReturnType ret = RTE_E_OK;
+
+  ret |= Com_SendSignal(ComConf_ComSignal_ACCompPow_b4e01f19_Tx, (&data)); /* PRQA S 0850 */ /* MD_MSR_19.8 */
+
+  return ret;
+} /* PRQA S 6010, 6030, 6050 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL */
+
+
+/**********************************************************************************************************************
  * Exclusive area access
  *********************************************************************************************************************/
 
@@ -209,8 +279,51 @@ FUNC(void, RTE_CODE) SchM_Exit_Mcu_TomTgcReg(void)
 
 
 /**********************************************************************************************************************
+ * Mode Switch API (Rte_Switch)
+ *********************************************************************************************************************/
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_Switch_Dcm_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl(Dcm_DiagnosticSessionControlType nextMode) /* PRQA S 0850, 1505, 3206 */ /* MD_MSR_19.8, MD_MSR_8.10, MD_Rte_3206 */
+{
+  Std_ReturnType ret = RTE_E_OK;
+
+
+  return ret;
+}
+
+
+/**********************************************************************************************************************
+ * COM-Callbacks for DataReceivedEvent triggered runnables, inter-ECU client/server communication, for queued com. and for Rx timeout / Rx inv. flag (reset)
+ *********************************************************************************************************************/
+
+FUNC(void, RTE_CODE) Rte_COMCbk_AC_UC_AirCirc_e0001df6_Rx(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
+{
+
+  if (Rte_InitState == RTE_STATE_INIT)
+  {
+    /* scheduled trigger for runnables: CounterRecieveSignal */
+    //(void)ActivateTask(OnEventTask); /* PRQA S 3417 */ /* MD_Rte_Os */
+    Os_Task_OnEventTask();
+  }
+} /* PRQA S 6010, 6050 */ /* MD_MSR_STPTH, MD_MSR_STCAL */
+
+
+/**********************************************************************************************************************
  * Task bodies for RTE controlled tasks
  *********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ * Task:     OnEventTask
+ * Priority: 0
+ * Schedule: FULL
+ *********************************************************************************************************************/
+TASK(OnEventTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
+{
+
+  /* call runnable */
+  CounterRecieveSignal();
+
+  //(void)TerminateTask(); /* PRQA S 3417 */ /* MD_Rte_Os */
+} /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
 
 /**********************************************************************************************************************
  * Task:     PeriodicTask
@@ -255,9 +368,17 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
     /* call schedulable entity */
     CanTp_MainFunction();
 
+    if (Rte_InitState == RTE_STATE_INIT)
+    {
+      /* call runnable */
+      CounterMainFunction();
+    }
+    /* call runnable */
+    Dcm_MainFunction();
+
     Rte_ScheduleTable_PeriodicTask_Step = 1;
   }
-  else if (Rte_ScheduleTable_PeriodicTask_Step == 1) /* PRQA S 2004 */ /* MD_Rte_2004 */ /* COV_RTE_STATE_MACHINE_LAST_STATE */
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 1) /* PRQA S 2004 */ /* MD_Rte_2004 */
   {
     /* call runnable */
     EcuM_MainFunction();
@@ -289,6 +410,340 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
     /* call schedulable entity */
     CanTp_MainFunction();
 
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 2;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 2) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    ComM_MainFunction_0();
+
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 3;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 3) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    if (Rte_InitState == RTE_STATE_INIT)
+    {
+      /* call runnable */
+      CounterMainFunction();
+    }
+    Rte_ScheduleTable_PeriodicTask_Step = 4;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 4) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 5;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 5) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    ComM_MainFunction_0();
+
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 6;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 6) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    if (Rte_InitState == RTE_STATE_INIT)
+    {
+      /* call runnable */
+      CounterMainFunction();
+    }
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 7;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 7) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    ComM_MainFunction_0();
+
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 8;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 8) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 9;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 9) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    if (Rte_InitState == RTE_STATE_INIT)
+    {
+      /* call runnable */
+      CounterMainFunction();
+    }
+    Rte_ScheduleTable_PeriodicTask_Step = 10;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 10) /* PRQA S 2004 */ /* MD_Rte_2004 */
+  {
+    /* call runnable */
+    ComM_MainFunction_0();
+
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
+    Rte_ScheduleTable_PeriodicTask_Step = 11;
+  }
+  else if (Rte_ScheduleTable_PeriodicTask_Step == 11) /* PRQA S 2004 */ /* MD_Rte_2004 */ /* COV_RTE_STATE_MACHINE_LAST_STATE */
+  {
+    /* call runnable */
+    EcuM_MainFunction();
+
+    /* call schedulable entity */
+    Com_MainFunctionTx();
+
+    /* call schedulable entity */
+    Can_MainFunction_Write();
+
+    /* call schedulable entity */
+    Can_MainFunction_Read();
+
+    /* call schedulable entity */
+    Com_MainFunctionRx();
+
+    /* call schedulable entity */
+    CanSM_MainFunction();
+
+    /* call schedulable entity */
+    Can_MainFunction_BusOff();
+
+    /* call schedulable entity */
+    Can_MainFunction_Mode();
+
+    /* call schedulable entity */
+    Can_MainFunction_Wakeup();
+
+    /* call schedulable entity */
+    CanTp_MainFunction();
+
+    /* call runnable */
+    Dcm_MainFunction();
+
     Rte_ScheduleTable_PeriodicTask_Step = 0;
   }
 
@@ -314,7 +769,18 @@ TASK(PeriodicTask) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
      Risk:       Wrong implementations could remain undetected.
      Prevention: Code inspection and test of different source code variants by the component test suites.
 
+   MD_Rte_3206:  MISRA rule: -
+     Reason:     The parameter's are not used by the code in all possible code variants.
+     Risk:       No functional risk.
+     Prevention: Not required.
+
    MD_Rte_3408:  MISRA rule: 8.8
+     Reason:     For the purpose of monitoring during calibration or debugging it is necessary to use non-static declarations.
+                 This is covered in the MISRA C compliance section of the Rte specification.
+     Risk:       No functional risk.
+     Prevention: Not required.
+
+   MD_Rte_3447:  MISRA rule: 8.8
      Reason:     For the purpose of monitoring during calibration or debugging it is necessary to use non-static declarations.
                  This is covered in the MISRA C compliance section of the Rte specification.
      Risk:       No functional risk.

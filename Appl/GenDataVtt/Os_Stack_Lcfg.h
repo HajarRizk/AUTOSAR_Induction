@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Lcfg.h
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -114,7 +114,7 @@ extern OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Kernel_Dyn, OS_CFG_SIZE_OSCORE0_KERN
 # include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_MemMap */
 
 /* Shared Task stack: OsCore0_Task_Prio0 */
-/* User: [PeriodicTask] */
+/* User: [OnEventTask, PeriodicTask] */
 extern OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio0_Dyn, OS_CFG_SIZE_OSCORE0_TASK_PRIO0_STACK);
 
 # define OS_STOP_SEC_STACK_OSCORE0_TASK_PRIO0_VAR_NOINIT_UNSPECIFIED

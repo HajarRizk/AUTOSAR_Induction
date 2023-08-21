@@ -28,6 +28,33 @@
  *
  * Not configured:
  *
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_Counter_ReadData_Return
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_Counter_ReadData_Start
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_Counter_WriteData_Return
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_Counter_WriteData_Start
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_CountersValue_ReadData_Return
+ *  Rte_CallHook_Dcm_DataServices_DcmDspData_CountersValue_ReadData_Start
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_RequestResults_Return
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_RequestResults_Start
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_Start_Return
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_Start_Start
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_Stop_Return
+ *  Rte_CallHook_Dcm_RoutineServices_DcmDspRoutine_Counter_Stop_Start
+ *  Rte_ComHookRx_AC_UC_AirCirc_e0001df6_Rx
+ *  Rte_ComHook_ACCompPow_b4e01f19_Tx_SigTx
+ *  Rte_ComHook_AC_UC_AirCirc_e0001df6_Rx_SigRx
+ *  Rte_IrvReadHook_CounterSWC_CounterMainFunction_CounterValueIRV_Return
+ *  Rte_IrvReadHook_CounterSWC_CounterMainFunction_CounterValueIRV_Start
+ *  Rte_IrvReadHook_CounterSWC_DataServices_Counter_ReadData_CounterValueIRV_Return
+ *  Rte_IrvReadHook_CounterSWC_DataServices_Counter_ReadData_CounterValueIRV_Start
+ *  Rte_IrvWriteHook_CounterSWC_CounterMainFunction_CounterValueIRV_Return
+ *  Rte_IrvWriteHook_CounterSWC_CounterMainFunction_CounterValueIRV_Start
+ *  Rte_IrvWriteHook_CounterSWC_CounterRecieveSignal_CounterValueIRV_Return
+ *  Rte_IrvWriteHook_CounterSWC_CounterRecieveSignal_CounterValueIRV_Start
+ *  Rte_IrvWriteHook_CounterSWC_DataServices_Counter_WriteData_CounterValueIRV_Return
+ *  Rte_IrvWriteHook_CounterSWC_DataServices_Counter_WriteData_CounterValueIRV_Start
+ *  Rte_ReadHook_CounterSWC_CounterSignalPI_Rx_Element_Return
+ *  Rte_ReadHook_CounterSWC_CounterSignalPI_Rx_Element_Start
  *  Rte_Runnable_ComM_ComM_MainFunction_0_Return
  *  Rte_Runnable_ComM_ComM_MainFunction_0_Start
  *  Rte_Runnable_ComM_GetCurrentComMode_Return
@@ -52,6 +79,34 @@
  *  Rte_Runnable_ComM_ResetInhibitCounter_Start
  *  Rte_Runnable_ComM_SetECUGroupClassification_Return
  *  Rte_Runnable_ComM_SetECUGroupClassification_Start
+ *  Rte_Runnable_CounterSWC_CounterMainFunction_Return
+ *  Rte_Runnable_CounterSWC_CounterMainFunction_Start
+ *  Rte_Runnable_CounterSWC_CounterRecieveSignal_Return
+ *  Rte_Runnable_CounterSWC_CounterRecieveSignal_Start
+ *  Rte_Runnable_CounterSWC_DataServices_Counter_ReadData_Return
+ *  Rte_Runnable_CounterSWC_DataServices_Counter_ReadData_Start
+ *  Rte_Runnable_CounterSWC_DataServices_Counter_WriteData_Return
+ *  Rte_Runnable_CounterSWC_DataServices_Counter_WriteData_Start
+ *  Rte_Runnable_CounterSWC_DataServices_DcmDspData_CountersValue_ReadData_Return
+ *  Rte_Runnable_CounterSWC_DataServices_DcmDspData_CountersValue_ReadData_Start
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_RequestResults_Return
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_RequestResults_Start
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_Start_Return
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_Start_Start
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_Stop_Return
+ *  Rte_Runnable_CounterSWC_RoutineServices_Counter_Stop_Start
+ *  Rte_Runnable_Dcm_Dcm_MainFunction_Return
+ *  Rte_Runnable_Dcm_Dcm_MainFunction_Start
+ *  Rte_Runnable_Dcm_GetActiveProtocol_Return
+ *  Rte_Runnable_Dcm_GetActiveProtocol_Start
+ *  Rte_Runnable_Dcm_GetRequestKind_Return
+ *  Rte_Runnable_Dcm_GetRequestKind_Start
+ *  Rte_Runnable_Dcm_GetSesCtrlType_Return
+ *  Rte_Runnable_Dcm_GetSesCtrlType_Start
+ *  Rte_Runnable_Dcm_ResetToDefaultSession_Return
+ *  Rte_Runnable_Dcm_ResetToDefaultSession_Start
+ *  Rte_Runnable_Dcm_SetActiveDiagnostic_Return
+ *  Rte_Runnable_Dcm_SetActiveDiagnostic_Start
  *  Rte_Runnable_EcuM_EcuM_MainFunction_Return
  *  Rte_Runnable_EcuM_EcuM_MainFunction_Start
  *  Rte_Runnable_EcuM_GetBootTarget_Return
@@ -72,8 +127,13 @@
  *  Rte_Runnable_Os_OsCore0_swc_GetCounterValue_Start
  *  Rte_Runnable_Os_OsCore0_swc_GetElapsedValue_Return
  *  Rte_Runnable_Os_OsCore0_swc_GetElapsedValue_Start
+ *  Rte_SwitchHook_Dcm_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl_Return
+ *  Rte_SwitchHook_Dcm_DcmDiagnosticSessionControl_DcmDiagnosticSessionControl_Start
+ *  Rte_Task_Activate
  *  Rte_Task_Dispatch
  *  Rte_Task_Terminate
+ *  Rte_WriteHook_CounterSWC_CounterSignalPI_Tx_Element_Return
+ *  Rte_WriteHook_CounterSWC_CounterSignalPI_Tx_Element_Start
  *  SchM_EnterHook_BswM_BSWM_EXCLUSIVE_AREA_0_Return
  *  SchM_EnterHook_BswM_BSWM_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_CanIf_CANIF_EXCLUSIVE_AREA_0_Return
@@ -130,6 +190,8 @@
  *  SchM_EnterHook_Com_COM_EXCLUSIVE_AREA_RX_Start
  *  SchM_EnterHook_Com_COM_EXCLUSIVE_AREA_TX_Return
  *  SchM_EnterHook_Com_COM_EXCLUSIVE_AREA_TX_Start
+ *  SchM_EnterHook_Dcm_DCM_EXCLUSIVE_AREA_0_Return
+ *  SchM_EnterHook_Dcm_DCM_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_Det_DET_EXCLUSIVE_AREA_0_Return
  *  SchM_EnterHook_Det_DET_EXCLUSIVE_AREA_0_Start
  *  SchM_EnterHook_EcuM_ECUM_EXCLUSIVE_AREA_0_Return
@@ -200,6 +262,8 @@
  *  SchM_ExitHook_Com_COM_EXCLUSIVE_AREA_RX_Start
  *  SchM_ExitHook_Com_COM_EXCLUSIVE_AREA_TX_Return
  *  SchM_ExitHook_Com_COM_EXCLUSIVE_AREA_TX_Start
+ *  SchM_ExitHook_Dcm_DCM_EXCLUSIVE_AREA_0_Return
+ *  SchM_ExitHook_Dcm_DCM_EXCLUSIVE_AREA_0_Start
  *  SchM_ExitHook_Det_DET_EXCLUSIVE_AREA_0_Return
  *  SchM_ExitHook_Det_DET_EXCLUSIVE_AREA_0_Start
  *  SchM_ExitHook_EcuM_ECUM_EXCLUSIVE_AREA_0_Return
@@ -234,6 +298,8 @@
  *  SchM_Schedulable_Com_Com_MainFunctionRx_Start
  *  SchM_Schedulable_Com_Com_MainFunctionTx_Return
  *  SchM_Schedulable_Com_Com_MainFunctionTx_Start
+ *  SchM_Schedulable_Dcm_Dcm_MainFunction_Return
+ *  SchM_Schedulable_Dcm_Dcm_MainFunction_Start
  *  SchM_Schedulable_EcuM_EcuM_MainFunction_Return
  *  SchM_Schedulable_EcuM_EcuM_MainFunction_Start
  *

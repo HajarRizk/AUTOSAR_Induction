@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: ComM_Private_Cfg.h
- *   Generation Time: 2023-08-16 18:17:03
+ *   Generation Time: 2023-08-20 17:38:36
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -69,6 +69,7 @@
 */ 
 #define ComM_GetChannelOfPCConfig()                                   ComM_Channel  /**< the pointer to ComM_Channel */
 #define ComM_GetChannelPbOfPCConfig()                                 ComM_ChannelPb  /**< the pointer to ComM_ChannelPb */
+#define ComM_GetDcmRequestActiveOfPCConfig()                          ComM_DcmRequestActive.raw  /**< the pointer to ComM_DcmRequestActive */
 #define ComM_GetSizeOfChannelOfPCConfig()                             1u  /**< the number of accomplishable value elements in ComM_Channel */
 #define ComM_GetSizeOfChannelPbOfPCConfig()                           1u  /**< the number of accomplishable value elements in ComM_ChannelPb */
 #define ComM_GetSizeOfUserByteMaskOfPCConfig()                        1u  /**< the number of accomplishable value elements in ComM_UserByteMask */
@@ -82,10 +83,21 @@
 */ 
 
 /** 
+  \defgroup  ComMPCGetDuplicatedRootDataMacros  ComM Get Duplicated Root Data Macros (PRE_COMPILE)
+  \brief  These macros can be used to read deduplicated root data elements.
+  \{
+*/ 
+#define ComM_GetSizeOfDcmRequestActiveOfPCConfig()                    ComM_GetSizeOfChannelOfPCConfig()  /**< the number of accomplishable value elements in ComM_DcmRequestActive */
+/** 
+  \}
+*/ 
+
+/** 
   \defgroup  ComMPCGetDataMacros  ComM Get Data Macros (PRE_COMPILE)
   \brief  These macros can be used to read CONST and VAR data.
   \{
 */ 
+#define ComM_IsDcmRequestActive(Index)                                ((ComM_GetDcmRequestActiveOfPCConfig()[(Index)]) != FALSE)
 #define ComM_IsPncUserOfUser(Index)                                   ((ComM_GetUserOfPCConfig()[(Index)].PncUserOfUser) != FALSE)
 #define ComM_GetUserReqFullCom(Index)                                 (ComM_GetUserReqFullComOfPCConfig()[(Index)])
 /** 
@@ -107,6 +119,7 @@
 #define ComM_IsUserReqFullComUsedOfChannelPb(Index)                   (((TRUE)) != FALSE)  /**< TRUE, if the 0:n relation has 1 relation pointing to ComM_UserReqFullCom */
 #define ComM_GetSizeOfChannel()                                       ComM_GetSizeOfChannelOfPCConfig()
 #define ComM_GetSizeOfChannelPb()                                     ComM_GetSizeOfChannelPbOfPCConfig()
+#define ComM_GetSizeOfDcmRequestActive()                              ComM_GetSizeOfDcmRequestActiveOfPCConfig()
 #define ComM_GetSizeOfUser()                                          ComM_GetSizeOfUserOfPCConfig()
 #define ComM_GetSizeOfUserByteMask()                                  ComM_GetSizeOfUserByteMaskOfPCConfig()
 #define ComM_GetSizeOfUserReqFullCom()                                ComM_GetSizeOfUserReqFullComOfPCConfig()
@@ -126,6 +139,7 @@
   \brief  These macros can be used to write data.
   \{
 */ 
+#define ComM_SetDcmRequestActive(Index, Value)                        ComM_GetDcmRequestActiveOfPCConfig()[(Index)] = (Value)
 #define ComM_SetUserReqFullCom(Index, Value)                          ComM_GetUserReqFullComOfPCConfig()[(Index)] = (Value)
 /** 
   \}
@@ -146,8 +160,10 @@
 #define ComM_HasUserReqFullComEndIdxOfChannelPb()                     (TRUE != FALSE)
 #define ComM_HasUserReqFullComStartIdxOfChannelPb()                   (TRUE != FALSE)
 #define ComM_HasUserReqFullComUsedOfChannelPb()                       (TRUE != FALSE)
+#define ComM_HasDcmRequestActive()                                    (TRUE != FALSE)
 #define ComM_HasSizeOfChannel()                                       (TRUE != FALSE)
 #define ComM_HasSizeOfChannelPb()                                     (TRUE != FALSE)
+#define ComM_HasSizeOfDcmRequestActive()                              (TRUE != FALSE)
 #define ComM_HasSizeOfUser()                                          (TRUE != FALSE)
 #define ComM_HasSizeOfUserByteMask()                                  (TRUE != FALSE)
 #define ComM_HasSizeOfUserReqFullCom()                                (TRUE != FALSE)
@@ -165,8 +181,10 @@
 #define ComM_HasPCConfig()                                            (TRUE != FALSE)
 #define ComM_HasChannelOfPCConfig()                                   (TRUE != FALSE)
 #define ComM_HasChannelPbOfPCConfig()                                 (TRUE != FALSE)
+#define ComM_HasDcmRequestActiveOfPCConfig()                          (TRUE != FALSE)
 #define ComM_HasSizeOfChannelOfPCConfig()                             (TRUE != FALSE)
 #define ComM_HasSizeOfChannelPbOfPCConfig()                           (TRUE != FALSE)
+#define ComM_HasSizeOfDcmRequestActiveOfPCConfig()                    (TRUE != FALSE)
 #define ComM_HasSizeOfUserByteMaskOfPCConfig()                        (TRUE != FALSE)
 #define ComM_HasSizeOfUserOfPCConfig()                                (TRUE != FALSE)
 #define ComM_HasSizeOfUserReqFullComOfPCConfig()                      (TRUE != FALSE)
@@ -261,6 +279,23 @@
 /*lint -restore */
 extern CONST(ComM_UserType, COMM_CONST) ComM_User[1];
 #define COMM_STOP_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+
+/**********************************************************************************************************************
+  ComM_DcmRequestActive
+**********************************************************************************************************************/
+/** 
+  \var    ComM_DcmRequestActive
+  \brief  Status of Dcm active diagnostic request, TRUE if requested, FALSE otherwise
+*/ 
+#define COMM_START_SEC_VAR_NOINIT_8BIT
+/*lint -save -esym(961, 19.1) */
+#include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+extern VAR(ComM_DcmRequestActiveUType, COMM_VAR_NOINIT) ComM_DcmRequestActive;  /* PRQA S 0759 */  /* MD_CSL_Union */
+#define COMM_STOP_SEC_VAR_NOINIT_8BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
 /*lint -restore */

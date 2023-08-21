@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Types_Lcfg.h
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -72,6 +72,7 @@
 
 /* Task identifiers. */
 #define InitTask InitTask
+#define OnEventTask OnEventTask
 #define PeriodicTask PeriodicTask
 
 /* Category 2 ISR identifiers. */
@@ -135,8 +136,9 @@ typedef enum
 typedef enum
 {
   InitTask = 0,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  PeriodicTask = 1,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
-  OS_TASKID_COUNT = 2,
+  OnEventTask = 1,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
+  PeriodicTask = 2,  /* PRQA S 0784 */ /* MD_Os_Rule5.5_0784 */
+  OS_TASKID_COUNT = 3,
   INVALID_TASK = OS_TASKID_COUNT
 } TaskType;
 

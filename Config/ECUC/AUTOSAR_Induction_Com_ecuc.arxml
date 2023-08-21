@@ -132,7 +132,7 @@
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComRxDeferredNotificationCacheSize</DEFINITION-REF>
-                  <VALUE>0</VALUE>
+                  <VALUE>1</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
                 <ECUC-NUMERICAL-PARAM-VALUE>
                   <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComRxImmediateNotificationCacheSize</DEFINITION-REF>
@@ -487,7 +487,12 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComBitSize</DEFINITION-REF>
-                      <VALUE>1</VALUE>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>DV:UserDefined</ANNOTATION-ORIGIN>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE>16</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalEndianness</DEFINITION-REF>
@@ -503,12 +508,21 @@
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalAccess</DEFINITION-REF>
-                      <VALUE>ACCESS_UNCLEAR</VALUE>
+                      <VALUE>ACCESS_NEEDED_BY_SWC_OR_COM</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComHandleId</DEFINITION-REF>
                       <VALUE>0</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComNotification</DEFINITION-REF>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>DV:RTE</ANNOTATION-ORIGIN>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE>Rte_COMCbk_AC_UC_AirCirc_e0001df6_Rx</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
                   <REFERENCE-VALUES>
                     <ECUC-REFERENCE-VALUE>
@@ -577,7 +591,12 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComBitSize</DEFINITION-REF>
-                      <VALUE>10</VALUE>
+                      <ANNOTATIONS>
+                        <ANNOTATION>
+                          <ANNOTATION-ORIGIN>DV:UserDefined</ANNOTATION-ORIGIN>
+                        </ANNOTATION>
+                      </ANNOTATIONS>
+                      <VALUE>16</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalEndianness</DEFINITION-REF>
@@ -593,7 +612,7 @@
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalAccess</DEFINITION-REF>
-                      <VALUE>ACCESS_UNCLEAR</VALUE>
+                      <VALUE>ACCESS_NEEDED_BY_SWC_OR_COM</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComHandleId</DEFINITION-REF>
@@ -601,7 +620,7 @@
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComTransferProperty</DEFINITION-REF>
-                      <VALUE>PENDING</VALUE>
+                      <VALUE>TRIGGERED</VALUE>
                     </ECUC-TEXTUAL-PARAM-VALUE>
                   </PARAMETER-VALUES>
                   <REFERENCE-VALUES>
@@ -714,7 +733,7 @@
                     </ECUC-TEXTUAL-PARAM-VALUE>
                     <ECUC-NUMERICAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduHandleId</DEFINITION-REF>
-                      <VALUE>3</VALUE>
+                      <VALUE>2</VALUE>
                     </ECUC-NUMERICAL-PARAM-VALUE>
                     <ECUC-TEXTUAL-PARAM-VALUE>
                       <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduSignalProcessing</DEFINITION-REF>
@@ -743,212 +762,6 @@
                       <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/UserControls_PDU_5c89b54e_Rx</VALUE-REF>
                     </ECUC-REFERENCE-VALUE>
                   </REFERENCE-VALUES>
-                </ECUC-CONTAINER-VALUE>
-                <ECUC-CONTAINER-VALUE UUID="6583013b-0422-4668-91d3-85901f2f10a5">
-                  <SHORT-NAME>DiagResponse</SHORT-NAME>
-                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu</DEFINITION-REF>
-                  <PARAMETER-VALUES>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduDirection</DEFINITION-REF>
-                      <VALUE>SEND</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduHandleId</DEFINITION-REF>
-                      <VALUE>1</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduSignalProcessing</DEFINITION-REF>
-                      <VALUE>DEFERRED</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduType</DEFINITION-REF>
-                      <VALUE>TP</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduCancellationSupport</DEFINITION-REF>
-                      <VALUE>false</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                  </PARAMETER-VALUES>
-                  <REFERENCE-VALUES>
-                    <ECUC-REFERENCE-VALUE>
-                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComPduIdRef</DEFINITION-REF>
-                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/DiagResponse_Com</VALUE-REF>
-                    </ECUC-REFERENCE-VALUE>
-                    <ECUC-REFERENCE-VALUE>
-                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduSignalRef</DEFINITION-REF>
-                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Com/ComConfig/DiagResponse_ComSignal</VALUE-REF>
-                    </ECUC-REFERENCE-VALUE>
-                  </REFERENCE-VALUES>
-                  <SUB-CONTAINERS>
-                    <ECUC-CONTAINER-VALUE UUID="d90d4e5d-4560-42f8-ad19-edfa23058fea">
-                      <SHORT-NAME>ComTxIPdu</SHORT-NAME>
-                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu</DEFINITION-REF>
-                      <PARAMETER-VALUES>
-                        <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComMinimumDelayTime</DEFINITION-REF>
-                          <VALUE>0</VALUE>
-                        </ECUC-NUMERICAL-PARAM-VALUE>
-                        <ECUC-NUMERICAL-PARAM-VALUE>
-                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxIPduUnusedAreasDefault</DEFINITION-REF>
-                          <VALUE>0</VALUE>
-                        </ECUC-NUMERICAL-PARAM-VALUE>
-                      </PARAMETER-VALUES>
-                      <SUB-CONTAINERS>
-                        <ECUC-CONTAINER-VALUE UUID="33615ee8-07aa-4489-9226-ee7656177b7d">
-                          <SHORT-NAME>ComTxModeFalse</SHORT-NAME>
-                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeFalse</DEFINITION-REF>
-                          <SUB-CONTAINERS>
-                            <ECUC-CONTAINER-VALUE UUID="13ab6ece-26ec-4738-98d3-9714df4a58ac">
-                              <SHORT-NAME>ComTxMode</SHORT-NAME>
-                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeFalse/ComTxMode</DEFINITION-REF>
-                              <PARAMETER-VALUES>
-                                <ECUC-TEXTUAL-PARAM-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeFalse/ComTxMode/ComTxModeMode</DEFINITION-REF>
-                                  <VALUE>DIRECT</VALUE>
-                                </ECUC-TEXTUAL-PARAM-VALUE>
-                                <ECUC-NUMERICAL-PARAM-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeFalse/ComTxMode/ComTxModeNumberOfRepetitions</DEFINITION-REF>
-                                  <VALUE>0</VALUE>
-                                </ECUC-NUMERICAL-PARAM-VALUE>
-                              </PARAMETER-VALUES>
-                            </ECUC-CONTAINER-VALUE>
-                          </SUB-CONTAINERS>
-                        </ECUC-CONTAINER-VALUE>
-                        <ECUC-CONTAINER-VALUE UUID="b0fb092c-6c1d-42e3-a097-8e17a18d768c">
-                          <SHORT-NAME>ComTxModeTrue</SHORT-NAME>
-                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue</DEFINITION-REF>
-                          <SUB-CONTAINERS>
-                            <ECUC-CONTAINER-VALUE UUID="df74ee14-9486-4bd8-a487-c006a9e5d22f">
-                              <SHORT-NAME>ComTxMode</SHORT-NAME>
-                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue/ComTxMode</DEFINITION-REF>
-                              <PARAMETER-VALUES>
-                                <ECUC-TEXTUAL-PARAM-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue/ComTxMode/ComTxModeMode</DEFINITION-REF>
-                                  <VALUE>DIRECT</VALUE>
-                                </ECUC-TEXTUAL-PARAM-VALUE>
-                                <ECUC-NUMERICAL-PARAM-VALUE>
-                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComTxIPdu/ComTxModeTrue/ComTxMode/ComTxModeNumberOfRepetitions</DEFINITION-REF>
-                                  <VALUE>0</VALUE>
-                                </ECUC-NUMERICAL-PARAM-VALUE>
-                              </PARAMETER-VALUES>
-                            </ECUC-CONTAINER-VALUE>
-                          </SUB-CONTAINERS>
-                        </ECUC-CONTAINER-VALUE>
-                      </SUB-CONTAINERS>
-                    </ECUC-CONTAINER-VALUE>
-                  </SUB-CONTAINERS>
-                </ECUC-CONTAINER-VALUE>
-                <ECUC-CONTAINER-VALUE UUID="f4a4f0dc-eda4-4bf4-a31f-a8ef39f22ec7">
-                  <SHORT-NAME>DiagResponse_ComSignal</SHORT-NAME>
-                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComSignal</DEFINITION-REF>
-                  <PARAMETER-VALUES>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComBitPosition</DEFINITION-REF>
-                      <VALUE>0</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalEndianness</DEFINITION-REF>
-                      <VALUE>OPAQUE</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalInitValue</DEFINITION-REF>
-                      <VALUE>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalType</DEFINITION-REF>
-                      <VALUE>UINT8_N</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalAccess</DEFINITION-REF>
-                      <VALUE>ACCESS_UNCLEAR</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComHandleId</DEFINITION-REF>
-                      <VALUE>3</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalLength</DEFINITION-REF>
-                      <VALUE>4095</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComTransferProperty</DEFINITION-REF>
-                      <VALUE>TRIGGERED</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                  </PARAMETER-VALUES>
-                </ECUC-CONTAINER-VALUE>
-                <ECUC-CONTAINER-VALUE UUID="b1617510-eb39-45a8-8f43-c1bc29e41e81">
-                  <SHORT-NAME>DiagRequest</SHORT-NAME>
-                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComIPdu</DEFINITION-REF>
-                  <PARAMETER-VALUES>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduDirection</DEFINITION-REF>
-                      <VALUE>RECEIVE</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduHandleId</DEFINITION-REF>
-                      <VALUE>2</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduSignalProcessing</DEFINITION-REF>
-                      <VALUE>DEFERRED</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduType</DEFINITION-REF>
-                      <VALUE>TP</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduCancellationSupport</DEFINITION-REF>
-                      <VALUE>false</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                  </PARAMETER-VALUES>
-                  <REFERENCE-VALUES>
-                    <ECUC-REFERENCE-VALUE>
-                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComPduIdRef</DEFINITION-REF>
-                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/DiagRequest_Com</VALUE-REF>
-                    </ECUC-REFERENCE-VALUE>
-                    <ECUC-REFERENCE-VALUE>
-                      <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Com/ComConfig/ComIPdu/ComIPduSignalRef</DEFINITION-REF>
-                      <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Com/ComConfig/DiagRequest_ComSignal</VALUE-REF>
-                    </ECUC-REFERENCE-VALUE>
-                  </REFERENCE-VALUES>
-                </ECUC-CONTAINER-VALUE>
-                <ECUC-CONTAINER-VALUE UUID="92dd6494-dddc-442d-a9e4-314c57bd142b">
-                  <SHORT-NAME>DiagRequest_ComSignal</SHORT-NAME>
-                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComSignal</DEFINITION-REF>
-                  <PARAMETER-VALUES>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComBitPosition</DEFINITION-REF>
-                      <VALUE>0</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalEndianness</DEFINITION-REF>
-                      <VALUE>OPAQUE</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalInitValue</DEFINITION-REF>
-                      <VALUE>0</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalType</DEFINITION-REF>
-                      <VALUE>UINT8_DYN</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalAccess</DEFINITION-REF>
-                      <VALUE>ACCESS_UNCLEAR</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComHandleId</DEFINITION-REF>
-                      <VALUE>5</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-NUMERICAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalLength</DEFINITION-REF>
-                      <VALUE>4095</VALUE>
-                    </ECUC-NUMERICAL-PARAM-VALUE>
-                    <ECUC-TEXTUAL-PARAM-VALUE>
-                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComTransferProperty</DEFINITION-REF>
-                      <VALUE>PENDING</VALUE>
-                    </ECUC-TEXTUAL-PARAM-VALUE>
-                  </PARAMETER-VALUES>
                 </ECUC-CONTAINER-VALUE>
               </SUB-CONTAINERS>
             </ECUC-CONTAINER-VALUE>
@@ -1016,6 +829,10 @@
                   <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Com/ComGeneral/ComDescriptionRoutingCodeGeneration</DEFINITION-REF>
                   <VALUE>false</VALUE>
                 </ECUC-NUMERICAL-PARAM-VALUE>
+                <ECUC-TEXTUAL-PARAM-VALUE>
+                  <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/MICROSAR/Com/ComGeneral/ComUserCbkHeaderFile</DEFINITION-REF>
+                  <VALUE>Rte_Cbk.h</VALUE>
+                </ECUC-TEXTUAL-PARAM-VALUE>
               </PARAMETER-VALUES>
             </ECUC-CONTAINER-VALUE>
           </CONTAINERS>

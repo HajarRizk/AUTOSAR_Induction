@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: ComM_Cfg.h
- *   Generation Time: 2023-08-16 18:17:03
+ *   Generation Time: 2023-08-20 17:38:36
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -129,7 +129,7 @@
 
 #define COMM_FULL_COMM_REQUEST_NOTIF                    STD_OFF
 #define COMM_MAX_NUMBER_OF_USERS                        1u
-#define COMM_DCM_INDICATION                             STD_OFF
+#define COMM_DCM_INDICATION                             STD_ON
 
 #define COMM_SYNCHRONOUS_WAKE_UP                        STD_ON
 #define COMM_EXTENDED_RAM_CHECK                         STD_OFF
@@ -192,7 +192,7 @@
 #define COMM_USERREQFULLCOMENDIDXOFCHANNELPB                          STD_ON
 #define COMM_USERREQFULLCOMSTARTIDXOFCHANNELPB                        STD_ON
 #define COMM_USERREQFULLCOMUSEDOFCHANNELPB                            STD_ON
-#define COMM_DCMREQUESTACTIVE                                         STD_OFF  /**< Deactivateable: 'ComM_DcmRequestActive' Reason: 'Keep Awake Channel support or Dcm support is disabled' */
+#define COMM_DCMREQUESTACTIVE                                         STD_ON
 #define COMM_FINALMAGICNUMBER                                         STD_OFF  /**< Deactivateable: 'ComM_FinalMagicNumber' Reason: 'the module configuration does not support flashing of data.' */
 #define COMM_FULLCOMREQUESTERS                                        STD_OFF  /**< Deactivateable: 'ComM_FullComRequesters' Reason: 'Deactivated because no channel had ComMFullCommRequestNoficiation enabled' */
 #define COMM_INITDATAHASHCODE                                         STD_OFF  /**< Deactivateable: 'ComM_InitDataHashCode' Reason: 'the module configuration does not support flashing of data.' */
@@ -231,6 +231,7 @@
 #define COMM_PNCSIGNALVALUES                                          STD_OFF  /**< Deactivateable: 'ComM_PncSignalValues' Reason: 'the array is deactivated because the size is 0 in all variants and the piece of data is in the configuration class: PRE_COMPILE' */
 #define COMM_SIZEOFCHANNEL                                            STD_ON
 #define COMM_SIZEOFCHANNELPB                                          STD_ON
+#define COMM_SIZEOFDCMREQUESTACTIVE                                   STD_ON
 #define COMM_SIZEOFUSER                                               STD_ON
 #define COMM_SIZEOFUSERBYTEMASK                                       STD_ON
 #define COMM_SIZEOFUSERREQFULLCOM                                     STD_ON
@@ -258,10 +259,12 @@
 #define COMM_PCCONFIG                                                 STD_ON
 #define COMM_CHANNELOFPCCONFIG                                        STD_ON
 #define COMM_CHANNELPBOFPCCONFIG                                      STD_ON
+#define COMM_DCMREQUESTACTIVEOFPCCONFIG                               STD_ON
 #define COMM_FINALMAGICNUMBEROFPCCONFIG                               STD_OFF  /**< Deactivateable: 'ComM_PCConfig.FinalMagicNumber' Reason: 'the module configuration does not support flashing of data.' */
 #define COMM_INITDATAHASHCODEOFPCCONFIG                               STD_OFF  /**< Deactivateable: 'ComM_PCConfig.InitDataHashCode' Reason: 'the module configuration does not support flashing of data.' */
 #define COMM_SIZEOFCHANNELOFPCCONFIG                                  STD_ON
 #define COMM_SIZEOFCHANNELPBOFPCCONFIG                                STD_ON
+#define COMM_SIZEOFDCMREQUESTACTIVEOFPCCONFIG                         STD_ON
 #define COMM_SIZEOFUSERBYTEMASKOFPCCONFIG                             STD_ON
 #define COMM_SIZEOFUSEROFPCCONFIG                                     STD_ON
 #define COMM_SIZEOFUSERREQFULLCOMOFPCCONFIG                           STD_ON
@@ -356,6 +359,7 @@
 #define COMM_ISDEF_USERREQFULLCOMIDXOFUSERBYTEMASK                    STD_ON
 #define COMM_ISDEF_CHANNELOFPCCONFIG                                  STD_ON
 #define COMM_ISDEF_CHANNELPBOFPCCONFIG                                STD_ON
+#define COMM_ISDEF_DCMREQUESTACTIVEOFPCCONFIG                         STD_ON
 #define COMM_ISDEF_USERBYTEMASKOFPCCONFIG                             STD_ON
 #define COMM_ISDEF_USEROFPCCONFIG                                     STD_ON
 #define COMM_ISDEF_USERREQFULLCOMOFPCCONFIG                           STD_ON
@@ -386,6 +390,7 @@
 #define COMM_EQ2_USERREQFULLCOMIDXOFUSERBYTEMASK                      0u
 #define COMM_EQ2_CHANNELOFPCCONFIG                                    ComM_Channel
 #define COMM_EQ2_CHANNELPBOFPCCONFIG                                  ComM_ChannelPb
+#define COMM_EQ2_DCMREQUESTACTIVEOFPCCONFIG                           ComM_DcmRequestActive.raw
 #define COMM_EQ2_USERBYTEMASKOFPCCONFIG                               ComM_UserByteMask
 #define COMM_EQ2_USEROFPCCONFIG                                       ComM_User
 #define COMM_EQ2_USERREQFULLCOMOFPCCONFIG                             ComM_UserReqFullCom
@@ -464,6 +469,18 @@ typedef uint8_least ComM_UserReqFullComIterType;
 */ 
 
 /** 
+  \defgroup  ComMPCIterableTypesWithSizeRelations  ComM Iterable Types With Size Relations (PRE_COMPILE)
+  \brief  These type definitions are used to iterate over a VAR based array with the same iterator as the related CONST array.
+  \{
+*/ 
+/**   \brief  type used to iterate ComM_DcmRequestActive */
+typedef ComM_ChannelIterType ComM_DcmRequestActiveIterType;
+
+/** 
+  \}
+*/ 
+
+/** 
   \defgroup  ComMPCValueTypes  ComM Value Types (PRE_COMPILE)
   \brief  These type definitions are used for value based data representations.
   \{
@@ -489,11 +506,17 @@ typedef uint8 ComM_UserReqFullComStartIdxOfChannelPbType;
 /**   \brief  value based type definition for ComM_UserReqFullComUsedOfChannelPb */
 typedef boolean ComM_UserReqFullComUsedOfChannelPbType;
 
+/**   \brief  value based type definition for ComM_DcmRequestActive */
+typedef boolean ComM_DcmRequestActiveType;
+
 /**   \brief  value based type definition for ComM_SizeOfChannel */
 typedef uint8 ComM_SizeOfChannelType;
 
 /**   \brief  value based type definition for ComM_SizeOfChannelPb */
 typedef uint8 ComM_SizeOfChannelPbType;
+
+/**   \brief  value based type definition for ComM_SizeOfDcmRequestActive */
+typedef uint8 ComM_SizeOfDcmRequestActiveType;
 
 /**   \brief  value based type definition for ComM_SizeOfUser */
 typedef uint8 ComM_SizeOfUserType;
@@ -573,6 +596,37 @@ typedef struct sComM_UserByteMaskType
 */ 
 
 /** 
+  \defgroup  ComMPCSymbolicStructTypes  ComM Symbolic Struct Types (PRE_COMPILE)
+  \brief  These structs are used in unions to have a symbol based data representation style.
+  \{
+*/ 
+/**   \brief  type to be used as symbolic data element access to ComM_DcmRequestActive */
+typedef struct ComM_DcmRequestActiveStructSTag
+{
+  ComM_DcmRequestActiveType ComMChannel_0;
+} ComM_DcmRequestActiveStructSType;
+
+/** 
+  \}
+*/ 
+
+/** 
+  \defgroup  ComMPCUnionIndexAndSymbolTypes  ComM Union Index And Symbol Types (PRE_COMPILE)
+  \brief  These unions are used to access arrays in an index and symbol based style.
+  \{
+*/ 
+/**   \brief  type to access ComM_DcmRequestActive in an index and symbol based style. */
+typedef union ComM_DcmRequestActiveUTag
+{  /* PRQA S 0750 */  /* MD_CSL_Union */
+  ComM_DcmRequestActiveType raw[1];
+  ComM_DcmRequestActiveStructSType str;
+} ComM_DcmRequestActiveUType;
+
+/** 
+  \}
+*/ 
+
+/** 
   \defgroup  ComMPCRootPointerTypes  ComM Root Pointer Types (PRE_COMPILE)
   \brief  These type definitions are used to point from the config root to symbol instances.
   \{
@@ -582,6 +636,9 @@ typedef P2CONST(ComM_ChannelType, TYPEDEF, COMM_CONST) ComM_ChannelPtrType;
 
 /**   \brief  type used to point to ComM_ChannelPb */
 typedef P2CONST(ComM_ChannelPbType, TYPEDEF, COMM_CONST) ComM_ChannelPbPtrType;
+
+/**   \brief  type used to point to ComM_DcmRequestActive */
+typedef P2VAR(ComM_DcmRequestActiveType, TYPEDEF, COMM_VAR_NOINIT) ComM_DcmRequestActivePtrType;
 
 /**   \brief  type used to point to ComM_User */
 typedef P2CONST(ComM_UserType, TYPEDEF, COMM_CONST) ComM_UserPtrType;

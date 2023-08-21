@@ -1,0 +1,195 @@
+/**********************************************************************************************************************
+ *  FILE REQUIRES USER MODIFICATIONS
+ *  Template Scope: sections marked with Start and End comments
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  This file includes template code that must be completed and/or adapted during BSW integration.
+ *  The template code is incomplete and only intended for providing a signature and an empty implementation.
+ *  It is neither intended nor qualified for use in series production without applying suitable quality measures.
+ *  The template code must be completed as described in the instructions given within this file and/or in the.
+ *  Technical Reference..
+ *  The completed implementation must be tested with diligent care and must comply with all quality requirements which.
+ *  are necessary according to the state of the art before its use..
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *             File:  CounterSWC.c
+ *           Config:  D:/Repositories/Training_Repo/AUTOSAR_Induction/AUTOSAR_Induction.dpa
+ *        SW-C Type:  CounterSWC
+ *  Generation Time:  2023-08-20 17:56:39
+ *
+ *        Generator:  MICROSAR RTE Generator Version 4.20.0
+ *                    RTE Core Version 1.20.0
+ *          License:  CBD1800285
+ *
+ *      Description:  C-Code implementation template for SW-C <CounterSWC>
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of version logging area >>                DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+/* PRQA S 0777, 0779 EOF */ /* MD_MSR_5.1_777, MD_MSR_5.1_779 */
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of version logging area >>                  DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+#include "Rte_CounterSWC.h" /* PRQA S 0857 */ /* MD_MSR_1.1_857 */
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of include and declaration area >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of include and declaration area >>          DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *
+ * Used AUTOSAR Data Types
+ *
+ **********************************************************************************************************************
+ *
+ * Primitive Types:
+ * ================
+ * uint16: Integer in interval [0...65535] (standard type)
+ *
+ *********************************************************************************************************************/
+
+
+#define CounterSWC_START_SEC_CODE
+#include "CounterSWC_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ *
+ * Runnable Entity Name: CounterMainFunction
+ *
+ *---------------------------------------------------------------------------------------------------------------------
+ *
+ * Executed if at least one of the following trigger conditions occurred:
+ *   - triggered on TimingEvent every 25ms
+ *
+ **********************************************************************************************************************
+ *
+ * Output Interfaces:
+ * ==================
+ *   Explicit S/R API:
+ *   -----------------
+ *   Std_ReturnType Rte_Write_CounterSignalPI_Tx_Element(uint16 data)
+ *
+ * Inter Runnable Variables:
+ * =========================
+ *   Explicit Read Access:
+ *   ---------------------
+ *   uint16 Rte_IrvRead_CounterMainFunction_CounterValueIRV(void)
+ *
+ *   Explicit Write Access:
+ *   ----------------------
+ *   void Rte_IrvWrite_CounterMainFunction_CounterValueIRV(uint16 data)
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of documentation area >>                  DO NOT CHANGE THIS COMMENT!
+ * Symbol: CounterMainFunction_doc
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of documentation area >>                    DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+FUNC(void, CounterSWC_CODE) CounterMainFunction(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
+{
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
+ * Symbol: CounterMainFunction
+ *********************************************************************************************************************/
+
+uint16 u16CounterValue = 0;
+u16CounterValue = Rte_IrvRead_CounterMainFunction_CounterValueIRV();
+u16CounterValue++;
+Rte_Write_CounterSignalPI_Tx_Element(u16CounterValue);
+Rte_IrvWrite_CounterMainFunction_CounterValueIRV(u16CounterValue);
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+}
+
+/**********************************************************************************************************************
+ *
+ * Runnable Entity Name: CounterRecieveSignal
+ *
+ *---------------------------------------------------------------------------------------------------------------------
+ *
+ * Executed if at least one of the following trigger conditions occurred:
+ *   - triggered on DataReceivedEvent for DataElementPrototype <Element> of PortPrototype <CounterSignalPI_Rx>
+ *
+ **********************************************************************************************************************
+ *
+ * Input Interfaces:
+ * =================
+ *   Explicit S/R API:
+ *   -----------------
+ *   Std_ReturnType Rte_Read_CounterSignalPI_Rx_Element(uint16 *data)
+ *
+ * Inter Runnable Variables:
+ * =========================
+ *   Explicit Write Access:
+ *   ----------------------
+ *   void Rte_IrvWrite_CounterRecieveSignal_CounterValueIRV(uint16 data)
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of documentation area >>                  DO NOT CHANGE THIS COMMENT!
+ * Symbol: CounterRecieveSignal_doc
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of documentation area >>                    DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+FUNC(void, CounterSWC_CODE) CounterRecieveSignal(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
+{
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
+ * Symbol: CounterRecieveSignal
+ *********************************************************************************************************************/
+
+uint16 u16counterValue = 0;
+Rte_Read_CounterSignalPI_Rx_Element(&u16counterValue);
+Rte_IrvWrite_CounterRecieveSignal_CounterValueIRV(u16counterValue);
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+}
+
+
+#define CounterSWC_STOP_SEC_CODE
+#include "CounterSWC_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of function definition area >>            DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of function definition area >>              DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of removed code area >>                   DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of removed code area >>                     DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/

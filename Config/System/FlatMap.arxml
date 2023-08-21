@@ -30,6 +30,24 @@
                                   </SDG>
                                 </SDGS>
                               </ADMIN-DATA>
+                              <INSTANCES>
+                                <FLAT-INSTANCE-DESCRIPTOR UUID="96250e1d-23df-4b9d-bc99-452fe02dff96">
+                                  <SHORT-NAME>CounterSWC</SHORT-NAME>
+                                  <ANNOTATIONS>
+                                    <ANNOTATION>
+                                      <ANNOTATION-ORIGIN>DV:Flattener</ANNOTATION-ORIGIN>
+                                    </ANNOTATION>
+                                  </ANNOTATIONS>
+                                  <UPSTREAM-REFERENCE-IREF>
+                                    <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/VectorAutosarExplorerGeneratedObjects/SYSTEM/System/EcuSwComposition</CONTEXT-ELEMENT-REF>
+                                    <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/CounterSWC</TARGET-REF>
+                                  </UPSTREAM-REFERENCE-IREF>
+                                  <ECU-EXTRACT-REFERENCE-IREF>
+                                    <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/SYSTEM/COMPOSITIONTYPE</CONTEXT-ELEMENT-REF>
+                                    <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/COM/VECTOR/CFG/WORKFLOW/SYSDESC/SYNC/COMPOSITIONTYPE/CounterSWC</TARGET-REF>
+                                  </ECU-EXTRACT-REFERENCE-IREF>
+                                </FLAT-INSTANCE-DESCRIPTOR>
+                              </INSTANCES>
                             </FLAT-MAP>
                           </ELEMENTS>
                         </AR-PACKAGE>

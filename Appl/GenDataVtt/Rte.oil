@@ -28,6 +28,14 @@
  * They are presented as a comment in the corresponding object definition containing a list of all legal values.
  *********************************************************************************************************************/
 
+   TASK OnEventTask {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 0:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
    TASK PeriodicTask {
       ACTIVATION = 1:"@RO@";
       PRIORITY = 0:"@RO@";

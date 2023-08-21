@@ -53,6 +53,7 @@ uint8 InitializeComStack()
 
   InitializeCanIf();
 
+BswM_Init(NULL_PTR);
 (void)CanSM_Init(CanSM_Config_Ptr);
   
   Com_Init(Com_Config_Ptr);
@@ -76,6 +77,9 @@ uint8 InitializeComStack()
   }
 
   CanIf_ControllerModeIndication(0, CANIF_CS_STARTED);
+  ComM_CommunicationAllowed(0, TRUE);
+  (void)ComM_RequestComMode(0, COMM_FULL_COMMUNICATION);
+
 
   retVal = CanIf_SetPduMode(0, CANIF_SET_ONLINE);
 

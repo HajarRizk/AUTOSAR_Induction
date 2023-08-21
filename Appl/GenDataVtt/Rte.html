@@ -118,11 +118,15 @@ Contents
 <H2><A NAME="refGeneratedFiles"><FONT SIZE=5 FACE="Verdana, Arial, Helvetica">2 Generated Files</FONT></A></H2>
 Rte_BswM.h<br>
 Rte_ComM.h<br>
+Rte_CounterSWC.h<br>
+Rte_Dcm.h<br>
 Rte_Det.h<br>
 Rte_EcuM.h<br>
 Rte_Os_OsCore0_swc.h<br>
 Rte_BswM_Type.h<br>
 Rte_ComM_Type.h<br>
+Rte_CounterSWC_Type.h<br>
+Rte_Dcm_Type.h<br>
 Rte_Det_Type.h<br>
 Rte_EcuM_Type.h<br>
 Rte_Os_OsCore0_swc_Type.h<br>
@@ -135,26 +139,20 @@ Rte_VttHook.h<br>
 Rte_Cfg.h<br>
 Rte.h<br>
 Rte_Cbk.h<br>
-ComXf_Compiler_Cfg.h<br>
-ComXf_MemMap.h<br>
-ComXf.h<br>
 Rte_MemMap.h<br>
 BswM_MemMap.h<br>
 ComM_MemMap.h<br>
+CounterSWC_MemMap.h<br>
+Dcm_MemMap.h<br>
 Det_MemMap.h<br>
 EcuM_MemMap.h<br>
 Os_OsCore0_swc_MemMap.h<br>
 Rte_Compiler_Cfg.h<br>
 Rte.c<br>
-ComXf.c<br>
 Rte_cfg.mak<br>
 Rte_check.mak<br>
 Rte_defs.mak<br>
 Rte_rules.mak<br>
-ComXf_cfg.mak<br>
-ComXf_check.mak<br>
-ComXf_defs.mak<br>
-ComXf_rules.mak<br>
 SchM_BswM.h<br>
 SchM_Can.h<br>
 SchM_CanIf.h<br>
@@ -163,6 +161,7 @@ SchM_CanTp.h<br>
 SchM_Com.h<br>
 SchM_ComM.h<br>
 SchM_ComXf.h<br>
+SchM_Dcm.h<br>
 SchM_Det.h<br>
 SchM_EcuM.h<br>
 SchM_Mcu.h<br>
@@ -175,6 +174,7 @@ SchM_CanTp_Type.h<br>
 SchM_Com_Type.h<br>
 SchM_ComM_Type.h<br>
 SchM_ComXf_Type.h<br>
+SchM_Dcm_Type.h<br>
 SchM_Det_Type.h<br>
 SchM_EcuM_Type.h<br>
 SchM_Mcu_Type.h<br>
@@ -188,7 +188,7 @@ Rte_Needs.ecuc.arxml<br>
 Note: This resource usage calculation assumes that the "Boolean" data type is based on uint8 base type.<br>
       Further on padding bytes for structs are not considered, which depends on the compiler settings.<br>
 <br>
-RAM   Size: 2 Bytes<br>
+RAM   Size: 4 Bytes<br>
 CONST Size: 0 Bytes<br>
 <br>
 <P ALIGN=LEFT>
@@ -200,6 +200,12 @@ CONST Size: 0 Bytes<br>
 <TD><B>Type</B></TD>
 <TD><B>Schedule</B></TD>
 <TD><B>Priority</B></TD>
+</TR>
+<TR>
+<TD>OnEventTask</TD>
+<TD>Basic</TD>
+<TD>FULL</TD>
+<TD>0</TD>
 </TR>
 <TR>
 <TD>PeriodicTask</TD>
@@ -306,6 +312,102 @@ CONST Size: 0 Bytes<br>
 <TR>
 <TD><B>OperationInvokedEvent</B> ComM::modeLimitation::SetECUGroupClassification</TD>
 <TD>SetECUGroupClassification</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 25ms</TD>
+<TD>CounterMainFunction</TD>
+<TD>PeriodicTask</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>DataReceivedEvent</B> CounterSWC::CounterSignalPI_Rx::Element</TD>
+<TD>CounterRecieveSignal</TD>
+<TD>OnEventTask</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::DataServices_Counter::ReadData</TD>
+<TD>DataServices_Counter_ReadData</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::DataServices_Counter::WriteData</TD>
+<TD>DataServices_Counter_WriteData</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::DataServices_DcmDspData_CountersValue::ReadData</TD>
+<TD>DataServices_DcmDspData_CountersValue_ReadData</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::RoutineServices_Counter::RequestResults</TD>
+<TD>RoutineServices_Counter_RequestResults</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::RoutineServices_Counter::Start</TD>
+<TD>RoutineServices_Counter_Start</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> CounterSWC::RoutineServices_Counter::Stop</TD>
+<TD>RoutineServices_Counter_Stop</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 10ms</TD>
+<TD>Dcm_MainFunction</TD>
+<TD>PeriodicTask</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> Dcm::DCMServices::GetActiveProtocol</TD>
+<TD>GetActiveProtocol</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> Dcm::DCMServices::GetRequestKind</TD>
+<TD>GetRequestKind</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> Dcm::DCMServices::GetSesCtrlType</TD>
+<TD>GetSesCtrlType</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> Dcm::DCMServices::ResetToDefaultSession</TD>
+<TD>ResetToDefaultSession</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> Dcm::DCMServices::SetActiveDiagnostic</TD>
+<TD>SetActiveDiagnostic</TD>
 <TD>n/a</TD>
 <TD>n/a</TD>
 <TD>n/a</TD>
@@ -446,6 +548,12 @@ CONST Size: 0 Bytes<br>
 <TR>
 <TD><B>TimingEvent</B> Cyclic 20ms</TD>
 <TD>ComM_MainFunction_0</TD>
+<TD>PeriodicTask</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 10ms</TD>
+<TD>Dcm_MainFunction</TD>
 <TD>PeriodicTask</TD>
 <TD>n/a</TD>
 </TR>

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_MemMap.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -104,6 +104,34 @@
 # undef OS_OS_COREINITHOOK_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
 
 # undef OS_STOP_SEC_OS_COREINITHOOK_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+#endif
+
+#ifdef OS_START_SEC_OnEventTask_CODE
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OnEventTask_CODE_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+# undef OS_START_SEC_OnEventTask_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
+#endif
+
+#ifdef OS_STOP_SEC_OnEventTask_CODE
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+# ifndef OS_OnEventTask_CODE_OPEN
+#  error Section OS_OnEventTask_CODE is currently not opened and so cannot be closed.
+# endif
+# undef OS_OnEventTask_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_Undef */
+
+# undef OS_STOP_SEC_OnEventTask_CODE /* PRQA S 0841 */ /* MD_MSR_Undef */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_Undef */
 #endif
 

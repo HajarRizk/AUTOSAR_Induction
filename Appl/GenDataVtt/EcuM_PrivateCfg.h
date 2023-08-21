@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: EcuM_PrivateCfg.h
- *   Generation Time: 2023-08-20 14:13:55
+ *   Generation Time: 2023-08-21 18:39:24
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -92,8 +92,8 @@
 #define EcuM_GetDefaultShutdownModeOfPCConfig()                       0u  /**< Default Shutdown Mode - Depending on target it its either a Sleep Mode or Reset Mode. */
 #define EcuM_GetDefaultShutdownTargetOfPCConfig()                     ECUM_STATE_OFF  /**< Default Shutdown Target */
 #define EcuM_GetDriverInitOneOfPCConfig()                             EcuM_DriverInitOne  /**< the pointer to EcuM_DriverInitOne */
-#define EcuM_GetEcuM_CRCHash_LowerOfPCConfig()                        0xF4DAD95Du
-#define EcuM_GetEcuM_CRCHash_UpperOfPCConfig()                        0xF06E6702u
+#define EcuM_GetEcuM_CRCHash_LowerOfPCConfig()                        0x03228F68u
+#define EcuM_GetEcuM_CRCHash_UpperOfPCConfig()                        0xD9CC75F4u
 #define EcuM_GetGeneratorCompatibilityVersionOfPCConfig()             2560u
 #define EcuM_GetMaxWakeupSourceCountOfPCConfig()                      6u  /**< Max Wakeup source count. */
 #define EcuM_GetModuleStateOfPCConfig()                               (&(EcuM_ModuleState))  /**< the pointer to EcuM_ModuleState */

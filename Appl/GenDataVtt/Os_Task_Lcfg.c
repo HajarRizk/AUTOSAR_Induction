@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Task_Lcfg.c
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -99,6 +99,9 @@
 /*! Dynamic task data: InitTask */
 OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_InitTask_Dyn;
 
+/*! Dynamic task data: OnEventTask */
+OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_OnEventTask_Dyn;
+
 /*! Dynamic task data: PeriodicTask */
 OS_LOCAL VAR(Os_TaskType, OS_VAR_NOINIT) OsCfg_Task_PeriodicTask_Dyn;
 
@@ -149,6 +152,38 @@ CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_InitTask =
   /* .StackSharing          = */ OS_TASKSCHEDULE_ALLOWED
 };
 
+/*! Task configuration data: OnEventTask */
+CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OnEventTask =
+{
+  /* .Thread                = */
+  {
+    /* .ContextConfig         = */ &OsCfg_Hal_Context_OnEventTask,
+    /* .Context               = */ &OsCfg_Hal_Context_OnEventTask_Dyn,
+    /* .Stack                 = */ &OsCfg_Stack_OsCore0_Task_Prio0,
+    /* .Dyn                   = */ OS_TASK_CASTDYN_TASK_2_THREAD(OsCfg_Task_OnEventTask_Dyn),
+    /* .OwnerApplication      = */ &OsCfg_App_SystemApplication_OsCore0,
+    /* .Core                  = */ &OsCfg_Core_OsCore0,
+    /* .IntApiState           = */ &OsCfg_Core_OsCore0_Dyn.IntApiState,
+    /* .TimeProtConfig        = */ NULL_PTR,
+    /* .MpAccessRightsInitial = */ NULL_PTR,
+    /* .AccessRights          = */ &OsCfg_AccessCheck_NoAccess,
+    /* .Trace                 = */ NULL_PTR,
+    /* .FpuContext            = */ NULL_PTR,
+    /* .InitialCallContext    = */ OS_CALLCONTEXT_TASK,
+    /* .PreThreadHook         = */ &Os_TaskCallPreTaskHook,
+    /* .InitDuringStartUp     = */ TRUE,
+    /* .UsesFpu               = */ FALSE
+  },
+  /* .HomePriority          = */ (Os_TaskPrioType)0uL,
+  /* .TaskId                = */ OnEventTask,
+  /* .RunningPriority       = */ (Os_TaskPrioType)0uL,
+  /* .MaxActivations        = */ (Os_ActivationCntType)1uL,
+  /* .AutostartModes        = */ OS_APPMODE_NONE,
+  /* .AccessingApplications = */ OS_APPID2MASK(SystemApplication_OsCore0),
+  /* .IsExtended            = */ (boolean)FALSE,
+  /* .StackSharing          = */ OS_TASKSCHEDULE_ALLOWED
+};
+
 /*! Task configuration data: PeriodicTask */
 CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_PeriodicTask =
 {
@@ -192,6 +227,7 @@ CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_PeriodicTask =
 CONSTP2CONST(Os_TaskConfigType, OS_CONST, OS_CONST) OsCfg_TaskRefs[OS_TASKID_COUNT + 1] =   /* PRQA S 4521 */ /* MD_Os_Rule10.1_4521 */
 {
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_InitTask),
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OnEventTask),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_PeriodicTask),
   NULL_PTR
 };

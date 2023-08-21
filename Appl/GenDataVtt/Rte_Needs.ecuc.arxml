@@ -5,6 +5,42 @@
             <SHORT-NAME>DaVinci_Project</SHORT-NAME>
             <ELEMENTS>
                 <ECUC-MODULE-CONFIGURATION-VALUES>
+                    <SHORT-NAME>Com</SHORT-NAME>
+                    <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Com</DEFINITION-REF>
+                    <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>ComConfig</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>ACCompPow_b4e01f19_Tx</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComSignal</DEFINITION-REF>
+                                    <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalType</DEFINITION-REF>
+                                            <VALUE>UINT16</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                    </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>AC_UC_AirCirc_e0001df6_Rx</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Com/ComConfig/ComSignal</DEFINITION-REF>
+                                    <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-FUNCTION-NAME-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComNotification</DEFINITION-REF>
+                                            <VALUE>Rte_COMCbk_AC_UC_AirCirc_e0001df6_Rx</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                            <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Com/ComConfig/ComSignal/ComSignalType</DEFINITION-REF>
+                                            <VALUE>UINT16</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                    </PARAMETER-VALUES>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                    </CONTAINERS>
+                </ECUC-MODULE-CONFIGURATION-VALUES>
+                <ECUC-MODULE-CONFIGURATION-VALUES>
                     <SHORT-NAME>Rte</SHORT-NAME>
                     <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Rte</DEFINITION-REF>
                     <CONTAINERS>
@@ -97,6 +133,16 @@
                             </SUB-CONTAINERS>
                         </ECUC-CONTAINER-VALUE>
                         <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Dcm</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>Dcm_MainFunctionTimingEvent0</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance/RteBswEventToTaskMapping</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
                             <SHORT-NAME>Det</SHORT-NAME>
                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteBswModuleInstance</DEFINITION-REF>
                             <SUB-CONTAINERS>
@@ -136,6 +182,30 @@
                             <SUB-CONTAINERS>
                                 <ECUC-CONTAINER-VALUE>
                                     <SHORT-NAME>Timer_ComM_MainFunction_0</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>CounterSWC_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>TMT_CounterMainFunction</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>DRT_CounterRecieveSignal_CounterSignalPI_Rx_Element</SHORT-NAME>
+                                    <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
+                                </ECUC-CONTAINER-VALUE>
+                            </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>Dcm_EcuSwComposition</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance</DEFINITION-REF>
+                            <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                    <SHORT-NAME>Timer_Dcm_MainFunction</SHORT-NAME>
                                     <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Rte/RteSwComponentInstance/RteEventToTaskMapping</DEFINITION-REF>
                                 </ECUC-CONTAINER-VALUE>
                             </SUB-CONTAINERS>
@@ -200,6 +270,26 @@
                     <SHORT-NAME>Os</SHORT-NAME>
                     <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Os</DEFINITION-REF>
                     <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                            <SHORT-NAME>OnEventTask</SHORT-NAME>
+                            <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsTask</DEFINITION-REF>
+                            <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskActivation</DEFINITION-REF>
+                                    <VALUE>1</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskPriority</DEFINITION-REF>
+                                    <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                    <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Os/OsTask/OsTaskSchedule</DEFINITION-REF>
+                                    <VALUE>FULL</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                            </PARAMETER-VALUES>
+                            <REFERENCE-VALUES>
+                            </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
                         <ECUC-CONTAINER-VALUE>
                             <SHORT-NAME>PeriodicTask</SHORT-NAME>
                             <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Os/OsTask</DEFINITION-REF>

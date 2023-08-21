@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Context_Lcfg.c
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -103,6 +103,9 @@ VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_ErrorHook_OsCore0_Dyn;
 
 /*! HAL dynamic task context data: InitTask */
 VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_InitTask_Dyn;
+
+/*! HAL dynamic task context data: OnEventTask */
+VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_OnEventTask_Dyn;
 
 /*! HAL dynamic task context data: PeriodicTask */
 VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_PeriodicTask_Dyn;
@@ -187,6 +190,29 @@ CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_InitTask =
   /* ReturnAddress =     */ (Os_Hal_ContextReturnCBType) Os_TaskMissingTerminateTask,
   /* IntLockLevel =      */ 0,
   /* Stack =             */ &OsCfg_Stack_OsCore0_Task_Prio4294967295
+}
+;
+
+/*! HAL task context configuration data: OnEventTask */
+CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_OnEventTask =
+{
+  /* Type =              */ Os_Hal_ContextConfigType_Task,
+  /* CANoeTask           */
+  {
+    /* Name =              */ "OnEventTask",
+    /* Id =                */ CANoeTaskId_OnEventTask,
+    /* Main =              */ Os_Hal_EntryExecuteThread
+  },
+  /* CANoeIsrHost        */
+  {
+    /* Name =              */ "OnEventTask_IsrHost",
+    /* Id =                */ CANoeTaskId_OnEventTask_IsrHost,
+    /* Main =              */ &Os_Hal_EntryIsrRun
+  },  
+  /* Entry =             */ (Os_Hal_ContextEntryCBType)  Os_Task_OnEventTask,                              /* PRQA S 0313 */ /* MD_Os_Hal_Rule11.1_0313 */
+  /* ReturnAddress =     */ (Os_Hal_ContextReturnCBType) Os_TaskMissingTerminateTask,
+  /* IntLockLevel =      */ 0,
+  /* Stack =             */ &OsCfg_Stack_OsCore0_Task_Prio0
 }
 ;
 

@@ -25,8 +25,17 @@
 #ifndef _RTE_CBK_H
 # define _RTE_CBK_H
 
+# include "Com.h"
+
+
 # define RTE_START_SEC_CODE
 # include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ * COM Callbacks for Rx Indication
+ *********************************************************************************************************************/
+
+FUNC(void, RTE_CODE) Rte_COMCbk_AC_UC_AirCirc_e0001df6_Rx(void); /* PRQA S 0850 */ /* MD_MSR_19.8 */
 
 # define RTE_STOP_SEC_CODE
 # include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

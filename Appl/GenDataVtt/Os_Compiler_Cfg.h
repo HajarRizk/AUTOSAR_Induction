@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Compiler_Cfg.h
- *   Generation Time: 2023-08-16 18:19:55
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -48,6 +48,7 @@
  *  OS USER CALLOUT CODE SECTIONS
  *********************************************************************************************************************/
 
+# define OS_ONEVENTTASK_CODE
 # define OS_PERIODICTASK_CODE
 
 

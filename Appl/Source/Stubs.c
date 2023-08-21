@@ -12,6 +12,7 @@
 #include "EcuM.h"
 #include "Rte_Main.h"
 #include "CanSM_Cfg.h"
+#include "Dcm.h"
 
 /*------------------------------------------------------------------*/
 /*---------------------------- InitTask ----------------------------*/
@@ -31,6 +32,8 @@ TASK(InitTask)
   #endif
 }
 
+
+
 /*------------------------------------------------------------------*/
 /*---------------------------- Os APIs. ----------------------------*/
 /*------------------------------------------------------------------*/
@@ -46,6 +49,12 @@ void CANoeEmuProcessor_SetTaskToRunAndEnableInterrupts(sint32 taskNr)
 {
 	Os_Hal_CoreId2CurrentContext[0]->Config->Entry(FALSE);
 }
+
+FUNC(void, DCM_CALLOUT_CODE) Dcm_Confirmation(Dcm_IdContextType idContext
+                                             ,PduIdType dcmRxPduId
+                                             ,Dcm_ConfirmationStatusType status)
+
+{}
 
 /*------------------------------------------------------------------*/
 /*---------------------- Communication APIs. -----------------------*/

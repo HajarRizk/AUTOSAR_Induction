@@ -16,6 +16,7 @@ int main( int argc, const char* argv[] )
   //Os_Init();    /* Init only OS Apis */
 
   EcuM_Init();    /* start OS never returns */
+  Dcm_Init();
 
   if (E_OK != InitializeComStack())
   {
@@ -38,12 +39,12 @@ int main( int argc, const char* argv[] )
     {
       printf("current secs: %ld\n", curr_ns - prev_ns);
 
-      Com_SendSignal(ComConf_ComSignal_DiagResponse_ComSignal, data);
+      //Com_SendSignal(ComConf_ComSignal_DiagResponse_ComSignal, data);
       //Com_TriggerIPDUSend(1);
       //Com_MainFunctionTx();
-      Com_ReceiveSignal(0, recieved_data);
-      Com_ReceiveSignal(1, recieved_data);
-      Com_ReceiveSignal(2, recieved_data);
+      //Com_ReceiveSignal(0, recieved_data);
+      //Com_ReceiveSignal(1, recieved_data);
+      //Com_ReceiveSignal(2, recieved_data);
 
       Os_Task_PeriodicTask();
       prev_ns = curr_ns;

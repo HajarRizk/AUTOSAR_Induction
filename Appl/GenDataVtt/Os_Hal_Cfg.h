@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Cfg.h
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -81,16 +81,19 @@ typedef enum
   CANoeTaskId_InitTask = 1,
   CANoeTaskId_InitTask_IsrHost = 2,
 
-  CANoeTaskId_PeriodicTask = 3,
-  CANoeTaskId_PeriodicTask_IsrHost = 4,
+  CANoeTaskId_OnEventTask = 3,
+  CANoeTaskId_OnEventTask_IsrHost = 4,
 
-  CANoeTaskId_Os_CoreInitHook_OsCore0 = 5,
-  CANoeTaskId_Os_CoreInitHook_OsCore0_IsrHost = 6,
+  CANoeTaskId_PeriodicTask = 5,
+  CANoeTaskId_PeriodicTask_IsrHost = 6,
 
-  CANoeTaskId_ErrorHook_OsCore0 = 7,
-  CANoeTaskId_ErrorHook_OsCore0_IsrHost = 8,
+  CANoeTaskId_Os_CoreInitHook_OsCore0 = 7,
+  CANoeTaskId_Os_CoreInitHook_OsCore0_IsrHost = 8,
 
-  OS_CANOE_OsCore0_TASK_COUNT = 9     /* PRQA S 0647 */ /* MD_Os_Hal_Dir1.1_0647 */
+  CANoeTaskId_ErrorHook_OsCore0 = 9,
+  CANoeTaskId_ErrorHook_OsCore0_IsrHost = 10,
+
+  OS_CANOE_OsCore0_TASK_COUNT = 11     /* PRQA S 0647 */ /* MD_Os_Hal_Dir1.1_0647 */
   
 } CANoeTaskIdType;                                                                                                      
 

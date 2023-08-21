@@ -2,25 +2,6 @@
 <!--This file was saved with a tool from Vector Informatik GmbH-->
 <AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <AR-PACKAGES>
-    <AR-PACKAGE UUID="5912DEC8-44BF-4AC1-87EC-F301570AB7C7">
-      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
-      <ELEMENTS>
-        <COMPOSITION-SW-COMPONENT-TYPE UUID="26A46B5C-C6E6-4E35-B7A4-9761DF6F44C7">
-          <SHORT-NAME>ECU_Composition</SHORT-NAME>
-        </COMPOSITION-SW-COMPONENT-TYPE>
-      </ELEMENTS>
-    </AR-PACKAGE>
-    <AR-PACKAGE UUID="2873CA95-8AC8-4944-A8B7-C353FB92751D">
-      <SHORT-NAME>EndToEndProtections</SHORT-NAME>
-      <ELEMENTS>
-        <END-TO-END-PROTECTION-SET UUID="589EBCA8-EC1B-40BA-AE18-78B914D5B115">
-          <SHORT-NAME>EndToEndProtectionSet</SHORT-NAME>
-        </END-TO-END-PROTECTION-SET>
-      </ELEMENTS>
-    </AR-PACKAGE>
-    <AR-PACKAGE UUID="43DE5A64-D3A5-40C5-83F9-419F2ABCCD8B">
-      <SHORT-NAME>Systems</SHORT-NAME>
-    </AR-PACKAGE>
     <AR-PACKAGE UUID="F67AE006-7BE7-4E4D-B9B6-9D1982E4ECD9">
       <SHORT-NAME>VectorAutosarExplorerGeneratedObjects</SHORT-NAME>
       <AR-PACKAGES>
@@ -39,6 +20,38 @@
           </ELEMENTS>
         </AR-PACKAGE>
       </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="5912DEC8-44BF-4AC1-87EC-F301570AB7C7">
+      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="26A46B5C-C6E6-4E35-B7A4-9761DF6F44C7">
+          <SHORT-NAME>ECU_Composition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE UUID="E82382B4-B2CC-471B-9B94-0334A5704C74">
+              <SHORT-NAME>CounterSWC</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DV:DEV">
+                    <SD GID="DV:ImportModePreset">Keep</SD>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/CounterSWC</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="2873CA95-8AC8-4944-A8B7-C353FB92751D">
+      <SHORT-NAME>EndToEndProtections</SHORT-NAME>
+      <ELEMENTS>
+        <END-TO-END-PROTECTION-SET UUID="589EBCA8-EC1B-40BA-AE18-78B914D5B115">
+          <SHORT-NAME>EndToEndProtectionSet</SHORT-NAME>
+        </END-TO-END-PROTECTION-SET>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="43DE5A64-D3A5-40C5-83F9-419F2ABCCD8B">
+      <SHORT-NAME>Systems</SHORT-NAME>
     </AR-PACKAGE>
   </AR-PACKAGES>
 </AUTOSAR>

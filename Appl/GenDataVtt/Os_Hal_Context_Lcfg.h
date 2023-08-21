@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Context_Lcfg.h
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -93,6 +93,10 @@ extern VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_ErrorHook_OsCore
 extern VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_InitTask_Dyn;
 
 
+/*! HAL dynamic task context data: OnEventTask */
+extern VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_OnEventTask_Dyn;
+
+
 /*! HAL dynamic task context data: PeriodicTask */
 extern VAR(Os_Hal_ContextType, OS_VAR_NOINIT) OsCfg_Hal_Context_PeriodicTask_Dyn;
 
@@ -119,6 +123,9 @@ extern CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_ErrorHook_OsC
 
 /*! HAL task context configuration data: InitTask */
 extern CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_InitTask;
+
+/*! HAL task context configuration data: OnEventTask */
+extern CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_OnEventTask;
 
 /*! HAL task context configuration data: PeriodicTask */
 extern CONST(Os_Hal_ContextConfigType, OS_CONST) OsCfg_Hal_Context_PeriodicTask;

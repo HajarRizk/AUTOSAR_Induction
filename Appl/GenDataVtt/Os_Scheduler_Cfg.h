@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Scheduler_Cfg.h
- *   Generation Time: 2023-08-16 18:19:56
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -60,7 +60,7 @@
 # define OS_CFG_NUM_TASKQUEUES                   (2u)
 
 /* Number of task queue activation slots: OsCore0 */
-# define OS_CFG_NUM_TASKQUEUE0_OSCORE0_SLOTS     (3u)
+# define OS_CFG_NUM_TASKQUEUE0_OSCORE0_SLOTS     (4u)
 # define OS_CFG_NUM_TASKQUEUE1_OSCORE0_SLOTS     (2u)
 
 

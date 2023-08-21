@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ActiveEcuC</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-MODULE-CONFIGURATION-VALUES UUID="6ff1e99a-173c-4357-a436-4bec346f30dc">
+          <SHORT-NAME>Dcm</SHORT-NAME>
+          <DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/Dcm</DEFINITION-REF>
+          <IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+          <MODULE-DESCRIPTION-REF DEST="BSW-IMPLEMENTATION">/MICROSAR/Dcm_Impl</MODULE-DESCRIPTION-REF>
+          <CONTAINERS>
+            <ECUC-CONTAINER-VALUE UUID="11e9f32f-adb0-4d02-bebb-618b803d5d68">
+              <SHORT-NAME>DcmConfigSet</SHORT-NAME>
+              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet</DEFINITION-REF>
+              <SUB-CONTAINERS>
+                <ECUC-CONTAINER-VALUE UUID="b8197a03-ee0d-4371-a18f-29c1d5eb4ba0">
+                  <SHORT-NAME>DcmGeneral</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmDemApiVersion</DEFINITION-REF>
+                      <VALUE>DCM_DEM_API_4_03_00</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmDevErrorDetect</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmRequestManufacturerNotificationEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmRequestSupplierNotificationEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmRespondAllRequest</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmTaskTime</DEFINITION-REF>
+                      <VALUE>0.01</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmVersionInfoApi</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-TEXTUAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmDspDataDefaultEndianness</DEFINITION-REF>
+                      <VALUE>LITTLE_ENDIAN</VALUE>
+                    </ECUC-TEXTUAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmSafeBswChecks</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmSupportedIDCalculationSuppressionEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmDtrDataProvisionViaDemEnabled</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmForeignDiagnosticRequestDetectionEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmSuppressResponseOnCanTpFuncMixedAddrRequests</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmSenderReceiverPRPortsEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmResetToFblAfterSessionFinalResponseEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmGeneral/DcmFinalResponseToFblEnabled</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="cddf0e42-b758-4bd5-8d60-d8b2147815fa">
+                  <SHORT-NAME>DcmDsd</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="e9efa8fe-d7df-4547-b01c-a110f7b347f6">
+                      <SHORT-NAME>DcmDsdServiceTable</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="c5f0f110-cff2-4eb1-b26b-42c1ecd2680e">
+                          <SHORT-NAME>ReadDataByIdentifier</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabServiceId</DEFINITION-REF>
+                              <VALUE>34</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabSubfuncAvail</DEFINITION-REF>
+                              <VALUE>false</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="75a46e4e-33fc-4b47-bc67-f970c0f2778f">
+                          <SHORT-NAME>DiagnosticSessionControl</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabServiceId</DEFINITION-REF>
+                              <VALUE>16</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabSubfuncAvail</DEFINITION-REF>
+                              <VALUE>true</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="5a3d36f6-b833-4bef-bcd1-926d1d573fd4">
+                              <SHORT-NAME>DefaultSession</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSubService</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSubService/DcmDsdSubServiceId</DEFINITION-REF>
+                                  <VALUE>1</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="83888531-51f7-442a-906a-78d9db5830b8">
+                          <SHORT-NAME>WriteDataByIdentifier</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabServiceId</DEFINITION-REF>
+                              <VALUE>46</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabSubfuncAvail</DEFINITION-REF>
+                              <VALUE>false</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="f8d329ea-7e76-438c-9767-3ed626a0ff06">
+                          <SHORT-NAME>TesterPresent</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabServiceId</DEFINITION-REF>
+                              <VALUE>62</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabSubfuncAvail</DEFINITION-REF>
+                              <VALUE>true</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="50d4743d-ce6c-46a7-9345-484f8c850920">
+                              <SHORT-NAME>DcmDsdSubService_0x00</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSubService</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSubService/DcmDsdSubServiceId</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="ff9c0a9a-0a6c-435b-b1f4-efc73dd6e292">
+                          <SHORT-NAME>RoutineControl</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabServiceId</DEFINITION-REF>
+                              <VALUE>49</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable/DcmDsdService/DcmDsdSidTabSubfuncAvail</DEFINITION-REF>
+                              <VALUE>true</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="6e072d6f-ac0d-4852-b4b9-1ca40e748226">
+                  <SHORT-NAME>DcmDsl</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl</DEFINITION-REF>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="27305110-86a0-4fb6-b8fd-1d3163bc8d46">
+                      <SHORT-NAME>DcmDslBuffer</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslBuffer</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslBuffer/DcmDslBufferSize</DEFINITION-REF>
+                          <VALUE>50</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="7e9fd6d7-399e-4cb0-bf7f-d7be7e4bfb89">
+                      <SHORT-NAME>DcmDslDiagResp</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslDiagResp</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslDiagResp/DcmDslDiagRespMaxNumRespPend</DEFINITION-REF>
+                          <VALUE>0</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslDiagResp/DcmDslDiagRespOnSecondDeclinedRequest</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslDiagResp/DcmDslDiagRespMaxNumOfDeclinedRequests</DEFINITION-REF>
+                          <VALUE>3</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="e5e843f3-fca9-4d9d-a51e-fb423f987972">
+                      <SHORT-NAME>DcmDslProtocol</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="427a35ed-ff30-40ed-9dcd-6550c46467c6">
+                          <SHORT-NAME>DcmDslProtocolRow</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolEndiannessConvEnabled</DEFINITION-REF>
+                              <VALUE>false</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolID</DEFINITION-REF>
+                              <VALUE>DCM_UDS_ON_CAN</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolPreemptTimeout</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolPriority</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmSendRespPendOnTransToBoot</DEFINITION-REF>
+                              <VALUE>true</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmTimStrP2ServerAdjust</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmTimStrP2StarServerAdjust</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolRxBufferID</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslBuffer</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolSIDTable</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsd/DcmDsdServiceTable</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslProtocolTxBufferID</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsl/DcmDslBuffer</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="e5de839e-8d66-48c5-bf14-4c5b71ddd90c">
+                              <SHORT-NAME>DcmDslConnection</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-CHOICE-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection</DEFINITION-REF>
+                              <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE UUID="1af48d4e-640a-4335-b670-c32a292611af">
+                                  <SHORT-NAME>DcmDslMainConnection</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-NUMERICAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRxTesterSourceAddr</DEFINITION-REF>
+                                      <VALUE>0</VALUE>
+                                    </ECUC-NUMERICAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE>
+                                      <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslAddressingType</DEFINITION-REF>
+                                      <VALUE>DCM_NET_ADDR_NORMAL</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE UUID="8802c70d-69e2-4efe-be43-badff0b5b399">
+                                      <SHORT-NAME>DcmDslProtocolRx</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx/DcmDslProtocolRxAddrType</DEFINITION-REF>
+                                          <VALUE>DCM_PHYSICAL_TYPE</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-NUMERICAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx/DcmDslProtocolRxChannelId</DEFINITION-REF>
+                                          <VALUE>0</VALUE>
+                                        </ECUC-NUMERICAL-PARAM-VALUE>
+                                        <ECUC-NUMERICAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx/DcmDslProtocolRxPduId</DEFINITION-REF>
+                                          <VALUE>0</VALUE>
+                                        </ECUC-NUMERICAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                      <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx/DcmDslProtocolRxPduRef</DEFINITION-REF>
+                                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/DiagRequest_Com</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                        <ECUC-REFERENCE-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-SYMBOLIC-NAME-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolRx/DcmDslProtocolRxComMChannelRef</DEFINITION-REF>
+                                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/ComM/ComMConfigSet/Connector_eJAD_AC_ECU_5f730b4d60fd8937_17d2a688</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                      </REFERENCE-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                    <ECUC-CONTAINER-VALUE UUID="e6b9c29b-83de-4b97-858c-c9948a988d85">
+                                      <SHORT-NAME>DcmDslProtocolTx</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolTx</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-NUMERICAL-PARAM-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolTx/DcmDslTxConfirmationPduId</DEFINITION-REF>
+                                          <VALUE>0</VALUE>
+                                        </ECUC-NUMERICAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                      <REFERENCE-VALUES>
+                                        <ECUC-REFERENCE-VALUE>
+                                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsl/DcmDslProtocol/DcmDslProtocolRow/DcmDslConnection/DcmDslMainConnection/DcmDslProtocolTx/DcmDslProtocolTxPduRef</DEFINITION-REF>
+                                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/EcuC/EcucPduCollection/DiagResponse_Com</VALUE-REF>
+                                        </ECUC-REFERENCE-VALUE>
+                                      </REFERENCE-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                              </SUB-CONTAINERS>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="51b5a0bc-e0a1-4e3e-990c-d5468dd7ad70">
+                  <SHORT-NAME>DcmDsp</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspReadDIDReportsNODIByte</DEFINITION-REF>
+                      <VALUE>false</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                  <SUB-CONTAINERS>
+                    <ECUC-CONTAINER-VALUE UUID="de40ac24-4aab-44f3-aa19-8dea7f67442a">
+                      <SHORT-NAME>DcmDspSecurity</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSecurity</DEFINITION-REF>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="3ab912f2-5d5e-415f-b1a4-ad5def6faab8">
+                      <SHORT-NAME>DcmDspSession</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="9c87f1dc-fdf0-41a6-9ab2-e55aeba63e8e">
+                          <SHORT-NAME>DcmDspSessionRow_Default</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession/DcmDspSessionRow</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-TEXTUAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession/DcmDspSessionRow/DcmDspSessionForBoot</DEFINITION-REF>
+                              <VALUE>DCM_NO_BOOT</VALUE>
+                            </ECUC-TEXTUAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession/DcmDspSessionRow/DcmDspSessionLevel</DEFINITION-REF>
+                              <VALUE>1</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession/DcmDspSessionRow/DcmDspSessionP2ServerMax</DEFINITION-REF>
+                              <VALUE>0.05</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspSession/DcmDspSessionRow/DcmDspSessionP2StarServerMax</DEFINITION-REF>
+                              <VALUE>5</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="208cf78a-e855-47fd-93ef-4b7917e2c227">
+                      <SHORT-NAME>DcmDspDid_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidIdentifier</DEFINITION-REF>
+                          <VALUE>78</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidUsed</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidUsePort</DEFINITION-REF>
+                          <VALUE>USE_DATA_ELEMENT_SPECIFIC_INTERFACES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidInfoRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo_Counter</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="b36cbba0-6776-472d-be03-33aa92733775">
+                          <SHORT-NAME>DcmDspDidSignal</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal/DcmDspDidDataPos</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal/DcmDspDidDataRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspData_Counter</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="b7030d09-0b4a-4c01-86c7-db56b4d251bb">
+                      <SHORT-NAME>DcmDspDidInfo_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidDynamicallyDefined</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="29d78514-2d36-4e54-bd32-b4ea57b634e4">
+                          <SHORT-NAME>DcmDspDidAccess</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidAccess</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="ab5c7a5e-04a9-46c2-8d99-010c11f9186c">
+                              <SHORT-NAME>DcmDspDidRead</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidAccess/DcmDspDidRead</DEFINITION-REF>
+                            </ECUC-CONTAINER-VALUE>
+                            <ECUC-CONTAINER-VALUE UUID="06c5b70d-e91e-4584-bf5c-200fe77f8f02">
+                              <SHORT-NAME>DcmDspDidWrite</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidAccess/DcmDspDidWrite</DEFINITION-REF>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="fd38aa80-6d8c-4d22-9969-f592f47183fc">
+                      <SHORT-NAME>DcmDspData_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataSize</DEFINITION-REF>
+                          <VALUE>16</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataUsePort</DEFINITION-REF>
+                          <VALUE>USE_DATA_SYNCH_CLIENT_SERVER</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataType</DEFINITION-REF>
+                          <VALUE>UINT16</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataConditionCheckReadFncUsed</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataEndianness</DEFINITION-REF>
+                          <VALUE>LITTLE_ENDIAN</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataInfoRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo_Counter</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="2f2c8a3f-e48e-4d14-a956-981414e655c8">
+                      <SHORT-NAME>DcmDspDataInfo_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo/DcmDspDataFixedLength</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo/DcmDspDataScalingInfoSize</DEFINITION-REF>
+                          <VALUE>2</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c548e357-5866-4039-a5fb-d476c3546862">
+                      <SHORT-NAME>DcmDspDid_CountersValue</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidIdentifier</DEFINITION-REF>
+                          <VALUE>4613</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidUsed</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidUsePort</DEFINITION-REF>
+                          <VALUE>USE_DATA_ELEMENT_SPECIFIC_INTERFACES</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidInfoRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo_CountersValue</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="346160b3-3902-4de2-a949-5cfb663327a1">
+                          <SHORT-NAME>DcmDspDidSignal</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal</DEFINITION-REF>
+                          <PARAMETER-VALUES>
+                            <ECUC-NUMERICAL-PARAM-VALUE>
+                              <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal/DcmDspDidDataPos</DEFINITION-REF>
+                              <VALUE>0</VALUE>
+                            </ECUC-NUMERICAL-PARAM-VALUE>
+                          </PARAMETER-VALUES>
+                          <REFERENCE-VALUES>
+                            <ECUC-REFERENCE-VALUE>
+                              <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDid/DcmDspDidSignal/DcmDspDidDataRef</DEFINITION-REF>
+                              <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspData_CountersValue</VALUE-REF>
+                            </ECUC-REFERENCE-VALUE>
+                          </REFERENCE-VALUES>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="93988196-2a08-40d7-8c80-76627252420b">
+                      <SHORT-NAME>DcmDspDataInfo_CountersValue</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo/DcmDspDataFixedLength</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="a4b5936a-940f-4dc9-a730-decf7cd224df">
+                      <SHORT-NAME>DcmDspData_CountersValue</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataSize</DEFINITION-REF>
+                          <VALUE>320</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataUsePort</DEFINITION-REF>
+                          <VALUE>USE_DATA_SYNCH_CLIENT_SERVER</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataType</DEFINITION-REF>
+                          <VALUE>UINT16_N</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataConditionCheckReadFncUsed</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspData/DcmDspDataInfoRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspDataInfo_CountersValue</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="9628384e-de21-4efc-9e1c-c8bdcadd7d7e">
+                      <SHORT-NAME>DcmDspDidInfo_CountersValue</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidDynamicallyDefined</DEFINITION-REF>
+                          <VALUE>false</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="ca37951f-30ad-4637-a28d-c68fe97d6b95">
+                          <SHORT-NAME>DcmDspDidAccess</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidAccess</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="42968766-cc31-4cc2-a1c1-6cf59b996a06">
+                              <SHORT-NAME>DcmDspDidRead</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspDidInfo/DcmDspDidAccess/DcmDspDidRead</DEFINITION-REF>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="8315bdbf-7590-48f1-8342-8270b2f99c59">
+                      <SHORT-NAME>DcmDspRoutine_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRequestResultsRoutineSupported</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRoutineFixedLength</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRoutineIdentifier</DEFINITION-REF>
+                          <VALUE>9217</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRoutineUsePort</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRoutineUsed</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspStopRoutineSupported</DEFINITION-REF>
+                          <VALUE>true</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                      <REFERENCE-VALUES>
+                        <ECUC-REFERENCE-VALUE>
+                          <DEFINITION-REF DEST="ECUC-REFERENCE-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutine/DcmDspRoutineInfoRef</DEFINITION-REF>
+                          <VALUE-REF DEST="ECUC-CONTAINER-VALUE">/ActiveEcuC/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo_Counter</VALUE-REF>
+                        </ECUC-REFERENCE-VALUE>
+                      </REFERENCE-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE UUID="c3de7769-d5fe-4737-ae92-8470749bf489">
+                      <SHORT-NAME>DcmDspRoutineInfo_Counter</SHORT-NAME>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo</DEFINITION-REF>
+                      <SUB-CONTAINERS>
+                        <ECUC-CONTAINER-VALUE UUID="16e7c5d2-c7e4-482c-aaad-93baae586714">
+                          <SHORT-NAME>DcmDspRoutineAuthorization</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineAuthorization</DEFINITION-REF>
+                        </ECUC-CONTAINER-VALUE>
+                        <ECUC-CONTAINER-VALUE UUID="c989df33-1df3-43c4-839b-ea376ec8a5fb">
+                          <SHORT-NAME>DcmDspRoutineRequestResOut</SHORT-NAME>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE UUID="672df7eb-8f59-4cbd-b248-3fcde8dcb417">
+                              <SHORT-NAME>DcmDspRoutineRequestResOutSignal</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut/DcmDspRoutineRequestResOutSignal</DEFINITION-REF>
+                              <PARAMETER-VALUES>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut/DcmDspRoutineRequestResOutSignal/DcmDspRoutineSignalLength</DEFINITION-REF>
+                                  <VALUE>16</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-NUMERICAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut/DcmDspRoutineRequestResOutSignal/DcmDspRoutineSignalPos</DEFINITION-REF>
+                                  <VALUE>0</VALUE>
+                                </ECUC-NUMERICAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut/DcmDspRoutineRequestResOutSignal/DcmDspRoutineSignalType</DEFINITION-REF>
+                                  <VALUE>UINT16</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                                <ECUC-TEXTUAL-PARAM-VALUE>
+                                  <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmDsp/DcmDspRoutineInfo/DcmDspRoutineRequestResOut/DcmDspRoutineRequestResOutSignal/DcmDspRoutineSignalEndianness</DEFINITION-REF>
+                                  <VALUE>LITTLE_ENDIAN</VALUE>
+                                </ECUC-TEXTUAL-PARAM-VALUE>
+                              </PARAMETER-VALUES>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </SUB-CONTAINERS>
+                    </ECUC-CONTAINER-VALUE>
+                  </SUB-CONTAINERS>
+                </ECUC-CONTAINER-VALUE>
+                <ECUC-CONTAINER-VALUE UUID="01fb9403-e504-4dba-81b3-8b23385e6c31">
+                  <SHORT-NAME>DcmPageBufferCfg</SHORT-NAME>
+                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmPageBufferCfg</DEFINITION-REF>
+                  <PARAMETER-VALUES>
+                    <ECUC-NUMERICAL-PARAM-VALUE>
+                      <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/Dcm/DcmConfigSet/DcmPageBufferCfg/DcmPagedBufferEnabled</DEFINITION-REF>
+                      <VALUE>true</VALUE>
+                    </ECUC-NUMERICAL-PARAM-VALUE>
+                  </PARAMETER-VALUES>
+                </ECUC-CONTAINER-VALUE>
+              </SUB-CONTAINERS>
+            </ECUC-CONTAINER-VALUE>
+          </CONTAINERS>
+        </ECUC-MODULE-CONFIGURATION-VALUES>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

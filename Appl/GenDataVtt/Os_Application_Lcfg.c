@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Lcfg.c
- *   Generation Time: 2023-08-17 14:16:38
+ *   Generation Time: 2023-08-20 17:42:15
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -154,6 +154,7 @@ OS_LOCAL CONST(Os_SchTConfigRefType, OS_CONST) OsCfg_App_SystemApplication_OsCor
 OS_LOCAL CONST(Os_TaskConfigRefType, OS_CONST) OsCfg_App_SystemApplication_OsCore0_TaskRefs[OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_TASKS + 1u] =
 {
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_InitTask),
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OnEventTask),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_PeriodicTask),
   NULL_PTR
 };

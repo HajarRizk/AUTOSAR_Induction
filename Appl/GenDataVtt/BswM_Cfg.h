@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: BswM_Cfg.h
- *   Generation Time: 2023-08-16 18:17:03
+ *   Generation Time: 2023-08-20 17:38:36
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -52,6 +52,7 @@
 #include "ComStack_Types.h" 
 #include "BswM_ComM.h"
 #include "BswM_CanSM.h"
+#include "BswM_Dcm.h"
 #include "BswM_EcuM.h"
 
 
@@ -126,7 +127,7 @@
 #define BSWM_ENABLE_ETHIF                    STD_OFF
 #define BSWM_ENABLE_ETHSM                    STD_OFF
 #define BSWM_ENABLE_LINTP                    STD_OFF
-#define BSWM_ENABLE_DCM                      STD_OFF
+#define BSWM_ENABLE_DCM                      STD_ON
 #define BSWM_ENABLE_NVM                      STD_OFF
 #define BSWM_ENABLE_ECUM                     STD_ON
 #define BSWM_ENABLE_COMM                     STD_ON

@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: ComM_Lcfg.c
- *   Generation Time: 2023-08-16 18:17:03
+ *   Generation Time: 2023-08-20 17:38:36
  *           Project: AUTOSAR_Induction - Version 1.0
  *          Delivery: CBD1800285_D02
  *      Tool Version: DaVinci Configurator (beta) 5.19.46 SP2
@@ -112,6 +112,26 @@ CONST(ComM_UserType, COMM_CONST) ComM_User[1] = {  /* PRQA S 1514, 1533 */  /* M
   { /*     0 */   FALSE }   /* [Connector_eJAD_AC_ECU_5f730b4d60fd8937_1ac2290f] */
 };
 #define COMM_STOP_SEC_CONST_UNSPECIFIED
+/*lint -save -esym(961, 19.1) */
+#include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+
+/**********************************************************************************************************************
+  ComM_DcmRequestActive
+**********************************************************************************************************************/
+/** 
+  \var    ComM_DcmRequestActive
+  \brief  Status of Dcm active diagnostic request, TRUE if requested, FALSE otherwise
+*/ 
+#define COMM_START_SEC_VAR_NOINIT_8BIT
+/*lint -save -esym(961, 19.1) */
+#include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
+/*lint -restore */
+VAR(ComM_DcmRequestActiveUType, COMM_VAR_NOINIT) ComM_DcmRequestActive;  /* PRQA S 0759, 1514, 1533 */  /* MD_CSL_Union, MD_CSL_ObjectOnlyAccessedOnce, MD_CSL_ObjectOnlyAccessedOnce */
+  /* Index        Referable Keys */
+  /*     0 */  /* [ComMChannel_0] */
+
+#define COMM_STOP_SEC_VAR_NOINIT_8BIT
 /*lint -save -esym(961, 19.1) */
 #include "MemMap.h"  /* PRQA S 5087 */  /* MD_MSR_MemMap */
 /*lint -restore */
