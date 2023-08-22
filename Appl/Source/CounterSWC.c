@@ -200,6 +200,22 @@
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of documentation area >>                    DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
+typedef enum {
+  ROUTINE_IDLE = 0,
+  ROUTINE_STARTED,
+  ROUTINE_RESULT,
+  ROUTINE_STOPPED
+} Dcm_RoutineState;
+
+uint16 u16CountersValue[20] = {0x00};
+Dcm_RoutineState eCounterRoutineState = ROUTINE_IDLE;
+uint16 u16CounterSum = 0x00;
+uint16 u16CountersNum = 0x00;
+uint16 u16tempCounterSum = 0x00;
+uint16 u16tempCountersNum = 0x00;
+
+
+
 
 FUNC(void, CounterSWC_CODE) CounterMainFunction(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
 {
@@ -208,11 +224,36 @@ FUNC(void, CounterSWC_CODE) CounterMainFunction(void) /* PRQA S 0850 */ /* MD_MS
  * Symbol: CounterMainFunction
  *********************************************************************************************************************/
 
-uint16 u16CounterValue = 0;
-u16CounterValue = Rte_IrvRead_CounterMainFunction_CounterValueIRV();
-u16CounterValue++;
-Rte_Write_CounterSignalPI_Tx_Element(u16CounterValue);
-Rte_IrvWrite_CounterMainFunction_CounterValueIRV(u16CounterValue);
+  uint16 u16CounterValue = 0;
+  static uint16 u16CounterArrayIndex = 0;
+
+  /*Read Counter Value from CounterValueIRV */
+  u16CounterValue = Rte_IrvRead_CounterMainFunction_CounterValueIRV();
+
+
+  /*Store the Latest Value of the counter in Counter Values Array*/
+  u16CountersValue[u16CounterArrayIndex] = u16CounterValue;
+  /*Increment the Counter Values Index*/
+  u16CounterArrayIndex = (u16CounterArrayIndex+1)%20;
+
+  /*Start Calculating the avarage of the counters if Start Request is recieved*/
+  if(eCounterRoutineState == ROUTINE_STARTED)
+  {
+    u16CounterSum = u16CounterSum + u16CounterValue;
+    u16CountersNum++;
+
+  }
+
+  /*Transmit Counter Value in COM Tx Message with ID 0xFC*/
+  Rte_Write_CounterSignalPI_Tx_Element(u16CounterValue);
+
+  /*Increment the Counter Every 25ms*/
+  u16CounterValue++;
+  /*Update the CounterValueIRV with the counter new value*/
+  Rte_IrvWrite_CounterMainFunction_CounterValueIRV(u16CounterValue);
+
+
+
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
@@ -259,9 +300,9 @@ FUNC(void, CounterSWC_CODE) CounterRecieveSignal(void) /* PRQA S 0850 */ /* MD_M
  * Symbol: CounterRecieveSignal
  *********************************************************************************************************************/
 
-uint16 u16counterValue = 0;
-Rte_Read_CounterSignalPI_Rx_Element(&u16counterValue);
-Rte_IrvWrite_CounterRecieveSignal_CounterValueIRV(u16counterValue);
+  uint16 u16counterValue = 0;
+  Rte_Read_CounterSignalPI_Rx_Element(&u16counterValue);
+  Rte_IrvWrite_CounterRecieveSignal_CounterValueIRV(u16counterValue);
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
@@ -316,7 +357,10 @@ FUNC(Std_ReturnType, CounterSWC_CODE) DataServices_Counter_ReadData(P2VAR(uint8,
  * Symbol: DataServices_Counter_ReadData (returns application error)
  *********************************************************************************************************************/
 
-*Data = Rte_IrvRead_DataServices_Counter_ReadData_CounterValueIRV();
+  uint16 u16counter = Rte_IrvRead_DataServices_Counter_ReadData_CounterValueIRV();
+  Data[1] = (uint8)u16counter;
+  Data[0] = (uint8)(u16counter>>8);
+  
   return RTE_E_OK;
 
 /**********************************************************************************************************************
@@ -371,8 +415,23 @@ FUNC(Std_ReturnType, CounterSWC_CODE) DataServices_Counter_WriteData(P2CONST(uin
  * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
  * Symbol: DataServices_Counter_WriteData (returns application error)
  *********************************************************************************************************************/
+  Std_ReturnType eReturnState = RTE_E_INVALID;
+  uint16 u16counter =0;
+  u16counter = (uint16)(Data[0]);
+  u16counter |= (uint16)(((uint16)Data[1]) << 8);
 
-  return RTE_E_OK;
+  if(u16counter <= 2500)
+  {
+
+    Rte_IrvWrite_DataServices_Counter_WriteData_CounterValueIRV(u16counter);
+    eReturnState = RTE_E_OK;
+  }
+  else
+  {
+    *ErrorCode = DCM_E_REQUESTOUTOFRANGE;
+  }
+  
+  return eReturnState;
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
@@ -419,6 +478,12 @@ FUNC(Std_ReturnType, CounterSWC_CODE) DataServices_DcmDspData_CountersValue_Read
  * Symbol: DataServices_DcmDspData_CountersValue_ReadData (returns application error)
  *********************************************************************************************************************/
 
+  for(uint8 i=0;i<20;i++)
+  {
+    Data[i+1] = (uint8)u16CountersValue[i];
+    Data[i] = (uint8)(u16CountersValue[i]>>8);
+  }
+  Data = u16CountersValue;
   return RTE_E_OK;
 
 /**********************************************************************************************************************
@@ -467,7 +532,21 @@ FUNC(Std_ReturnType, CounterSWC_CODE) RoutineServices_Counter_RequestResults(Dcm
  * Symbol: RoutineServices_Counter_RequestResults (returns application error)
  *********************************************************************************************************************/
 
-  return RTE_E_OK;
+  Std_ReturnType eReturnState = RTE_E_INVALID;
+  
+  if(eCounterRoutineState == ROUTINE_STOPPED)
+  {
+
+    *DcmDspRoutineRequestResOutSignal = u16tempCounterSum/u16tempCountersNum;
+    eCounterRoutineState = ROUTINE_RESULT;
+    eReturnState = RTE_E_OK;
+  }
+  else
+  {
+    *ErrorCode = DCM_E_REQUESTSEQUENCEERROR;
+  }
+  
+  return eReturnState;
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
@@ -515,7 +594,20 @@ FUNC(Std_ReturnType, CounterSWC_CODE) RoutineServices_Counter_Start(Dcm_OpStatus
  * Symbol: RoutineServices_Counter_Start (returns application error)
  *********************************************************************************************************************/
 
-  return RTE_E_OK;
+  Std_ReturnType eReturnState = RTE_E_INVALID;
+  
+  if(!(eCounterRoutineState == ROUTINE_STARTED))
+  {
+
+    eCounterRoutineState = ROUTINE_STARTED;
+    eReturnState = RTE_E_OK;
+  }
+  else
+  {
+    *ErrorCode = DCM_E_REQUESTSEQUENCEERROR;
+  }
+  
+  return eReturnState;
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
@@ -562,9 +654,23 @@ FUNC(Std_ReturnType, CounterSWC_CODE) RoutineServices_Counter_Stop(Dcm_OpStatusT
  * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
  * Symbol: RoutineServices_Counter_Stop (returns application error)
  *********************************************************************************************************************/
-
-  return RTE_E_OK;
-
+  Std_ReturnType eReturnState = RTE_E_INVALID;
+  
+  if(eCounterRoutineState == ROUTINE_STARTED )
+  {
+    u16tempCounterSum = u16CounterSum;
+    u16tempCountersNum = u16CountersNum;
+    u16CounterSum = 0;
+    u16CountersNum = 0;
+    eCounterRoutineState = ROUTINE_STOPPED;
+    eReturnState = RTE_E_OK;
+  }
+  else
+  {
+    *ErrorCode = DCM_E_REQUESTSEQUENCEERROR;
+  }
+  
+  return eReturnState;
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
